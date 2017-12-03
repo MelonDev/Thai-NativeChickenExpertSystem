@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<tabs>
+    <tab
+        id="@+id/nav_tab_1"
+        icon="@drawable/tab1_icon"
+        title="@string/tab_1" />
+    <tab
+        id="@+id/nav_tab_2"
+        icon="@drawable/tab2_icon"
+        title="@string/tab_2" />
+    <tab
+        id="@+id/nav_tab_3"
+        icon="@drawable/tab3_icon"
+        title="@string/tab_3" />
+    <tab
+        id="@+id/nav_tab_4"
+        icon="@drawable/tab4_icon"
+        title="@string/tab_4" />
+
+</tabs>

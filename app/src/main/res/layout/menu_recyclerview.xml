@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <RelativeLayout
+        android:layout_marginTop="10dp"
+        android:layout_width="match_parent"
+        android:layout_height="50dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginLeft="16dp"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/pridi_medium"
+            android:layout_alignParentLeft="true"
+            android:text="หัวข้อ"
+            android:textSize="24dp" />
+
+        <TextView
+            android:layout_alignParentRight="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_vertical"
+            android:layout_marginRight="16dp"
+            android:layout_centerVertical="true"
+            android:fontFamily="@font/pridi_light"
+            android:text="แสดงเพิ่มเติม"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="18dp" />
+
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:clipToPadding="false"
+        android:padding="10dp"
+        android:orientation="horizontal"
+        android:visibility="visible"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="50dp"
+        android:drawSelectorOnTop="false"
+        app:layoutManager="LinearLayoutManager"
+        android:listSelector="@android:color/transparent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:listitem="@layout/menu_icon"
+
+        />
+
+</RelativeLayout>
