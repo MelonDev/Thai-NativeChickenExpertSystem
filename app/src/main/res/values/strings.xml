@@ -12,5 +12,7 @@
     <string name="tab_4">ผู้จัดทำ</string>
     <string name="title_activity_sub_main">SubMainActivity</string>
     <string name="title_activity_chicken_datail">ChickenDatailActivity</string>
+    <string name="title_activity_splash_screen">SplashScreenActivity</string>
+    <string name="title_activity_splash">SplashActivity</string>
 
 </resources>
