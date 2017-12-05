@@ -21,6 +21,7 @@ class TabFourthFragment : Fragment() {
         val view = inflater!!.inflate(R.layout.fragment_tab_fourth, container, false)
 
 
+
         return view
     }
 

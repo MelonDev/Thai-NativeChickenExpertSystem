@@ -1,0 +1,941 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:layout_marginBottom="5dp"
+    android:layout_marginLeft="10dp"
+    android:layout_marginRight="10dp"
+    android:layout_marginTop="5dp">
+
+
+    <!-- ข้อมูลพื้นฐาน -->
+    <LinearLayout
+        android:id="@+id/detailA"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:cardBackgroundColor="@color/colorWhite"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingBottom="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/pridi_medium"
+                    android:paddingBottom="8dp"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="10dp"
+                    android:text="ข้อมูลพื้นฐาน"
+                    android:textColor="@color/colorText"
+                    android:textSize="22dp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:background="#EEEEEE" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="8dp"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="@font/pridi_light"
+                        android:text="สายพันธุ์ : "
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:id="@+id/detailA1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="@font/pridi_extralight"
+                        android:text="ชื่อสายพันธุ์ไก่"
+                        android:textSize="20dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+
+    <!-- รูปภาพ -->
+    <LinearLayout
+        android:id="@+id/detailB"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:cardBackgroundColor="@color/colorWhite"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingBottom="10dp">
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:paddingBottom="8dp"
+                        android:paddingLeft="16dp"
+                        android:paddingTop="10dp">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:fontFamily="@font/pridi_medium"
+                            android:text="รูปภาพ"
+                            android:textColor="@color/colorText"
+                            android:textSize="22dp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:visibility="gone"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignParentRight="true"
+                        android:layout_centerVertical="true"
+                        android:paddingRight="10dp">
+
+                        <ImageView
+                            android:layout_width="22dp"
+                            android:layout_height="22dp"
+                            android:layout_gravity="center_vertical"
+                            android:src="@drawable/zoom"
+                            android:tint="@color/colorText" />
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="center_vertical"
+                            android:fontFamily="@font/pridi_extralight"
+                            android:paddingLeft="12dp"
+                            android:paddingRight="16dp"
+                            android:text="ขยาย"
+                            android:textSize="20dp" />
+
+                    </LinearLayout>
+
+                </RelativeLayout>
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:background="#EEEEEE" />
+
+                <RelativeLayout
+                    android:layout_marginTop="20dp"
+                    android:layout_marginBottom="10dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:paddingBottom="10dp"
+                    android:visibility="visible">
+
+                    <ImageView
+                        android:id="@+id/detailB1"
+                        android:layout_width="match_parent"
+                        android:layout_height="180dp"
+                        android:adjustViewBounds="true"
+                        android:src="@drawable/unknown_picture" />
+
+                </RelativeLayout>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+
+
+    <!-- ลักษณะทั่วไป -->
+    <LinearLayout
+        android:id="@+id/detailC"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:cardBackgroundColor="@color/colorWhite"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingBottom="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/pridi_medium"
+                    android:paddingBottom="8dp"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="10dp"
+                    android:text="ลักษณะทั่วไป"
+                    android:textColor="@color/colorText"
+                    android:textSize="22dp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:background="#EEEEEE" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="8dp"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="@font/pridi_light"
+                        android:text="สีเปลือกไข่ : "
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:id="@+id/detailC1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="@font/pridi_extralight"
+                        android:text="ไม่ทราบสี"
+                        android:textSize="20dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+
+    <!-- ลักษณะภายนอก -->
+    <LinearLayout
+        android:id="@+id/detailD"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:cardBackgroundColor="@color/colorWhite"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingBottom="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/pridi_medium"
+                    android:paddingBottom="8dp"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="10dp"
+                    android:text="ลักษณะภายนอก"
+                    android:textColor="@color/colorText"
+                    android:textSize="22dp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:background="#EEEEEE" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingBottom="8dp"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="12dp">
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:fontFamily="@font/pridi_light"
+                            android:text="ลักษณะหงอน : "
+                            android:textSize="20dp" />
+
+                        <TextView
+                            android:id="@+id/detailD1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:fontFamily="@font/pridi_extralight"
+                            android:text="ไม่ทราบ"
+                            android:textSize="20dp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:fontFamily="@font/pridi_light"
+                            android:text="สีใบหน้า : "
+                            android:textSize="20dp" />
+
+                        <TextView
+                            android:id="@+id/detailD2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:fontFamily="@font/pridi_extralight"
+                            android:text="ไม่ทราบ"
+                            android:textSize="20dp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:fontFamily="@font/pridi_light"
+                            android:text="สีตา : "
+                            android:textSize="20dp" />
+
+                        <TextView
+                            android:id="@+id/detailD3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:fontFamily="@font/pridi_extralight"
+                            android:text="ไม่ทราบ"
+                            android:textSize="20dp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:fontFamily="@font/pridi_light"
+                            android:text="สีปาก : "
+                            android:textSize="20dp" />
+
+                        <TextView
+                            android:id="@+id/detailD4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:fontFamily="@font/pridi_extralight"
+                            android:text="ไม่ทราบ"
+                            android:textSize="20dp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:fontFamily="@font/pridi_light"
+                            android:text="สีตุ้มหู : "
+                            android:textSize="20dp" />
+
+                        <TextView
+                            android:id="@+id/detailD5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:fontFamily="@font/pridi_extralight"
+                            android:text="ไม่ทราบ"
+                            android:textSize="20dp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:fontFamily="@font/pridi_light"
+                            android:text="สีสร้อยคอ : "
+                            android:textSize="20dp" />
+
+                        <TextView
+                            android:id="@+id/detailD6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:fontFamily="@font/pridi_extralight"
+                            android:text="ไม่ทราบ"
+                            android:textSize="20dp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:fontFamily="@font/pridi_light"
+                            android:text="สีเหนียง : "
+                            android:textSize="20dp" />
+
+                        <TextView
+                            android:id="@+id/detailD7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:fontFamily="@font/pridi_extralight"
+                            android:text="ไม่ทราบ"
+                            android:textSize="20dp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:fontFamily="@font/pridi_light"
+                            android:text="สีเดือย : "
+                            android:textSize="20dp" />
+
+                        <TextView
+                            android:id="@+id/detailD8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:fontFamily="@font/pridi_extralight"
+                            android:text="ไม่ทราบ"
+                            android:textSize="20dp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:fontFamily="@font/pridi_light"
+                            android:text="สักษณะหางและสี : "
+                            android:textSize="20dp" />
+
+                        <TextView
+                            android:id="@+id/detailD9"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:fontFamily="@font/pridi_extralight"
+                            android:text="ไม่ทราบ"
+                            android:textSize="20dp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:fontFamily="@font/pridi_light"
+                            android:text="สีขนลำตัว : "
+                            android:textSize="20dp" />
+
+                        <TextView
+                            android:id="@+id/detailD10"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:fontFamily="@font/pridi_extralight"
+                            android:text="ไม่ทราบ"
+                            android:textSize="20dp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:fontFamily="@font/pridi_light"
+                            android:text="สีผิวหนัง : "
+                            android:textSize="20dp" />
+
+                        <TextView
+                            android:id="@+id/detailD11"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:fontFamily="@font/pridi_extralight"
+                            android:text="ไม่ทราบ"
+                            android:textSize="20dp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:fontFamily="@font/pridi_light"
+                            android:text="สีแข้ง : "
+                            android:textSize="20dp" />
+
+                        <TextView
+                            android:id="@+id/detailD12"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:fontFamily="@font/pridi_extralight"
+                            android:text="ไม่ทราบ"
+                            android:textSize="20dp" />
+
+                    </LinearLayout>
+
+                    <LinearLayout
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="5dp"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:fontFamily="@font/pridi_light"
+                            android:text="สีเล็บ : "
+                            android:textSize="20dp" />
+
+                        <TextView
+                            android:id="@+id/detailD13"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:fontFamily="@font/pridi_extralight"
+                            android:text="ไม่ทราบ"
+                            android:textSize="20dp" />
+
+                    </LinearLayout>
+
+
+                </LinearLayout>
+
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+
+    <!-- ลักษณะทางเศรษฐกิจ -->
+    <LinearLayout
+        android:id="@+id/detailE"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:cardBackgroundColor="@color/colorWhite"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingBottom="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/pridi_medium"
+                    android:paddingBottom="8dp"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="10dp"
+                    android:text="ลักษณะทั่วไป"
+                    android:textColor="@color/colorText"
+                    android:textSize="22dp" />
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:background="#EEEEEE" />
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:paddingBottom="8dp"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="12dp">
+
+                    <LinearLayout
+                        android:layout_marginTop="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:fontFamily="@font/pridi_light"
+                            android:text="ระยะเวลาการเลี้ยง : "
+                            android:textSize="20dp" />
+
+                        <TextView
+                            android:id="@+id/detailE1"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:fontFamily="@font/pridi_extralight"
+                            android:text="ไม่ทราบ"
+                            android:textSize="20dp" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_marginTop="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:fontFamily="@font/pridi_light"
+                            android:text="อายุที่ให้ไข่ฟองแรก(วัน) : "
+                            android:textSize="20dp" />
+
+                        <TextView
+                            android:id="@+id/detailE2"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:fontFamily="@font/pridi_extralight"
+                            android:text="ไม่ทราบ"
+                            android:textSize="20dp" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_marginTop="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:fontFamily="@font/pridi_light"
+                            android:text="ผลผลิตไข่แม่ต่อปี(ฟอง) : "
+                            android:textSize="20dp" />
+
+                        <TextView
+                            android:id="@+id/detailE3"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:fontFamily="@font/pridi_extralight"
+                            android:text="ไม่ทราบ"
+                            android:textSize="20dp" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_marginTop="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:fontFamily="@font/pridi_light"
+                            android:text="น้ำหนักตัว(กก.) : "
+                            android:textSize="20dp" />
+
+                        <TextView
+                            android:id="@+id/detailE4"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:fontFamily="@font/pridi_extralight"
+                            android:text="ไม่ทราบ"
+                            android:textSize="20dp" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_marginTop="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:fontFamily="@font/pridi_light"
+                            android:text="อัตราแลกเปลี่ยนเป็นอาหาร(%) : "
+                            android:textSize="20dp" />
+
+                        <TextView
+                            android:id="@+id/detailE5"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:fontFamily="@font/pridi_extralight"
+                            android:text="ไม่ทราบ"
+                            android:textSize="20dp" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_marginTop="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:fontFamily="@font/pridi_light"
+                            android:text="อัตราการตาย(%) : "
+                            android:textSize="20dp" />
+
+                        <TextView
+                            android:id="@+id/detailE6"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:fontFamily="@font/pridi_extralight"
+                            android:text="ไม่ทราบ"
+                            android:textSize="20dp" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_marginTop="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:fontFamily="@font/pridi_light"
+                            android:text="น้ำหนักที่ขาย(กก.) : "
+                            android:textSize="20dp" />
+
+                        <TextView
+                            android:id="@+id/detailE7"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:fontFamily="@font/pridi_extralight"
+                            android:text="ไม่ทราบ"
+                            android:textSize="20dp" />
+
+                    </LinearLayout>
+                    <LinearLayout
+                        android:layout_marginTop="5dp"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:orientation="horizontal">
+
+                        <TextView
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:fontFamily="@font/pridi_light"
+                            android:text="น้ำหนักแรกเกิด : "
+                            android:textSize="20dp" />
+
+                        <TextView
+                            android:id="@+id/detailE8"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:layout_gravity="top"
+                            android:fontFamily="@font/pridi_extralight"
+                            android:text="ไม่ทราบ"
+                            android:textSize="20dp" />
+
+                    </LinearLayout>
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+
+    <!-- อื่นๆ -->
+    <LinearLayout
+        android:id="@+id/detailF"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:cardBackgroundColor="@color/colorWhite"
+            app:cardCornerRadius="15dp"
+            app:cardElevation="0dp">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical"
+                android:paddingBottom="10dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:fontFamily="@font/pridi_medium"
+                    android:paddingBottom="8dp"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="10dp"
+                    android:text="อื่นๆ"
+                    android:textColor="@color/colorText"
+                    android:textSize="22dp" />
+
+                <RelativeLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="3dp"
+                    android:background="#EEEEEE" />
+
+                <LinearLayout
+                    android:layout_marginTop="5dp"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:paddingBottom="8dp"
+                    android:paddingLeft="16dp"
+                    android:paddingTop="12dp">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="@font/pridi_light"
+                        android:text="น้ำหนักตัวเมื่อให้ไข่ฟองแรก : "
+                        android:textSize="20dp" />
+
+                    <TextView
+                        android:id="@+id/detailF1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_gravity="center_vertical"
+                        android:fontFamily="@font/pridi_extralight"
+                        android:text="ไม่ทราบสี"
+                        android:textSize="20dp" />
+
+                </LinearLayout>
+
+            </LinearLayout>
+
+        </android.support.v7.widget.CardView>
+
+    </LinearLayout>
+
+
+</RelativeLayout>
+

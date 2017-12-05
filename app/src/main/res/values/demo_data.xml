@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="Z0">
+        <item>พันธุ์ไก่ชน</item>
+        <item>พันธุ์ไก่แจ้</item>
+        <item>พันธุ์ไก่อู</item>
+        <item>พันธุ์ไก่ตะเภา</item>
+        <item>พันธุ์ไก่เบตง</item>
+        <item>พันธุ์ไก่กลาย</item>
+        <item>พันธุ์ไก่พม่า</item>
+    </string-array>
+
+    <string-array name="A1">
+        <item>เหลืองหางขาว</item>
+        <item>ประดู๋หางดำ</item>
+        <item>เขียวเลาหางขาว</item>
+        <item>ประดู่เลาหางขาว</item>
+        <item>เขียวพารี</item>
+        <item>เทา</item>
+        <item>ทองแดงหางดำ</item>
+        <item>นกแดงหางแดง</item>
+        <item>นกกรด</item>
+        <item>ลายหางขาว</item>
+        <item>ชีท่าพระ</item>
+    </string-array>
+
+    <string-array name="A2">
+        <item>เหลืองใหญ่พระเจ้า 5 พระองค์</item>
+        <item>เหลืองรวกพระเจ้า 5 พระองค์</item>
+        <item>เหลืองโสนพระเจ้า 5 พระองค์</item>
+        <item>เหลืองเลาพระเจ้า 5 พระองค์</item>
+        <item>เหลืองทับทิม</item>
+        <item>เหลืองเอกา</item>
+    </string-array>
+
+    <string-array name="B1">
+        <item>ไก่สีไก่ป่าเหลือง</item>
+        <item>ไก่สีไก่ป่าเข้ม</item>
+        <item>ไก่สีไก่ป่าหูขาว</item>
+        <item>ไก่สีโนรี</item>
+        <item>ไก่สีกาบหมาก</item>
+        <item>ไก่สีกาบอ้อย</item>
+        <item>ไก่สีเบญจรงค์</item>
+        <item>ไก่สีเหลืองดอกโสน</item>
+        <item>ไก่สีประดู๋</item>
+        <item>ไก่สีเหลืองหางขาว</item>
+        <item>ไก่สีประดู๋</item>
+        <item>ไก่สีสร้อยสุวรรณ</item>
+    </string-array>
+
+</resources>

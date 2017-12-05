@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
+    android:orientation="vertical"
+    android:layout_marginTop="0dp"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools">
 
@@ -11,6 +13,7 @@
         android:layout_height="50dp">
 
         <TextView
+            android:id="@+id/mainChickenBreedTitle"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_vertical"
@@ -19,9 +22,10 @@
             android:fontFamily="@font/pridi_medium"
             android:layout_alignParentLeft="true"
             android:text="หัวข้อ"
-            android:textSize="24dp" />
+            android:textSize="26dp" />
 
         <TextView
+            android:id="@+id/mainMore"
             android:layout_alignParentRight="true"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
@@ -30,21 +34,25 @@
             android:layout_centerVertical="true"
             android:fontFamily="@font/pridi_light"
             android:text="แสดงเพิ่มเติม"
-            android:textColor="@color/colorPrimaryDark"
+            android:textColor="@color/colorPrimary"
             android:textSize="18dp" />
 
     </RelativeLayout>
 
     <android.support.v7.widget.RecyclerView
+        android:id="@+id/main_menu_horizontal_recycler_view"
         android:clipToPadding="false"
-        android:padding="10dp"
+        android:paddingLeft="10dp"
+        android:paddingRight="10dp"
+        android:paddingTop="5dp"
+        android:paddingBottom="0dp"
         android:orientation="horizontal"
         android:visibility="visible"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="0dp"
         android:layout_marginRight="0dp"
-        android:layout_marginTop="50dp"
+        android:layout_marginTop="0dp"
         android:drawSelectorOnTop="false"
         app:layoutManager="LinearLayoutManager"
         android:listSelector="@android:color/transparent"
@@ -53,4 +61,22 @@
 
         />
 
-</RelativeLayout>
+    <RelativeLayout
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_height="10dp"
+        android:background="#73ffefbe"
+        />
+    <ImageView
+        android:visibility="visible"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="6dp"
+        android:src="@drawable/line_1"
+        android:layout_alignParentBottom="true"
+        />
+
+</LinearLayout>
