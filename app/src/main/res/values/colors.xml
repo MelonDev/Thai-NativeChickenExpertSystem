@@ -9,4 +9,6 @@
 
     <color name="tabColor">#689F38</color>
 
+    <color name="searchPrimaryColor">#313131</color>
+
 </resources>

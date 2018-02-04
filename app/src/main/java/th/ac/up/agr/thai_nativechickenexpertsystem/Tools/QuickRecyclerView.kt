@@ -5,6 +5,9 @@ import android.support.v7.widget.GridLayoutManager
 import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.view.View
+import com.google.android.flexbox.FlexDirection
+import com.google.android.flexbox.FlexboxLayoutManager
+import com.google.android.flexbox.JustifyContent
 import th.ac.up.agr.thai_nativechickenexpertsystem.Tools.PreCaching.PreCachingGridLayoutManager
 import th.ac.up.agr.thai_nativechickenexpertsystem.Tools.PreCaching.PreCachingLinearLayoutManager
 
@@ -24,6 +27,12 @@ class QuickRecyclerView(private val context: Context, private val recyclerView: 
                 layoutManager.orientation = gridOrientation()
                 //layoutManager.extraLayoutSpace = extraLayoutSpace()
                 layoutManager.reverseLayout = reverse
+                recyclerView.layoutManager = layoutManager
+            }
+            "flexbox" -> {
+                val layoutManager = FlexboxLayoutManager(context)
+                layoutManager.justifyContent = JustifyContent.FLEX_END
+                layoutManager.flexDirection = FlexDirection.COLUMN
                 recyclerView.layoutManager = layoutManager
             }
         }

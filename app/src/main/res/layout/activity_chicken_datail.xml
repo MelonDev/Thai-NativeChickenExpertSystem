@@ -17,8 +17,8 @@
         <RelativeLayout
             app:layout_scrollFlags="scroll"
             android:layout_width="match_parent"
-            android:minHeight="?attr/actionBarSize"
-            android:layout_height="wrap_content"
+            android:minHeight="50dp"
+            android:layout_height="50dp"
             android:layout_marginTop="4dp"
             android:background="@color/colorPrimary">
 
@@ -32,8 +32,8 @@
                 android:paddingRight="16dp">
 
                 <ImageView
-                    android:layout_width="25dp"
-                    android:layout_height="25dp"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
                     android:layout_centerVertical="true"
                     android:src="@drawable/back" />
 
@@ -41,13 +41,13 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_centerVertical="true"
-                    android:layout_marginLeft="30dp"
+                    android:layout_marginLeft="25dp"
                     android:fontFamily="@font/pridi_extralight"
                     android:paddingBottom="0dp"
-                    android:paddingTop="2dp"
+                    android:paddingTop="0dp"
                     android:text="กลับ"
                     android:textColor="@color/colorWhite"
-                    android:textSize="22dp" />
+                    android:textSize="20dp" />
 
             </RelativeLayout>
 
@@ -74,12 +74,12 @@
         <android.support.constraint.ConstraintLayout
             app:layout_scrollFlags="enterAlways"
             android:layout_width="match_parent"
-            android:layout_height="?attr/actionBarSize">
+            android:layout_height="50dp">
             <RelativeLayout
                 android:background="@color/colorWhite"
                 android:id="@+id/leftTab"
                 android:layout_width="0dp"
-                android:layout_height="?attr/actionBarSize"
+                android:layout_height="50dp"
                 android:layout_marginStart="0dp"
                 android:layout_marginTop="0dp"
                 app:layout_constraintEnd_toStartOf="@+id/guideline"
@@ -136,7 +136,7 @@
                 android:background="@color/colorWhite"
                 android:id="@+id/rightTab"
                 android:layout_width="0dp"
-                android:layout_height="?attr/actionBarSize"
+                android:layout_height="50dp"
                 android:layout_marginStart="0dp"
                 android:layout_marginTop="0dp"
                 app:layout_constraintStart_toEndOf="@id/guideline"

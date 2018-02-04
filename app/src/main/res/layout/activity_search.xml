@@ -1,0 +1,168 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/bb_darkBackgroundColor"
+    tools:context="th.ac.up.agr.thai_nativechickenexpertsystem.SearchActivity">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        app:elevation="0dp">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="4dp"
+            android:background="#313131"
+            android:minHeight="?attr/actionBarSize">
+
+            <RelativeLayout
+                android:id="@+id/search_back_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="2dp"
+                android:paddingLeft="6dp"
+                android:paddingRight="16dp">
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_centerVertical="true"
+                    android:src="@drawable/back" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="25dp"
+                    android:fontFamily="@font/pridi_extralight"
+                    android:paddingBottom="0dp"
+                    android:paddingTop="0dp"
+                    android:text="กลับ"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="20dp" />
+
+
+            </RelativeLayout>
+
+            <LinearLayout
+                android:id="@+id/div_title_btn"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="0dp"
+                android:layout_marginTop="2dp"
+                android:layout_alignParentRight="true"
+                android:paddingLeft="6dp"
+                android:paddingRight="16dp">
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_vertical"
+                    android:layout_marginLeft="0dp"
+                    android:fontFamily="@font/pridi_extralight"
+                    android:paddingBottom="0dp"
+                    android:paddingTop="0dp"
+                    android:text="พันธุ์ไก่"
+                    android:textColor="@color/colorWhite"
+                    android:textSize="20dp" />
+
+                <ImageView
+                    android:layout_width="20dp"
+                    android:layout_height="20dp"
+                    android:layout_marginLeft="10dp"
+                    android:rotation="270"
+                    android:layout_gravity="center_vertical"
+                    android:src="@drawable/back" />
+
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/sub_title_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerInParent="true"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="0dp"
+                android:fontFamily="@font/pridi_medium"
+                android:gravity="center_horizontal"
+                android:maxWidth="200dp"
+                android:paddingBottom="0dp"
+                android:paddingRight="0dp"
+                android:text="ค้นหา"
+                android:textColor="#FFFFFF"
+                android:textSize="22dp" />
+
+
+        </RelativeLayout>
+
+    </android.support.design.widget.AppBarLayout>
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:layout_alignParentBottom="false"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginTop="66dp"
+        android:visibility="visible">
+
+        <android.support.v7.widget.CardView
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            app:cardElevation="0dp"
+            app:cardCornerRadius="10dp"
+            app:cardBackgroundColor="#313131">
+
+
+            <EditText
+                android:id="@+id/search_edittext"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginRight="0dp"
+                android:background="@android:color/transparent"
+                android:fontFamily="@font/pridi_light"
+                android:hint="เพิ่มคำค้นหา"
+                android:paddingBottom="10dp"
+                android:paddingLeft="16dp"
+                android:paddingRight="16dp"
+                android:paddingTop="16dp"
+                android:singleLine="true"
+                android:textColor="@color/colorWhite"
+                android:textColorHint="#9e9e9e"
+                android:textSize="20dp" />
+
+        </android.support.v7.widget.CardView>
+
+
+    </RelativeLayout>
+
+    <android.support.v7.widget.RecyclerView
+        android:clipToPadding="false"
+        android:orientation="horizontal"
+        android:paddingLeft="16dp"
+        android:id="@+id/search_chips_recycler_view"
+        android:visibility="gone"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="130dp"
+        android:drawSelectorOnTop="false"
+        app:layoutManager="LinearLayoutManager"
+        android:listSelector="@android:color/transparent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:listitem="@layout/search_chips"
+
+        />
+
+</RelativeLayout>

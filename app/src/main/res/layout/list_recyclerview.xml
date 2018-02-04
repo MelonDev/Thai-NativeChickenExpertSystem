@@ -34,16 +34,16 @@
                 android:layout_centerVertical="true"
                 android:layout_alignParentRight="true"
                 android:layout_marginRight="16dp"
-                android:tint="@color/colorText"
+                android:tint="#d1d1d1"
                 />
 
         </RelativeLayout>
 
         <RelativeLayout
-
+            android:layout_marginLeft="16dp"
             android:layout_width="match_parent"
             android:layout_height="1dp"
-            android:background="#b6b6b6"
+            android:background="#d1d1d1"
             />
 
     </LinearLayout>

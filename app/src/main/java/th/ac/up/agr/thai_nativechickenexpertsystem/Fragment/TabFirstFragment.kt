@@ -1,16 +1,19 @@
 package th.ac.up.agr.thai_nativechickenexpertsystem.Fragment
 
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import kotlinx.android.synthetic.main.fragment_tab_first.*
 import kotlinx.android.synthetic.main.fragment_tab_first.view.*
 import th.ac.up.agr.thai_nativechickenexpertsystem.Adapter.MainListVerticalAdapter
 import th.ac.up.agr.thai_nativechickenexpertsystem.Adapter.MainMenuVerticalAdapter
 import th.ac.up.agr.thai_nativechickenexpertsystem.Data.ChickenBreedData
 import th.ac.up.agr.thai_nativechickenexpertsystem.R
+import th.ac.up.agr.thai_nativechickenexpertsystem.SearchActivity
 import th.ac.up.agr.thai_nativechickenexpertsystem.Tools.QuickRecyclerView
 import th.ac.up.agr.thai_nativechickenexpertsystem.Tools.StringArrayToArrayList
 
@@ -55,6 +58,10 @@ class TabFirstFragment : Fragment() {
                 .recyclerView()
 
         listRecyclerView.adapter = MainListVerticalAdapter(context,data,10)
+
+        view.main_searchbtn.setOnClickListener {
+            val intent = Intent(context,SearchActivity::class.java)
+            startActivity(intent) }
 
 
         return view

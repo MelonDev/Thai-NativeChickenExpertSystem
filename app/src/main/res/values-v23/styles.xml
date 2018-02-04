@@ -11,6 +11,13 @@
         <item name="android:navigationBarColor">#bfbfbf</item>
     </style>
 
+    <style name="SearchTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/searchPrimaryColor</item>
+        <item name="colorPrimaryDark">@color/searchPrimaryColor</item>
+        <item name="colorAccent">@color/colorAccent</item>
+    </style>
+
     <style name="bottomBar" >
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>

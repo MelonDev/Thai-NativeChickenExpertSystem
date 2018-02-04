@@ -8,7 +8,7 @@
 
     <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
+        android:layout_height="50dp"
         app:elevation="0dp">
 
 
@@ -33,21 +33,21 @@
 
                     <ImageView
                         android:layout_centerVertical="true"
-                        android:layout_width="25dp"
-                        android:layout_height="25dp"
+                        android:layout_width="20dp"
+                        android:layout_height="20dp"
                         android:src="@drawable/back"
                         />
 
                     <TextView
-                        android:paddingTop="2dp"
+                        android:paddingTop="0dp"
                         android:paddingBottom="0dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="กลับ"
                         android:textColor="@color/colorWhite"
                         android:layout_centerVertical="true"
-                        android:layout_marginLeft="30dp"
-                        android:textSize="22dp"
+                        android:layout_marginLeft="25dp"
+                        android:textSize="20dp"
                         android:fontFamily="@font/pridi_extralight"
                         />
 
@@ -68,120 +68,7 @@
                     android:fontFamily="@font/pridi_medium"
                     android:text="@string/tab_1"
                     android:textColor="#FFFFFF"
-                    android:textSize="24dp" />
-
-                <LinearLayout
-                    android:layout_centerVertical="true"
-                    android:visibility="gone"
-                    android:layout_marginBottom="0dp"
-                    android:layout_alignParentRight="true"
-                    android:layout_marginRight="16dp"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content">
-
-
-                    <RelativeLayout
-                        android:id="@+id/tab1_menu_btn"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
-
-                        <android.support.v7.widget.CardView
-                            android:id="@+id/tab1_menu_on"
-                            android:visibility="visible"
-                            app:contentPadding="7dp"
-                            android:layout_width="36dp"
-                            android:layout_height="36dp"
-                            app:cardElevation="0dp"
-                            app:cardCornerRadius="8dp"
-                            app:cardBackgroundColor="@color/colorWhite"
-                            >
-
-                            <ImageView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:src="@drawable/menu_on"
-                                android:tint="@color/colorPrimary"
-                                />
-
-                        </android.support.v7.widget.CardView>
-
-                        <android.support.v7.widget.CardView
-                            android:id="@+id/tab1_menu_off"
-                            android:visibility="gone"
-                            app:contentPadding="7dp"
-                            android:layout_width="36dp"
-                            android:layout_height="36dp"
-                            app:cardElevation="0dp"
-                            app:cardCornerRadius="8dp"
-                            app:cardBackgroundColor="@color/colorPrimary"
-                            >
-
-                            <ImageView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:src="@drawable/menu_off"
-                                android:tint="@color/colorWhite"
-                                />
-
-                        </android.support.v7.widget.CardView>
-
-
-                    </RelativeLayout>
-
-
-                    <RelativeLayout
-                        android:id="@+id/tab1_list_btn"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content">
-
-                        <android.support.v7.widget.CardView
-                            android:id="@+id/tab1_list_off"
-                            android:visibility="visible"
-                            android:layout_marginLeft="10dp"
-                            app:contentPadding="7dp"
-                            android:layout_width="36dp"
-                            android:layout_height="36dp"
-                            app:cardElevation="0dp"
-                            app:cardCornerRadius="8dp"
-                            app:cardBackgroundColor="@color/colorPrimary"
-                            >
-
-                            <ImageView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:src="@drawable/list_off"
-                                android:tint="@color/colorWhite"
-                                />
-
-                        </android.support.v7.widget.CardView>
-
-                        <android.support.v7.widget.CardView
-                            android:id="@+id/tab1_list_on"
-                            android:visibility="gone"
-                            android:layout_marginLeft="10dp"
-                            app:contentPadding="7dp"
-                            android:layout_width="36dp"
-                            android:layout_height="36dp"
-                            app:cardElevation="0dp"
-                            app:cardCornerRadius="8dp"
-                            app:cardBackgroundColor="@color/colorWhite"
-                            >
-
-                            <ImageView
-                                android:layout_width="match_parent"
-                                android:layout_height="match_parent"
-                                android:src="@drawable/list_on"
-                                android:tint="@color/colorPrimary"
-                                />
-
-                        </android.support.v7.widget.CardView>
-
-
-                    </RelativeLayout>
-
-
-                </LinearLayout>
-
+                    android:textSize="22dp" />
 
 
 
@@ -192,14 +79,15 @@
 
 
     <android.support.v7.widget.RecyclerView
-        android:paddingTop="10dp"
+        android:clipToPadding="false"
+        android:paddingTop="20dp"
         android:id="@+id/sub_menu_vertical_recycler_view"
         android:visibility="gone"
         android:paddingBottom="10dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginLeft="0dp"
-        android:layout_marginRight="0dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
         android:layout_marginTop="0dp"
         app:spanCount="3"
         android:drawSelectorOnTop="false"

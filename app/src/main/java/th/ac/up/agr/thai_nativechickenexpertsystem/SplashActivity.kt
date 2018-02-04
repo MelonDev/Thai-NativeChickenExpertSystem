@@ -24,6 +24,8 @@ class SplashActivity : AppCompatActivity() {
 
         runnable = Runnable {
             val intent = Intent(this, MainActivity::class.java)
+            //val intent = Intent(this, ModernMainActivity::class.java)
+
             startActivity(intent)
             finish()
         }
