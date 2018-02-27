@@ -13,7 +13,7 @@ import th.ac.up.agr.thai_nativechickenexpertsystem.ViewHolder.ChickenDetailViewH
 class ChickenDetailAdapter(val context: Context, val data: ArrayList<ChickenDetailData>) : RecyclerView.Adapter<ChickenDetailViewHolder>() {
 
     override fun onBindViewHolder(holder: ChickenDetailViewHolder?, position: Int) {
-
+/*
         val slot :ChickenDetailData = data[0]
 
         val option = BitmapFactory.Options()
@@ -78,7 +78,7 @@ class ChickenDetailAdapter(val context: Context, val data: ArrayList<ChickenDeta
                 holder?.F1?.text = slot.weightOfGiveFirstEgg
             }
         }
-
+*/
     }
 
     private fun allGone(holder :ChickenDetailViewHolder?){

@@ -7,14 +7,16 @@
 
 
     <string name="tab_1">พันธุ์ไก่</string>
-    <string name="tab_2">โรคของไก่</string>
-    <string name="tab_3">ไก่อุดมทัศนีย์</string>
-    <string name="tab_4">เพิ่มเติม</string>
+    <string name="tab_2">ลักษณะ</string>
+    <string name="tab_2_full">ลักษณะของไก่พื้นเมือง</string>
+    <string name="tab_3">โรคของไก่</string>
+    <string name="tab_4">ผู้จัดทำ</string>
     <string name="title_activity_sub_main">SubMainActivity</string>
     <string name="title_activity_chicken_datail">ChickenDatailActivity</string>
     <string name="title_activity_splash_screen">SplashScreenActivity</string>
     <string name="title_activity_splash">SplashActivity</string>
     <string name="title_activity_modern_main">ModernMainActivity</string>
     <string name="title_activity_search">SearchActivity</string>
+    <string name="title_activity_add_data">AddDataActivity</string>
 
 </resources>

@@ -1,60 +1,201 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#ededed"
     tools:context="th.ac.up.agr.thai_nativechickenexpertsystem.Fragment.TabSecondFragment">
+
+    <android.support.design.widget.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:elevation="0dp">
+
+
+        <RelativeLayout
+            app:layout_scrollFlags="scroll"
+            android:layout_width="match_parent"
+            android:minHeight="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="4dp"
+            android:background="@color/colorPrimary">
+
+
+
+            <TextView
+                android:gravity="center_horizontal"
+                android:id="@+id/detail_title_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerInParent="true"
+                android:layout_marginBottom="8dp"
+                android:layout_marginLeft="0dp"
+                android:fontFamily="@font/pridi_medium"
+                android:paddingBottom="0dp"
+                android:paddingRight="0dp"
+                android:text="@string/tab_2_full"
+                android:textColor="#FFFFFF"
+                android:textSize="24dp" />
+
+
+        </RelativeLayout>
+
+        <android.support.constraint.ConstraintLayout
+            app:layout_scrollFlags="enterAlways"
+            android:layout_width="match_parent"
+            android:layout_height="50dp">
+            <RelativeLayout
+                android:background="@color/colorWhite"
+                android:id="@+id/leftTab"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                app:layout_constraintEnd_toStartOf="@+id/guideline"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" >
+
+                <LinearLayout
+                    android:paddingRight="10dp"
+                    android:layout_centerInParent="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ภายนอก"
+                        android:fontFamily="@font/pridi_extralight"
+                        android:textSize="20dp"
+                        android:padding="5dp"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:layout_gravity="center"
+                        />
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/leftLine"
+                    android:layout_width="match_parent"
+                    android:layout_height="6dp"
+                    android:background="@color/colorPrimary"
+                    android:layout_alignParentBottom="true"
+                    />
+
+
+            </RelativeLayout>
+
+            <android.support.constraint.Guideline
+                android:id="@+id/guideline"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:orientation="vertical"
+                app:layout_constraintGuide_percent="0.5" />
+
+            <RelativeLayout
+                android:background="@color/colorWhite"
+                android:id="@+id/rightTab"
+                android:layout_width="0dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="0dp"
+                android:layout_marginTop="0dp"
+                app:layout_constraintStart_toEndOf="@id/guideline"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintTop_toTopOf="parent" >
+
+                <LinearLayout
+                    android:paddingRight="10dp"
+
+                    android:layout_centerInParent="true"
+                    android:layout_width="wrap_content"
+                    android:layout_height="match_parent">
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="ทางเศรษฐกิจ"
+                        android:fontFamily="@font/pridi_extralight"
+                        android:textSize="20dp"
+                        android:padding="5dp"
+                        android:textColor="@color/colorPrimaryDark"
+                        android:layout_gravity="center"
+                        />
+
+                </LinearLayout>
+
+                <RelativeLayout
+                    android:id="@+id/rightLine"
+                    android:visibility="gone"
+                    android:layout_width="match_parent"
+                    android:layout_height="6dp"
+                    android:background="@color/colorPrimary"
+                    android:layout_alignParentBottom="true"
+                    />
+
+            </RelativeLayout>
+        </android.support.constraint.ConstraintLayout>
+
+    </android.support.design.widget.AppBarLayout>
 
     <RelativeLayout
         android:visibility="gone"
-        android:layout_width="match_parent"
-        android:layout_height="64dp"
-        android:background="@color/colorPrimary"
-        >
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_marginLeft="16dp"
-            android:layout_marginBottom="8dp"
-            android:fontFamily="@font/pridi"
-            android:text="@string/tab_2"
-            android:textColor="#FFFFFF"
-            android:textSize="24dp" />
-
-    </RelativeLayout>
-
-    <RelativeLayout
+        android:id="@+id/second_loading"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-
-
         <LinearLayout
+            android:paddingTop="40dp"
             android:layout_centerInParent="true"
             android:orientation="vertical"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content">
 
-            <ImageView
-                android:layout_gravity="center_horizontal"
-                android:layout_width="100dp"
-                android:layout_height="100dp"
-                android:src="@drawable/icon"
-                android:tint="@color/colorPrimary"
+            <ProgressBar
+                style="?android:progressBarStyle"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_gravity="center"
                 />
+
             <TextView
+                android:fontFamily="@font/pridi_extralight"
+                android:textSize="20dp"
                 android:layout_marginTop="20dp"
-                android:textSize="24dp"
-                android:fontFamily="@font/kanit_extralight"
                 android:textColor="@color/colorPrimaryDark"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="หน้านี้ยังไม่พร้อมใช้งาน"
+                android:text="กำลังจัดเตรียมข้อมูล"
                 />
 
         </LinearLayout>
 
     </RelativeLayout>
 
-</FrameLayout>
+    <android.support.v7.widget.RecyclerView
+        android:paddingTop="16dp"
+        android:paddingBottom="0dp"
+        android:clipToPadding="false"
+        android:id="@+id/feature_recycler_view"
+        android:visibility="visible"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="0dp"
+        android:drawSelectorOnTop="false"
+        android:scrollbars="vertical"
+        app:layoutManager="LinearLayoutManager"
+        app:spanCount="1"
+        android:listSelector="@android:color/transparent"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:listitem="@layout/new_list_recyclerview"
+
+        />
+
+
+
+</LinearLayout>

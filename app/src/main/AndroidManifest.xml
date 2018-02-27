@@ -2,7 +2,10 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="th.ac.up.agr.thai_nativechickenexpertsystem">
 
+    <uses-permission android:name="android.permission.INTERNET" />
+
     <application
+        android:name=".MyApp"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
@@ -47,6 +50,10 @@
         <activity
             android:name=".SearchActivity"
             android:label="@string/title_activity_search"
+            android:theme="@style/SearchTheme" />
+        <activity
+            android:name=".AddDataActivity"
+            android:label="@string/title_activity_add_data"
             android:theme="@style/SearchTheme"></activity>
     </application>
 

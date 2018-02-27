@@ -3,6 +3,7 @@ package th.ac.up.agr.thai_nativechickenexpertsystem.Adapter
 import android.content.Context
 import android.content.Intent
 import android.support.v7.widget.RecyclerView
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
@@ -10,12 +11,44 @@ import th.ac.up.agr.thai_nativechickenexpertsystem.ChickenDatailActivity
 import th.ac.up.agr.thai_nativechickenexpertsystem.Data.ChickenBreedData
 import th.ac.up.agr.thai_nativechickenexpertsystem.R
 import th.ac.up.agr.thai_nativechickenexpertsystem.SubMainActivity
+import th.ac.up.agr.thai_nativechickenexpertsystem.Tools.Path
 import th.ac.up.agr.thai_nativechickenexpertsystem.ViewHolder.ChickenBreedViewHolder
 
-class MainGridVerticalAdapter(val context: Context, val data: ArrayList<ChickenBreedData>, val ID: Int) : RecyclerView.Adapter<ChickenBreedViewHolder>() {
+class MainGridVerticalAdapter(val context: Context, val data: ArrayList<String>,val ID :Int,var path :String) : RecyclerView.Adapter<ChickenBreedViewHolder>() {
 
     override fun onBindViewHolder(holder: ChickenBreedViewHolder?, position: Int) {
 
+        holder?.gridItemTitle?.text = data[position]
+
+        holder?.gridItem?.setOnClickListener {
+
+            when (ID) {
+                4 -> {
+                    val intent = Intent(context, SubMainActivity::class.java)
+                    intent.putExtra("ID", 2)
+                    intent.putExtra("TITLE", data[position])
+                    intent.putExtra("PATH", Path().toPath(path,data[position]))
+                    context.startActivity(intent)
+                }
+                5 -> {
+                    val intent = Intent(context, ChickenDatailActivity::class.java)
+                    intent.putExtra("ID", 2)
+                    intent.putExtra("TITLE", data[position])
+                    intent.putExtra("PATH", Path().toPath(path,data[position]))
+                    context.startActivity(intent)
+                }
+                6 -> {
+                    val intent = Intent(context, ChickenDatailActivity::class.java)
+                    intent.putExtra("ID", 2)
+                    intent.putExtra("TITLE", data[position])
+                    intent.putExtra("PATH", Path().toPath(path,data[position]))
+                    context.startActivity(intent)
+                }
+            }
+
+        }
+
+/*
         val slot = data[position]
 
         holder?.gridItemTitle?.text = slot.name
@@ -42,7 +75,7 @@ class MainGridVerticalAdapter(val context: Context, val data: ArrayList<ChickenB
             }
 
         }
-
+*/
     }
 
     override fun getItemCount(): Int {

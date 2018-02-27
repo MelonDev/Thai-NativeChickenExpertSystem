@@ -6,6 +6,7 @@ import android.os.Handler
 import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
 import android.view.View
+import android.widget.Toast
 
 import kotlinx.android.synthetic.main.activity_chicken_datail.*
 import kotlinx.android.synthetic.main.fragment_tab_first.view.*
@@ -14,6 +15,7 @@ import th.ac.up.agr.thai_nativechickenexpertsystem.Adapter.MainMenuVerticalAdapt
 import th.ac.up.agr.thai_nativechickenexpertsystem.Data.ChickenBreedData
 import th.ac.up.agr.thai_nativechickenexpertsystem.Data.ChickenDetailData
 import th.ac.up.agr.thai_nativechickenexpertsystem.Tools.DeviceUtills
+import th.ac.up.agr.thai_nativechickenexpertsystem.Tools.Path
 import th.ac.up.agr.thai_nativechickenexpertsystem.Tools.QuickRecyclerView
 import th.ac.up.agr.thai_nativechickenexpertsystem.Tools.StringArrayToArrayList
 
@@ -26,6 +28,11 @@ class ChickenDatailActivity : AppCompatActivity() {
 
         val bundle = intent.extras
         val title = bundle.getString("TITLE")
+        val path = bundle.getString("PATH")
+
+        val arrPath = Path().fromPathToArray(path)
+        //Toast.makeText(this,Path().fromPathToArray(path).toString(), Toast.LENGTH_SHORT).show()
+
 
         detail_title_name.text = title
         detail_title_name.maxWidth = DeviceUtills(this).getScreenWidth() - (175 * 2)
@@ -39,7 +46,7 @@ class ChickenDatailActivity : AppCompatActivity() {
 
 
     }
-
+/*
     private fun fakeMaleData(): ChickenDetailData {
         val data: ChickenDetailData = ChickenDetailData(
                 "ไก่ชน"
@@ -73,7 +80,8 @@ class ChickenDatailActivity : AppCompatActivity() {
         )
         return data
     }
-
+*/
+    /*
     private fun fakeFemaleData(): ChickenDetailData {
         val data: ChickenDetailData = ChickenDetailData(
                 "ไก่ชน"
@@ -107,7 +115,7 @@ class ChickenDatailActivity : AppCompatActivity() {
         )
         return data
     }
-
+*/
     private fun loadingRecyclerview() {
         val handler = Handler()
 
@@ -132,7 +140,7 @@ class ChickenDatailActivity : AppCompatActivity() {
             "male" -> {
                 leftLine.visibility = View.VISIBLE
                 rightLine.visibility = View.GONE
-
+/*
                 loadingRecyclerview()
 
                 val detailMaleRecyclerView = QuickRecyclerView(this
@@ -149,12 +157,12 @@ class ChickenDatailActivity : AppCompatActivity() {
                 data.add(fakeMaleData())
 
                 detailMaleRecyclerView.adapter = ChickenDetailAdapter(this, data)
-
+*/
             }
             "female" -> {
                 leftLine.visibility = View.GONE
                 rightLine.visibility = View.VISIBLE
-
+/*
                 loadingRecyclerview()
 
                 val detailFemaleRecyclerView = QuickRecyclerView(this
@@ -171,7 +179,7 @@ class ChickenDatailActivity : AppCompatActivity() {
                 data.add(fakeFemaleData())
 
                 detailFemaleRecyclerView.adapter = ChickenDetailAdapter(this, data)
-
+*/
             }
         }
 

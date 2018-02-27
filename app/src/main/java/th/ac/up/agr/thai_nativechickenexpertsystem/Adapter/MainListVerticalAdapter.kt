@@ -10,12 +10,52 @@ import th.ac.up.agr.thai_nativechickenexpertsystem.ChickenDatailActivity
 import th.ac.up.agr.thai_nativechickenexpertsystem.Data.ChickenBreedData
 import th.ac.up.agr.thai_nativechickenexpertsystem.R
 import th.ac.up.agr.thai_nativechickenexpertsystem.SubMainActivity
+import th.ac.up.agr.thai_nativechickenexpertsystem.Tools.Path
 import th.ac.up.agr.thai_nativechickenexpertsystem.ViewHolder.ChickenBreedViewHolder
 
-class MainListVerticalAdapter (val context: Context,val data :ArrayList<ChickenBreedData>,val ID:Int) : RecyclerView.Adapter<ChickenBreedViewHolder>() {
+class MainListVerticalAdapter (val context: Context,val data :ArrayList<String>,val mainTitle:String,val finish :Boolean,val path :String) : RecyclerView.Adapter<ChickenBreedViewHolder>() {
 
     override fun onBindViewHolder(holder: ChickenBreedViewHolder?, position: Int) {
 
+        holder?.mainListTitle?.text = data[position]
+
+        if (data[position].contentEquals("ไก่ชน")){
+            holder?.listItem?.setOnClickListener {
+                val intent = Intent(context, SubMainActivity::class.java)
+                intent.putExtra("ID", 10)
+                intent.putExtra("TITLE", data[position])
+                intent.putExtra("PATH", Path().toPath(path,data[position]))
+                context.startActivity(intent)
+            }
+        } else if (mainTitle.contentEquals("ไก่ชน")) {
+            holder?.listItem?.setOnClickListener {
+                val intent = Intent(context, SubMainActivity::class.java)
+                intent.putExtra("ID", 11)
+                intent.putExtra("TITLE", data[position])
+                intent.putExtra("PATH", Path().toPath(path,data[position]))
+                context.startActivity(intent)
+            }
+        } else if (!finish) {
+            holder?.listItem?.setOnClickListener {
+                val intent = Intent(context, SubMainActivity::class.java)
+                intent.putExtra("ID", 12)
+                intent.putExtra("TITLE", data[position])
+                intent.putExtra("PATH", Path().toPath(path,data[position]))
+                context.startActivity(intent)
+            }
+        } else if (finish) {
+            holder?.listItem?.setOnClickListener {
+                val intent = Intent(context, ChickenDatailActivity::class.java)
+                intent.putExtra("ID", 12)
+                intent.putExtra("TITLE", data[position])
+                intent.putExtra("PATH", Path().toPath(path, data[position]))
+                context.startActivity(intent)
+            }
+
+        }
+
+
+/*
         val slot = data[position]
 
         holder?.mainListTitle?.text = slot.name
@@ -47,7 +87,7 @@ class MainListVerticalAdapter (val context: Context,val data :ArrayList<ChickenB
 
 
         }
-
+*/
     }
 
     override fun getItemCount(): Int {

@@ -1,10 +1,7 @@
 package th.ac.up.agr.thai_nativechickenexpertsystem.Data
 
 data class ChickenDetailData(val breed: String
-                             , val firstSubSpecies: String
-                             , val secondSubSpecies: String
                              , val sex: String
-                             , val eggShellColor: String
                              , val crestStyle: String
                              , val faceColor: String
                              , val eyeColor: String
@@ -18,14 +15,40 @@ data class ChickenDetailData(val breed: String
                              , val skinColor: String
                              , val shinColor: String
                              , val nailColor: String
+                             , val specialDescrition: String
                              , val duration: String
                              , val ageOfGiveFirstEgg: String
                              , val productivityPerYear: String
+                             , val eggShellColor: String
                              , val weight: String
                              , val exchangeRateToFood: String
                              , val mortalityRate: String
                              , val weightForSold: String
                              , val birthWeight: String
                              , val weightOfGiveFirstEgg: String
-                             , val image: Int
+                             , val linkCrestStyle: String
+                             , val linkFaceColor: String
+                             , val linkEyeColor: String
+                             , val linkMouthColor: String
+                             , val linkEarringColor: String
+                             , val linkNecklaceColor: String
+                             , val linkWattleColor: String
+                             , val linkSpurColor: String
+                             , val linkTailStyleAndColor: String
+                             , val linkBodyFurColor: String
+                             , val linkSkinColor: String
+                             , val linkShinColor: String
+                             , val linkNailColor: String
+                             , val linkSpecialDescrition: String
+                             , val linkDuration: String
+                             , val linkAgeOfGiveFirstEgg: String
+                             , val linkProductivityPerYear: String
+                             , val linkEggShellColor: String
+                             , val linkWeight: String
+                             , val linkExchangeRateToFood: String
+                             , val linkMortalityRate: String
+                             , val linkWeightForSold: String
+                             , val linkBirthWeight: String
+                             , val linkWeightOfGiveFirstEgg: String
+                             , val image: String
 )

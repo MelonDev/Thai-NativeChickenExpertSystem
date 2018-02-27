@@ -28,6 +28,7 @@ class MainActivity : AppCompatActivity() {
             }
         }
 
+
         //bottomNavigationBar = findViewById<BottomNavigationBar>(R.id.bottom_navigation_bar)
 
     }

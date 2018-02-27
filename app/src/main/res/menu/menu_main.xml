@@ -9,19 +9,19 @@
         android:title="@string/tab_1"
         app:showAsAction="ifRoom" />
     <item
-        android:id="@+id/action_schedules"
+        android:id="@+id/action_f"
         android:enabled="true"
         android:icon="@drawable/tab2_icon"
         android:title="@string/tab_2"
         app:showAsAction="ifRoom" />
     <item
-        android:id="@+id/action_music"
+        android:id="@+id/action_bacteria"
         android:enabled="true"
-        android:icon="@drawable/tab3_icon"
+        android:icon="@drawable/tab2_icon"
         android:title="@string/tab_3"
         app:showAsAction="ifRoom" />
     <item
-        android:id="@+id/action_musics"
+        android:id="@+id/action_people"
         android:enabled="true"
         android:icon="@drawable/tab4_icon"
         android:title="@string/tab_4"
