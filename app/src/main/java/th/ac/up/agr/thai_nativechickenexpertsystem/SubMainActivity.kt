@@ -8,6 +8,9 @@ import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.view.View
 import android.widget.Toast
+import com.google.firebase.database.DataSnapshot
+import com.google.firebase.database.DatabaseError
+import com.google.firebase.database.ValueEventListener
 
 import kotlinx.android.synthetic.main.activity_sub_main.*
 import kotlinx.android.synthetic.main.fragment_tab_first.view.*
@@ -21,7 +24,9 @@ import th.ac.up.agr.thai_nativechickenexpertsystem.Tools.StringArrayToArrayList
 
 class SubMainActivity : AppCompatActivity() {
 
-    lateinit var firebase :FirebaseChicken
+    lateinit var firebase: FirebaseChicken
+
+    private var data: ArrayList<String> = ArrayList()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,7 +44,7 @@ class SubMainActivity : AppCompatActivity() {
         sub_title_name.text = title
         sub_title_name.maxWidth = DeviceUtills(this).getScreenWidth() - (175 * 2)
 
-        //Toast.makeText(this,path,Toast.LENGTH_SHORT).show()
+        //Toast.makeText(this,ID.toString(),Toast.LENGTH_SHORT).show()
 
 
         when (ID) {
@@ -65,8 +70,8 @@ class SubMainActivity : AppCompatActivity() {
                         "high")
                         .recyclerView()
 
-                listRecyclerView.adapter = MainGridVerticalAdapter(this, ArrayList<String>(),4,"")
-                firebase.mainLoadChicken(firebase.databaseReference.child("พันธุ์ไก่").child(title),listRecyclerView,4,"main",path)
+                listRecyclerView.adapter = MainGridVerticalAdapter(this, ArrayList<String>(), 4, "", "'")
+                firebase.mainLoadChicken(firebase.databaseReference.child("พันธุ์ไก่").child(title), listRecyclerView, 4, title, path)
 
             }
             1 -> {
@@ -89,10 +94,12 @@ class SubMainActivity : AppCompatActivity() {
                         "high")
                         .recyclerView()
 
-                listRecyclerView.adapter = MainGridVerticalAdapter(this, ArrayList<String>(),5,"")
-                firebase.mainLoadChicken(firebase.databaseReference.child("พันธุ์ไก่").child(title),listRecyclerView,5,"main",path)
+                listRecyclerView.adapter = MainGridVerticalAdapter(this, ArrayList<String>(), 5, "", "")
+                firebase.mainLoadChicken(firebase.databaseReference.child("พันธุ์ไก่").child(title), listRecyclerView, 5, title, path)
             }
             2 -> {
+
+                //Log.e("PA",path)
                 sub_list_vertical_recycler_view.visibility = View.GONE
                 sub_menu_vertical_recycler_view.visibility = View.VISIBLE
 
@@ -114,8 +121,8 @@ class SubMainActivity : AppCompatActivity() {
                         "high")
                         .recyclerView()
 
-                listRecyclerView.adapter = MainGridVerticalAdapter(this, ArrayList<String>(),6,"")
-                firebase.mainLoadChicken(firebase.databaseReference.child("พันธุ์ไก่").child("ไก่ชน").child(title),listRecyclerView,6,"main",path)
+                listRecyclerView.adapter = MainGridVerticalAdapter(this, ArrayList<String>(), 6, "", "")
+                firebase.mainLoadChicken(firebase.databaseReference.child("พันธุ์ไก่").child("ไก่ชน").child(title), listRecyclerView, 6, title, path)
             }
             10 -> {
                 sub_list_vertical_recycler_view.visibility = View.VISIBLE
@@ -138,8 +145,8 @@ class SubMainActivity : AppCompatActivity() {
                         "high")
                         .recyclerView()
 
-                listRecyclerView.adapter = MainListVerticalAdapter(this, ArrayList<String>(),title,false,"")
-                firebase.mainLoadChicken(firebase.databaseReference.child("พันธุ์ไก่").child(title),listRecyclerView,11,title,path)
+                listRecyclerView.adapter = MainListVerticalAdapter(this, ArrayList<String>(), title, false, "")
+                firebase.mainLoadChicken(firebase.databaseReference.child("พันธุ์ไก่").child(title), listRecyclerView, 11, title, path)
 
             }
             11 -> {
@@ -164,8 +171,8 @@ class SubMainActivity : AppCompatActivity() {
                         .recyclerView()
 
 
-                listRecyclerView.adapter = MainListVerticalAdapter(this, ArrayList<String>(),title,false,"")
-                firebase.mainLoadChicken(firebase.databaseReference.child("พันธุ์ไก่").child("ไก่ชน").child(title),listRecyclerView,20,title,path)
+                listRecyclerView.adapter = MainListVerticalAdapter(this, ArrayList<String>(), title, false, "")
+                firebase.mainLoadChicken(firebase.databaseReference.child("พันธุ์ไก่").child("ไก่ชน").child(title), listRecyclerView, 20, title, path)
 
             }
             12 -> {
@@ -190,8 +197,12 @@ class SubMainActivity : AppCompatActivity() {
                         .recyclerView()
 
 
-                listRecyclerView.adapter = MainListVerticalAdapter(this, ArrayList<String>(),title,false,"")
-                firebase.mainLoadChicken(firebase.databaseReference.child("พันธุ์ไก่").child(title),listRecyclerView,21,title,path)
+                listRecyclerView.adapter = MainListVerticalAdapter(this, ArrayList<String>(), title, false, "")
+                firebase.mainLoadChicken(firebase.databaseReference.child("พันธุ์ไก่").child(title), listRecyclerView, 21, title, path)
+
+            }
+            100 -> {
+                abcMode()
 
             }
 
@@ -271,7 +282,62 @@ class SubMainActivity : AppCompatActivity() {
 */
     }
 
-    private fun recyclerview(orientation: String,data :ArrayList<ChickenBreedData>,ID :Int){
+    private fun abcMode() {
+        val s = firebase.databaseReference.child("พันธุ์ไก่")
+        s.addListenerForSingleValueEvent(object : ValueEventListener {
+            override fun onCancelled(p0: DatabaseError?) {
+                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+            }
+
+            override fun onDataChange(p0: DataSnapshot?) {
+                onSyncKeyOther(p0)
+
+                sub_list_vertical_recycler_view.visibility = View.GONE
+                sub_menu_vertical_recycler_view.visibility = View.VISIBLE
+
+                //Toast.makeText(this,"ID 1",Toast.LENGTH_SHORT).show()
+                val listRecyclerView = QuickRecyclerView(applicationContext
+                        ,
+                        sub_menu_vertical_recycler_view
+                        ,
+                        "grid"
+                        ,
+                        3
+                        ,
+                        "vertical"
+                        ,
+                        false
+                        ,
+                        "never"
+                        ,
+                        "high")
+                        .recyclerView()
+
+                listRecyclerView.adapter = MainGridVerticalAdapter(applicationContext, ArrayList<String>(), 100, "", "")
+                firebase.mainLoadChicken(firebase.databaseReference.child("พันธุ์ไก่"), listRecyclerView, 101, "พันธุ์อื่นๆ", "")
+            }
+        })
+    }
+
+    private fun onSyncKeyOther(dataSnapshot: DataSnapshot?) {
+        val a = ArrayList<String>()
+        val b = ArrayList<String>()
+
+        dataSnapshot!!.children.mapNotNullTo(a) {
+            it.key
+        }
+
+        a.filter {
+            (!it.contentEquals("ไก่ชน")
+                    and !it.contentEquals("ไก่แจ้")
+                    and !it.contentEquals("ไก่ดำ")
+                    and !it.contentEquals("ไก่พม่า"))
+        }
+                .forEach { data.add(it) }
+
+    }
+
+    private fun recyclerview(orientation: String, data: ArrayList<ChickenBreedData>, ID: Int) {
 
         /*
 

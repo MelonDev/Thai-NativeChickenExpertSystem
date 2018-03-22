@@ -23,7 +23,7 @@ import th.ac.up.agr.thai_nativechickenexpertsystem.ViewHolder.ChickenBreedViewHo
 class MainMenuVerticalAdapter(val context: Context, val data: ArrayList<String>) : RecyclerView.Adapter<ChickenBreedViewHolder>() {
 
     var views = View(context)
-    lateinit var firebase : FirebaseChicken
+    lateinit var firebase: FirebaseChicken
 
     var path = String()
 
@@ -57,28 +57,42 @@ class MainMenuVerticalAdapter(val context: Context, val data: ArrayList<String>)
                 , "high")
                 .recyclerView()
 
-        menuRecyclerView.adapter = MainMenuHorizontalAdapter(context, ArrayList<String>(),data[position],"")
-        firebase.mainLoadChicken(firebase.databaseReference.child("พันธุ์ไก่").child(data[position]),menuRecyclerView,2,data[position],path)
+        menuRecyclerView.adapter = MainMenuHorizontalAdapter(context, ArrayList<String>(), data[position], "")
+        if (data[position].contentEquals("พันธุ์อื่นๆ")) {
+            firebase.mainLoadChicken(firebase.databaseReference.child("พันธุ์ไก่"), menuRecyclerView, 100, data[position], path)
+        } else {
+            firebase.mainLoadChicken(firebase.databaseReference.child("พันธุ์ไก่").child(data[position]), menuRecyclerView, 2, data[position], path)
+        }
 
 
-        if (data[position].contentEquals("ไก่ชน")){
+        if (data[position].contentEquals("ไก่ชน")) {
             holder?.mainMore?.setOnClickListener {
                 val intent = Intent(context, SubMainActivity::class.java)
                 intent.putExtra("ID", 0)
                 intent.putExtra("TITLE", data[position])
-                intent.putExtra("PATH", Path().toPath(path,data[position]))
+                intent.putExtra("PATH", Path().toPath(path, data[position]))
                 context.startActivity(intent)
             }
+        } else if (data[position].contentEquals("พันธุ์อื่นๆ")) {
+
+            //holder?.mainMore?.visibility = View.GONE
+            holder?.mainMore?.setOnClickListener {
+                val intent = Intent(context, SubMainActivity::class.java)
+                intent.putExtra("ID", 100)
+                intent.putExtra("TITLE", data[position])
+                intent.putExtra("PATH", "")
+                context.startActivity(intent)
+            }
+
         } else {
             holder?.mainMore?.setOnClickListener {
                 val intent = Intent(context, SubMainActivity::class.java)
                 intent.putExtra("ID", 1)
                 intent.putExtra("TITLE", data[position])
-                intent.putExtra("PATH", Path().toPath(path,data[position]))
+                intent.putExtra("PATH", Path().toPath(path, data[position]))
                 context.startActivity(intent)
             }
         }
-
 
 
         //val data :ArrayList<ChickenBreedData> = setData(position)

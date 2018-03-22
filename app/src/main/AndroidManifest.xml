@@ -26,12 +26,12 @@
             android:name=".SubMainActivity"
             android:label="@string/title_activity_sub_main"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme" />
+            android:theme="@style/NewTheme" />
         <activity
             android:name=".ChickenDatailActivity"
             android:label="@string/title_activity_chicken_datail"
             android:screenOrientation="portrait"
-            android:theme="@style/AppTheme" />
+            android:theme="@style/NewTheme" />
         <activity
             android:name=".SplashActivity"
             android:label="@string/app_name"

@@ -23,4 +23,10 @@ class ChickenBreedViewHolder(val itemview:View) :RecyclerView.ViewHolder(itemvie
     val gridItem = itemView.subGridItem
     val mainMenuItem = itemView.mainMenuItem
 
+    val itemImageView = itemView.item_chicken_image
+    val itemImageCardView = itemView.item_chicken_image_cardView
+
+    val itemImageView2 = itemView.item_chicken_image2
+    val itemImageCardView2 = itemView.item_chicken_image2_cardView
+
 }

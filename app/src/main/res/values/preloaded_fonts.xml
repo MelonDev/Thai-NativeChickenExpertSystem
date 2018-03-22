@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
     <array name="preloaded_fonts" translatable="false">
+        <item>@font/itim</item>
+        <item>@font/kanit</item>
         <item>@font/kanit_bold</item>
+        <item>@font/kanit_light</item>
+        <item>@font/kanit_medium</item>
         <item>@font/pridi_extralight</item>
+        <item>@font/sriracha</item>
     </array>
 </resources>

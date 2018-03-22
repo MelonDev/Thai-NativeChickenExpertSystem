@@ -16,5 +16,9 @@
         id="@+id/nav_tab_4"
         icon="@drawable/tab4_icon"
         title="@string/tab_4" />
+    <tab
+        id="@+id/nav_tab_5"
+        icon="@drawable/tab5_icon"
+        title="@string/tab_5" />
 
 </tabs>

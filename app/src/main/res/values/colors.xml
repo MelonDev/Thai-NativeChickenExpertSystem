@@ -4,11 +4,15 @@
     <color name="colorPrimaryDark">#FFA000</color>
     <color name="colorAccent">#FF4081</color>
 
+    <color name="colorPrimaryNew"></color>
+
     <color name="colorWhite">#FFFFFF</color>
     <color name="colorText">#939393</color>
 
     <color name="tabColor">#689F38</color>
 
     <color name="searchPrimaryColor">#313131</color>
+    <color name="colorBNV">#BFBFBF</color>
+    <color name="colorBBNV">@color/bb_darkBackgroundColor</color>
 
 </resources>

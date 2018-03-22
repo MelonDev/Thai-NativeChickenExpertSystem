@@ -1,5 +1,6 @@
 package th.ac.up.agr.thai_nativechickenexpertsystem.Tools
 
+import android.util.Log
 import com.google.firebase.database.DatabaseReference
 
 /**
@@ -20,10 +21,20 @@ class Path (){
     fun fromPathToArray(path: String) :ArrayList<String>{
         var arr :ArrayList<String> = ArrayList<String>()
         var str = ""
+        var i = 0
         for(c in path){
+            i+=1
+            //Log.e("str",str.toString())
+            //Log.e("arr",arr.toString())
+            //Log.e("c",c.toString())
             when (c) {
                 path.get(path.lastIndex) -> {
-                    arr.add(str)
+                    if (i == path.length){
+                        str += c.toString()
+                        arr.add(str)
+                    }else {
+                        str += c.toString()
+                    }
                 }
                 '>' -> {
                     arr.add(str)
@@ -32,6 +43,7 @@ class Path (){
                 else -> str += c.toString()
             }
         }
+        Log.e("ARR ${path}",arr.toString())
         return arr
     }
 

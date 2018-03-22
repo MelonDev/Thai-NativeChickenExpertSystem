@@ -39,48 +39,48 @@
                         />
 
                     <TextView
-                        android:paddingTop="0dp"
-                        android:paddingBottom="0dp"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="กลับ"
-                        android:textColor="@color/colorWhite"
                         android:layout_centerVertical="true"
                         android:layout_marginLeft="25dp"
-                        android:textSize="20dp"
                         android:fontFamily="@font/pridi_extralight"
-                        />
+                        android:paddingBottom="0dp"
+                        android:paddingTop="0dp"
+                        android:text="กลับ"
+                        android:textColor="@color/colorWhite"
+                        android:textSize="20dp" />
 
                 </RelativeLayout>
 
                 <TextView
-                    android:maxWidth="200dp"
-                    android:gravity="center_horizontal"
                     android:id="@+id/sub_title_name"
-                    android:paddingBottom="0dp"
-                    android:paddingRight="0dp"
-                    android:layout_centerInParent="true"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_alignParentBottom="true"
-                    android:layout_marginLeft="0dp"
+                    android:layout_centerInParent="true"
                     android:layout_marginBottom="8dp"
+                    android:layout_marginLeft="0dp"
                     android:fontFamily="@font/pridi_medium"
+                    android:gravity="center_horizontal"
+                    android:maxWidth="200dp"
+                    android:paddingBottom="0dp"
+                    android:paddingRight="0dp"
                     android:text="@string/tab_1"
                     android:textColor="#FFFFFF"
                     android:textSize="22dp" />
 
 
 
+
             </RelativeLayout>
+
+
 
     </android.support.design.widget.AppBarLayout>
 
-
-
     <android.support.v7.widget.RecyclerView
-        android:clipToPadding="false"
-        android:paddingTop="20dp"
+        android:clipToPadding="true"
+        android:paddingTop="10dp"
         android:id="@+id/sub_menu_vertical_recycler_view"
         android:visibility="gone"
         android:paddingBottom="10dp"
@@ -88,7 +88,7 @@
         android:layout_height="match_parent"
         android:layout_marginLeft="16dp"
         android:layout_marginRight="16dp"
-        android:layout_marginTop="0dp"
+        android:layout_marginTop="20dp"
         app:spanCount="3"
         android:drawSelectorOnTop="false"
         app:layoutManager="GridLayoutManager"
@@ -99,13 +99,14 @@
         />
 
     <android.support.v7.widget.RecyclerView
+        android:clipToPadding="true"
         android:id="@+id/sub_list_vertical_recycler_view"
         android:visibility="visible"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginLeft="0dp"
         android:layout_marginRight="0dp"
-        android:layout_marginTop="0dp"
+        android:layout_marginTop="10dp"
         android:drawSelectorOnTop="false"
         app:layoutManager="LinearLayoutManager"
         android:listSelector="@android:color/transparent"
@@ -113,6 +114,8 @@
         tools:listitem="@layout/list_recyclerview"
 
         />
+
+
 
 
 </android.support.design.widget.CoordinatorLayout>

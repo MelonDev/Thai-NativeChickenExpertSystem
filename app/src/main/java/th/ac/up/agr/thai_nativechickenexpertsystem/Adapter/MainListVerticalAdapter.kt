@@ -19,6 +19,7 @@ class MainListVerticalAdapter (val context: Context,val data :ArrayList<String>,
 
         holder?.mainListTitle?.text = data[position]
 
+
         if (data[position].contentEquals("ไก่ชน")){
             holder?.listItem?.setOnClickListener {
                 val intent = Intent(context, SubMainActivity::class.java)
