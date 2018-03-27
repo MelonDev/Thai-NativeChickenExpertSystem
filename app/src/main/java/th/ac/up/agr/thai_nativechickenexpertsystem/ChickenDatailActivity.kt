@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.os.Handler
 import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
+import android.util.Log
 import android.view.View
 import android.widget.Toast
 
@@ -12,8 +13,11 @@ import kotlinx.android.synthetic.main.activity_chicken_datail.*
 import kotlinx.android.synthetic.main.fragment_tab_first.view.*
 import th.ac.up.agr.thai_nativechickenexpertsystem.Adapter.ChickenDetailAdapter
 import th.ac.up.agr.thai_nativechickenexpertsystem.Adapter.MainMenuVerticalAdapter
+import th.ac.up.agr.thai_nativechickenexpertsystem.Data.Chicken
 import th.ac.up.agr.thai_nativechickenexpertsystem.Data.ChickenBreedData
 import th.ac.up.agr.thai_nativechickenexpertsystem.Data.ChickenDetailData
+import th.ac.up.agr.thai_nativechickenexpertsystem.Firebase.FirebaseChicken
+import th.ac.up.agr.thai_nativechickenexpertsystem.Firebase.FirebaseLoadDetails
 import th.ac.up.agr.thai_nativechickenexpertsystem.Tools.DeviceUtills
 import th.ac.up.agr.thai_nativechickenexpertsystem.Tools.Path
 import th.ac.up.agr.thai_nativechickenexpertsystem.Tools.QuickRecyclerView
@@ -21,6 +25,7 @@ import th.ac.up.agr.thai_nativechickenexpertsystem.Tools.StringArrayToArrayList
 
 class ChickenDatailActivity : AppCompatActivity() {
 
+    var arrPath = ArrayList<String>()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -30,9 +35,10 @@ class ChickenDatailActivity : AppCompatActivity() {
         val title = bundle.getString("TITLE")
         val path = bundle.getString("PATH")
 
-        val arrPath = Path().fromPathToArray(path)
+        arrPath = Path().fromPathToArray(path)
         //Toast.makeText(this,Path().fromPathToArray(path).toString(), Toast.LENGTH_SHORT).show()
 
+        //Toast.makeText(applicationContext,path,Toast.LENGTH_SHORT).show()
 
         detail_title_name.text = title
         detail_title_name.maxWidth = DeviceUtills(this).getScreenWidth() - (175 * 2)
@@ -136,53 +142,45 @@ class ChickenDatailActivity : AppCompatActivity() {
 
     private fun tabSelection(sex: String) {
 
+        loadingRecyclerview()
+
+
         when (sex) {
             "male" -> {
                 leftLine.visibility = View.VISIBLE
                 rightLine.visibility = View.GONE
-/*
-                loadingRecyclerview()
+                setRecyclerView("เพศผู้")
 
-                val detailMaleRecyclerView = QuickRecyclerView(this
-                        , chicken_detail_recycler_view
-                        , "linear"
-                        , 1
-                        , "vertical"
-                        , false
-                        , "alway"
-                        , "high")
-                        .recyclerView()
-
-                val data: ArrayList<ChickenDetailData> = ArrayList<ChickenDetailData>()
-                data.add(fakeMaleData())
-
-                detailMaleRecyclerView.adapter = ChickenDetailAdapter(this, data)
-*/
             }
             "female" -> {
                 leftLine.visibility = View.GONE
                 rightLine.visibility = View.VISIBLE
-/*
-                loadingRecyclerview()
+                setRecyclerView("เพศเมีย")
 
-                val detailFemaleRecyclerView = QuickRecyclerView(this
-                        , chicken_detail_recycler_view
-                        , "linear"
-                        , 1
-                        , "vertical"
-                        , false
-                        , "alway"
-                        , "high")
-                        .recyclerView()
-
-                val data: ArrayList<ChickenDetailData> = ArrayList<ChickenDetailData>()
-                data.add(fakeFemaleData())
-
-                detailFemaleRecyclerView.adapter = ChickenDetailAdapter(this, data)
-*/
             }
         }
 
     }
+
+    private fun setRecyclerView(sex: String){
+
+        //val slot : Chicken = FirebaseLoadDetails(applicationContext).loadData(arrPath,sex)
+
+        //Log.e("TEST SLOT",slot.image)
+
+        val detailMaleRecyclerView = QuickRecyclerView(this
+                , chicken_detail_recycler_view
+                , "linear"
+                , 1
+                , "vertical"
+                , false
+                , "alway"
+                , "high")
+                .recyclerView()
+
+        detailMaleRecyclerView.adapter = ChickenDetailAdapter(this,sex,arrPath)
+    }
+
+
 
 }
