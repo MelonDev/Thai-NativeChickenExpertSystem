@@ -20,7 +20,7 @@ import th.ac.up.agr.thai_nativechickenexpertsystem.ViewHolder.ChickenBreedViewHo
 
 class FeaturesListVerticalAdapter(val context: Context, val data: ArrayList<String>) : RecyclerView.Adapter<ChickenBreedViewHolder>() {
 
-    override fun onBindViewHolder(holder: ChickenBreedViewHolder?, position: Int) {
+    override fun onBindViewHolder(holder: ChickenBreedViewHolder, position: Int) {
 
 
         val slot = data[position]
@@ -28,7 +28,7 @@ class FeaturesListVerticalAdapter(val context: Context, val data: ArrayList<Stri
 
         Animation().animation(holder?.itemView!!)
 
-        holder?.listItem?.setOnClickListener {
+        holder.listItem?.setOnClickListener {
 
 
         }
@@ -40,7 +40,7 @@ class FeaturesListVerticalAdapter(val context: Context, val data: ArrayList<Stri
         return data.size
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): ChickenBreedViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ChickenBreedViewHolder {
         val view = LayoutInflater.from(context).inflate(R.layout.new_list_recyclerview, parent, false)
 
 

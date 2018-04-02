@@ -34,7 +34,7 @@ open class FirebaseClient(val context: Context) {
         dataSnapshot!!.children.mapNotNullTo(dataSet){
             it.getValue(DataBlock::class.java)
         }
-        dataSnapshot!!.children.mapNotNullTo(dataKey){
+        dataSnapshot.children.mapNotNullTo(dataKey){
             it.key
         }
         Log.e("Co",dataSet.size.toString())

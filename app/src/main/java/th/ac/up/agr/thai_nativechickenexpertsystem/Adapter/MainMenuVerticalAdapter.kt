@@ -27,7 +27,7 @@ class MainMenuVerticalAdapter(val context: Context, val data: ArrayList<String>)
 
     var path = String()
 
-    override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): ChickenBreedViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ChickenBreedViewHolder {
         val view = LayoutInflater.from(parent?.context).inflate(R.layout.menu_recyclerview, parent, false)
 
         views = view
@@ -39,7 +39,7 @@ class MainMenuVerticalAdapter(val context: Context, val data: ArrayList<String>)
         return data.size
     }
 
-    override fun onBindViewHolder(holder: ChickenBreedViewHolder?, position: Int) {
+    override fun onBindViewHolder(holder: ChickenBreedViewHolder, position: Int) {
 
         holder?.mainBreedTitle?.text = data[position]
 
@@ -66,7 +66,7 @@ class MainMenuVerticalAdapter(val context: Context, val data: ArrayList<String>)
 
 
         if (data[position].contentEquals("ไก่ชน")) {
-            holder?.mainMore?.setOnClickListener {
+            holder.mainMore?.setOnClickListener {
                 val intent = Intent(context, SubMainActivity::class.java)
                 intent.putExtra("ID", 0)
                 intent.putExtra("TITLE", data[position])
@@ -76,7 +76,7 @@ class MainMenuVerticalAdapter(val context: Context, val data: ArrayList<String>)
         } else if (data[position].contentEquals("พันธุ์อื่นๆ")) {
 
             //holder?.mainMore?.visibility = View.GONE
-            holder?.mainMore?.setOnClickListener {
+            holder.mainMore?.setOnClickListener {
                 val intent = Intent(context, SubMainActivity::class.java)
                 intent.putExtra("ID", 100)
                 intent.putExtra("TITLE", data[position])
@@ -85,7 +85,7 @@ class MainMenuVerticalAdapter(val context: Context, val data: ArrayList<String>)
             }
 
         } else {
-            holder?.mainMore?.setOnClickListener {
+            holder.mainMore?.setOnClickListener {
                 val intent = Intent(context, SubMainActivity::class.java)
                 intent.putExtra("ID", 1)
                 intent.putExtra("TITLE", data[position])

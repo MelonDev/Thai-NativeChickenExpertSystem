@@ -15,7 +15,7 @@ import th.ac.up.agr.thai_nativechickenexpertsystem.ViewHolder.ChickenBreedViewHo
 
 class MainListVerticalAdapter (val context: Context,val data :ArrayList<String>,val mainTitle:String,val finish :Boolean,val path :String) : RecyclerView.Adapter<ChickenBreedViewHolder>() {
 
-    override fun onBindViewHolder(holder: ChickenBreedViewHolder?, position: Int) {
+    override fun onBindViewHolder(holder: ChickenBreedViewHolder, position: Int) {
 
         holder?.mainListTitle?.text = data[position]
 
@@ -95,7 +95,7 @@ class MainListVerticalAdapter (val context: Context,val data :ArrayList<String>,
         return data.size
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): ChickenBreedViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ChickenBreedViewHolder {
         val view = LayoutInflater.from(context).inflate(R.layout.list_recyclerview,parent,false)
 
 

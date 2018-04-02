@@ -49,7 +49,7 @@
             android:layout_height="50dp">
             <RelativeLayout
                 android:background="@color/colorWhite"
-                android:id="@+id/leftTab"
+                android:id="@+id/secondLeftTab"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="0dp"
@@ -79,7 +79,7 @@
                 </LinearLayout>
 
                 <RelativeLayout
-                    android:id="@+id/leftLine"
+                    android:id="@+id/secondLeftLine"
                     android:layout_width="match_parent"
                     android:layout_height="6dp"
                     android:background="@color/colorPrimary"
@@ -98,7 +98,7 @@
 
             <RelativeLayout
                 android:background="@color/colorWhite"
-                android:id="@+id/rightTab"
+                android:id="@+id/secondRightTab"
                 android:layout_width="0dp"
                 android:layout_height="50dp"
                 android:layout_marginStart="0dp"
@@ -128,7 +128,7 @@
                 </LinearLayout>
 
                 <RelativeLayout
-                    android:id="@+id/rightLine"
+                    android:id="@+id/secondRightLine"
                     android:visibility="gone"
                     android:layout_width="match_parent"
                     android:layout_height="6dp"

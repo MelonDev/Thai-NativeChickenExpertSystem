@@ -8,7 +8,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
-import com.bumptech.glide.Glide
 import com.google.firebase.database.*
 import com.squareup.picasso.NetworkPolicy
 import com.squareup.picasso.Picasso
@@ -19,6 +18,7 @@ import th.ac.up.agr.thai_nativechickenexpertsystem.SubMainActivity
 import th.ac.up.agr.thai_nativechickenexpertsystem.Tools.Animation
 import th.ac.up.agr.thai_nativechickenexpertsystem.Tools.Path
 import th.ac.up.agr.thai_nativechickenexpertsystem.ViewHolder.ChickenBreedViewHolder
+import java.lang.Exception
 
 class MainGridVerticalAdapter(val context: Context, val data: ArrayList<String>, val ID: Int, var path: String, val title: String) : RecyclerView.Adapter<ChickenBreedViewHolder>() {
 
@@ -28,7 +28,7 @@ class MainGridVerticalAdapter(val context: Context, val data: ArrayList<String>,
 
     private var ars = ArrayList<String>()
 
-    override fun onBindViewHolder(holder: ChickenBreedViewHolder?, position: Int) {
+    override fun onBindViewHolder(holder: ChickenBreedViewHolder, position: Int) {
 
         holder?.gridItemTitle?.text = data[position]
 
@@ -74,16 +74,17 @@ class MainGridVerticalAdapter(val context: Context, val data: ArrayList<String>,
                                         holder?.itemImageCardView2?.visibility = View.GONE
 
                                         //Glide.with(context).load(url).into(holder?.itemImageView2!!)
-                                        Picasso.with(context).load(url).networkPolicy(NetworkPolicy.OFFLINE).into(holder?.itemImageView2!!,object : com.squareup.picasso.Callback {
+                                        Picasso.get().load(url).networkPolicy(NetworkPolicy.OFFLINE).into(holder?.itemImageView2!!,object : com.squareup.picasso.Callback {
                                             override fun onSuccess() {
-                                                Animation().itemHideAnimation(holder?.itemImageCardView2)
-                                                holder?.itemImageCardView2?.visibility = View.GONE
-                                                Animation().itemLoadAnimation(holder?.itemImageView2)
-                                                holder?.itemImageView2?.visibility = View.VISIBLE
+                                                Animation().itemHideAnimation(holder.itemImageCardView2)
+                                                holder.itemImageCardView2?.visibility = View.GONE
+                                                Animation().itemLoadAnimation(holder.itemImageView2)
+                                                holder.itemImageView2?.visibility = View.VISIBLE
                                             }
-                                            override fun onError() {
-                                                holder?.itemImageCardView2?.visibility = View.VISIBLE
-                                                holder?.itemImageView2?.visibility = View.GONE
+
+                                            override fun onError(e: Exception?) {
+                                                holder.itemImageCardView2?.visibility = View.VISIBLE
+                                                holder.itemImageView2?.visibility = View.GONE
                                             }
                                         })
                                         //Picasso.with(context).load(url).into(holder?.itemImageView!!)
@@ -109,16 +110,16 @@ class MainGridVerticalAdapter(val context: Context, val data: ArrayList<String>,
                                 //Log.e("PASS","PASS")
                                 holder?.itemImageCardView2?.visibility = View.GONE
                                 //Glide.with(context).load(url).into(holder?.itemImageView2!!)
-                                Picasso.with(context).load(url).networkPolicy(NetworkPolicy.OFFLINE).into(holder?.itemImageView2!!,object : com.squareup.picasso.Callback {
+                                Picasso.get().load(url).networkPolicy(NetworkPolicy.OFFLINE).into(holder?.itemImageView2!!,object : com.squareup.picasso.Callback {
                                     override fun onSuccess() {
-                                        Animation().itemHideAnimation(holder?.itemImageCardView2)
-                                        holder?.itemImageCardView2?.visibility = View.GONE
-                                        Animation().itemLoadAnimation(holder?.itemImageView2)
-                                        holder?.itemImageView2?.visibility = View.VISIBLE
+                                        Animation().itemHideAnimation(holder.itemImageCardView2)
+                                        holder.itemImageCardView2?.visibility = View.GONE
+                                        Animation().itemLoadAnimation(holder.itemImageView2)
+                                        holder.itemImageView2?.visibility = View.VISIBLE
                                     }
-                                    override fun onError() {
-                                        holder?.itemImageCardView2?.visibility = View.VISIBLE
-                                        holder?.itemImageView2?.visibility = View.GONE
+                                    override fun onError(e: Exception?) {
+                                        holder.itemImageCardView2?.visibility = View.VISIBLE
+                                        holder.itemImageView2?.visibility = View.GONE
                                     }
                                 })
                                 //Picasso.with(context).load(url).into(holder?.itemImageView!!)
@@ -156,16 +157,16 @@ class MainGridVerticalAdapter(val context: Context, val data: ArrayList<String>,
                                 holder?.itemImageCardView2?.visibility = View.GONE
 
                                 //Glide.with(context).load(url).into(holder?.itemImageView2!!)
-                                Picasso.with(context).load(url).networkPolicy(NetworkPolicy.OFFLINE).into(holder?.itemImageView2!!, object : com.squareup.picasso.Callback {
+                                Picasso.get().load(url).networkPolicy(NetworkPolicy.OFFLINE).into(holder?.itemImageView2!!, object : com.squareup.picasso.Callback {
                                     override fun onSuccess() {
-                                        Animation().itemHideAnimation(holder?.itemImageCardView2)
-                                        holder?.itemImageCardView2?.visibility = View.GONE
-                                        Animation().itemLoadAnimation(holder?.itemImageView2)
-                                        holder?.itemImageView2?.visibility = View.VISIBLE
+                                        Animation().itemHideAnimation(holder.itemImageCardView2)
+                                        holder.itemImageCardView2?.visibility = View.GONE
+                                        Animation().itemLoadAnimation(holder.itemImageView2)
+                                        holder.itemImageView2?.visibility = View.VISIBLE
                                     }
-                                    override fun onError() {
-                                        holder?.itemImageCardView2?.visibility = View.VISIBLE
-                                        holder?.itemImageView2?.visibility = View.GONE
+                                    override fun onError(e: Exception?) {
+                                        holder.itemImageCardView2?.visibility = View.VISIBLE
+                                        holder.itemImageView2?.visibility = View.GONE
                                     }
                                 })
                                 //Glide.with(myFragment).load(url).centerCrop().placeholder(R.drawable.loading_spinner).into(myImageView)
@@ -295,7 +296,7 @@ class MainGridVerticalAdapter(val context: Context, val data: ArrayList<String>,
         }
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): ChickenBreedViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ChickenBreedViewHolder {
         val view = LayoutInflater.from(context).inflate(R.layout.menu_icon_2, parent, false)
 
 

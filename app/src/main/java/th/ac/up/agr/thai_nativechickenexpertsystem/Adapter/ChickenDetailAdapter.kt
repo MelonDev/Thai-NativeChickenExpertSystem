@@ -21,7 +21,7 @@ class ChickenDetailAdapter(val context: Context,val sex :String,val arr :ArrayLi
     //val databaseReference: DatabaseReference = FirebaseDatabase.getInstance().reference
 
 
-    override fun onBindViewHolder(holder: ChickenDetailViewHolder?, position: Int) {
+    override fun onBindViewHolder(holder: ChickenDetailViewHolder, position: Int) {
 
 
         val firebase = FirebaseLoadDetails(context,holder)
@@ -48,7 +48,7 @@ class ChickenDetailAdapter(val context: Context,val sex :String,val arr :ArrayLi
         return 6
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup?, viewType: Int): ChickenDetailViewHolder {
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ChickenDetailViewHolder {
         val view = LayoutInflater.from(parent?.context).inflate(R.layout.detail_card_view, parent, false)
 
         return ChickenDetailViewHolder(view)

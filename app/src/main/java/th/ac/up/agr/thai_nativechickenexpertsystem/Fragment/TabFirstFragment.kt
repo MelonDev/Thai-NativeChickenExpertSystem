@@ -10,6 +10,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Toast
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.fragment_tab_first.*
@@ -52,7 +53,10 @@ class TabFirstFragment : Fragment() {
         }
 
 
-        view.tab1_menu_btn.setOnClickListener { tabMenu(view, true) }
+        view.tab1_menu_btn.setOnClickListener {
+            tabMenu(view, true)
+            //Toast.makeText(context,"RT",Toast.LENGTH_SHORT).show()
+        }
         view.tab1_list_btn.setOnClickListener { tabMenu(view, false) }
 /*
         val menuRecyclerView = QuickRecyclerView(context

@@ -12,6 +12,7 @@ import kotlinx.android.synthetic.main.activity_main.*
 import th.ac.up.agr.thai_nativechickenexpertsystem.Fragment.*
 import android.view.WindowManager
 import android.os.Build
+import android.widget.Toast
 
 
 class MainActivity : AppCompatActivity() {

@@ -8,6 +8,7 @@ import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import com.jaredrummler.android.device.DeviceName
 
 import kotlinx.android.synthetic.main.activity_search.*

@@ -6,7 +6,7 @@ import com.google.firebase.database.DatabaseReference
 /**
  * Created by melondev on 26/2/2018 AD.
  */
-class Path (){
+class Path {
 
     fun toPath(path :String,point :String) : String{
 

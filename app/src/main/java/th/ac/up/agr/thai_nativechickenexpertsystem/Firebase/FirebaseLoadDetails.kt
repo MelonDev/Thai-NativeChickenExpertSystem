@@ -148,7 +148,7 @@ class FirebaseLoadDetails(val context: Context,val holder :ChickenDetailViewHold
                 holder?.detailB?.visibility = View.VISIBLE
 
                 if (slot.image.isNotEmpty()){
-                    Picasso.with(context).load(slot.image).error(R.drawable.unknown_picture).into(holder?.B1Image)
+                    Picasso.get().load(slot.image).error(R.drawable.unknown_picture).into(holder?.B1Image)
                 }
 
 
