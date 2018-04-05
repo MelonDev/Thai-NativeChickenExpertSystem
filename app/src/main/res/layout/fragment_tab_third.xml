@@ -2,60 +2,77 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#ededed"
     tools:context="th.ac.up.agr.thai_nativechickenexpertsystem.Fragment.TabThirdFragment">
 
-    <RelativeLayout
-        android:visibility="gone"
+    <android.support.design.widget.AppBarLayout
         android:layout_width="match_parent"
-        android:layout_height="64dp"
-        android:background="@color/colorPrimary"
-        >
-
-        <TextView
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_alignParentBottom="true"
-            android:layout_marginLeft="16dp"
-            android:layout_marginBottom="8dp"
-            android:fontFamily="@font/pridi"
-            android:text="@string/tab_3"
-            android:textColor="#FFFFFF"
-            android:textSize="24dp" />
-
-    </RelativeLayout>
-
-<RelativeLayout
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:elevation="0dp">
 
 
+        <RelativeLayout
+            app:layout_scrollFlags="scroll"
+            android:layout_width="match_parent"
+            android:minHeight="50dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="4dp"
+            android:background="@color/colorPrimary">
+
+
+
+            <TextView
+                android:gravity="center_horizontal"
+                android:id="@+id/detail_title_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerInParent="true"
+                android:layout_marginBottom="6dp"
+                android:layout_marginLeft="0dp"
+                android:fontFamily="@font/pridi_medium"
+                android:paddingBottom="0dp"
+                android:paddingRight="0dp"
+                android:text="@string/tab_3_full"
+                android:textColor="#FFFFFF"
+                android:textSize="24dp" />
+
+
+        </RelativeLayout>
+
+    </android.support.design.widget.AppBarLayout>
 
     <LinearLayout
-        android:layout_centerInParent="true"
         android:orientation="vertical"
-        android:layout_width="wrap_content"
+        android:layout_marginTop="65dp"
+        android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
-        <ImageView
+        <android.support.v7.widget.CardView
+            android:visibility="gone"
+            app:cardElevation="0dp"
+            app:cardCornerRadius="25dp"
             android:layout_gravity="center_horizontal"
-            android:layout_width="100dp"
-            android:layout_height="100dp"
-            android:src="@drawable/icon"
-            android:tint="@color/colorPrimary"
-            />
-        <TextView
-            android:layout_marginTop="20dp"
-            android:textSize="24dp"
-            android:fontFamily="@font/kanit_extralight"
-            android:textColor="@color/colorPrimaryDark"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:text="หน้านี้ยังไม่พร้อมใช้งาน"
-            />
+            app:cardBackgroundColor="@color/colorPrimaryDark"
+            android:layout_width="250dp"
+            android:layout_height="50dp">
+
+            <android.support.v7.widget.CardView
+                app:cardElevation="0dp"
+                app:cardCornerRadius="24dp"
+                app:cardBackgroundColor="@color/colorWhite"
+                android:layout_gravity="center"
+                android:layout_width="248dp"
+                android:layout_height="48dp">
+
+            </android.support.v7.widget.CardView>
+
+        </android.support.v7.widget.CardView>
 
     </LinearLayout>
 
-</RelativeLayout>
 
 
 </FrameLayout>

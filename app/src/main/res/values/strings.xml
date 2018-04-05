@@ -10,6 +10,8 @@
     <string name="tab_2">ลักษณะ</string>
     <string name="tab_2_full">ลักษณะของไก่พื้นเมือง</string>
     <string name="tab_3">การจัดการ</string>
+    <string name="tab_3_full">แจ้งเตือนการจัดการ</string>
+
     <string name="tab_4">โรคของไก่</string>
     <string name="tab_5">เพิ่มเติม</string>
     <string name="title_activity_sub_main">SubMainActivity</string>

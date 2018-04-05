@@ -26,6 +26,8 @@ class AddDataActivity : AppCompatActivity() {
         this.window.setSoftInputMode(WindowManager.LayoutParams.SOFT_INPUT_STATE_ALWAYS_HIDDEN)
 
 
+
+
     }
 
     override fun onResume() {

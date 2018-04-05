@@ -34,15 +34,15 @@ class TabSecondFragment : Fragment() {
 
         //Toast.makeText(context,"TEST",Toast.LENGTH_SHORT).show()
 
-      tabSelection(view,"ภายนอก")
+        tabSelection(view, "ภายนอก")
 
         //Log.e("TEST","TEST")
 
         view.secondLeftTab.setOnClickListener {
-            tabSelection(view,"ภายนอก")
+            tabSelection(view, "ภายนอก")
         }
         view.secondRightTab.setOnClickListener {
-            tabSelection(view,"เศรษฐกิจ")
+            tabSelection(view, "เศรษฐกิจ")
         }
 
 /*
@@ -65,7 +65,7 @@ class TabSecondFragment : Fragment() {
     }
 
 
-    private fun tabSelection(view: View,string: String) {
+    private fun tabSelection(view: View, string: String) {
 
         loadingRecyclerview(view)
 
@@ -78,14 +78,14 @@ class TabSecondFragment : Fragment() {
                 //Toast.makeText(context,string+"Hellose",Toast.LENGTH_SHORT).show()
                 view.secondLeftLine?.visibility = View.VISIBLE
                 view.secondRightLine?.visibility = View.GONE
-                setRecyclerView(view,"ภายนอก")
+                setRecyclerView(view, "ภายนอก")
 
             }
             "เศรษฐกิจ" -> {
                 //Toast.makeText(context,string+"Hellose",Toast.LENGTH_SHORT).show()
                 view.secondLeftLine?.visibility = View.GONE
                 view.secondRightLine?.visibility = View.VISIBLE
-                setRecyclerView(view,"ทางเศรษฐกิจ")
+                setRecyclerView(view, "ทางเศรษฐกิจ")
 
             }
         }
@@ -112,7 +112,7 @@ class TabSecondFragment : Fragment() {
         handler.postDelayed(runnable, delay_time)
     }
 
-    private fun setRecyclerView(view: View,string: String){
+    private fun setRecyclerView(view: View, string: String) {
 
         //val slot : Chicken = FirebaseLoadDetails(applicationContext).loadData(arrPath,sex)
 
@@ -132,7 +132,7 @@ class TabSecondFragment : Fragment() {
         val FirebaseFunction = FirebaseOnFunction(view.context)
 
         recyclerView.adapter = FeaturesListVerticalAdapter(view.context, ArrayList<String>())
-        FirebaseFunction.toRecyclerView(FirebaseFunction.databaseReference.child("ลักษณะ").child(string),recyclerView,view.second_loading)
+        FirebaseFunction.toRecyclerView(FirebaseFunction.databaseReference.child("ลักษณะ").child(string), recyclerView, view.second_loading)
 
 
         /*
