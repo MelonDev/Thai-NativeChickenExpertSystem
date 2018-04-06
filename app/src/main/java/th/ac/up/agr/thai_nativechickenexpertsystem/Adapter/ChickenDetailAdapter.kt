@@ -45,7 +45,7 @@ class ChickenDetailAdapter(val context: Context,val sex :String,val arr :ArrayLi
 
 
     override fun getItemCount(): Int {
-        return 6
+        return 5
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ChickenDetailViewHolder {

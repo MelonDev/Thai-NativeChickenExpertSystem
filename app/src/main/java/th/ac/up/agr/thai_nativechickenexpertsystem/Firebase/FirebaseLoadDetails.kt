@@ -158,12 +158,6 @@ class FirebaseLoadDetails(val context: Context,val holder :ChickenDetailViewHold
             }
             2 -> {
                 allGone(holder)
-                holder?.detailC?.visibility = View.VISIBLE
-
-                holder?.C1?.text = slot.eggShellColor
-            }
-            3 -> {
-                allGone(holder)
                 holder?.detailD?.visibility = View.VISIBLE
 
                 holder?.D1?.text = slot.crestStyle
@@ -180,10 +174,11 @@ class FirebaseLoadDetails(val context: Context,val holder :ChickenDetailViewHold
                 holder?.D12?.text = slot.shinColor
                 holder?.D13?.text = slot.nailColor
             }
-            4 -> {
+            3 -> {
                 allGone(holder)
                 holder?.detailE?.visibility = View.VISIBLE
 
+                holder?.C1?.text = slot.eggShellColor
                 holder?.E1?.text = slot.duration
                 holder?.E2?.text = slot.ageOfGiveFirstEgg
                 holder?.E3?.text = slot.productivityPerYear
@@ -193,7 +188,7 @@ class FirebaseLoadDetails(val context: Context,val holder :ChickenDetailViewHold
                 holder?.E7?.text = slot.weightForSold
                 holder?.E8?.text = slot.birthWeight
             }
-            5 -> {
+            4 -> {
                 allGone(holder)
                 holder?.detailF?.visibility = View.VISIBLE
 

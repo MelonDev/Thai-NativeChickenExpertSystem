@@ -1,9 +1,9 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#ededed"
+    android:background="#FFFFFF"
     tools:context="th.ac.up.agr.thai_nativechickenexpertsystem.Fragment.TabFifthFragment">
 
     <android.support.design.widget.AppBarLayout
@@ -28,7 +28,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_centerInParent="true"
-                android:layout_marginBottom="6dp"
+                android:layout_marginBottom="0dp"
                 android:layout_marginLeft="0dp"
                 android:fontFamily="@font/pridi_medium"
                 android:paddingBottom="0dp"
@@ -42,4 +42,23 @@
 
     </android.support.design.widget.AppBarLayout>
 
-</FrameLayout>
+    <android.support.v7.widget.RecyclerView
+        android:paddingTop="16dp"
+        android:clipToPadding="false"
+        android:id="@+id/more_recyclerview"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:layout_marginTop="0dp"
+        android:drawSelectorOnTop="false"
+        android:listSelector="@android:color/transparent"
+        app:layoutManager="android.support.v7.widget.GridLayoutManager"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        app:spanCount="3"
+        tools:listitem="@layout/menu_icon_3"
+        />
+
+</android.support.design.widget.CoordinatorLayout>

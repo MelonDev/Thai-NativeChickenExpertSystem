@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:paddingTop="16dp"
+    android:paddingBottom="4dp"
+    android:paddingLeft="6dp"
+    android:paddingRight="6dp"
+    android:layout_gravity="center"
+    android:orientation="vertical">
+
+    <RelativeLayout
+        android:id="@+id/menu_unclick"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center">
+
+        <RelativeLayout
+            android:layout_centerHorizontal="true"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <RelativeLayout
+                android:layout_centerHorizontal="true"
+                android:layout_width="80dp"
+                android:layout_height="80dp">
+
+                <android.support.v7.widget.CardView
+                    app:cardElevation="0dp"
+                    android:layout_centerInParent="true"
+                    app:cardCornerRadius="40dp"
+                    app:cardBackgroundColor="@color/colorPrimary"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"/>
+
+                <android.support.v7.widget.CardView
+                    app:cardElevation="0dp"
+                    android:layout_margin="1.5dp"
+                    android:layout_centerInParent="true"
+                    app:cardCornerRadius="39.5dp"
+                    app:cardBackgroundColor="@color/colorWhite"
+                    android:layout_width="80dp"
+                    android:layout_height="80dp"/>
+
+
+            </RelativeLayout>
+
+            <ImageView
+                android:id="@+id/menu_circle_image"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_centerInParent="true"
+                android:src="@drawable/ic_chicken_off"
+                android:tint="@color/colorPrimary" />
+
+        </RelativeLayout>
+
+        <TextView
+            android:textAlignment="center"
+            android:id="@+id/menu_circle_text"
+            android:layout_width="90dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="84dp"
+            android:fontFamily="@font/pridi_extralight"
+            android:text="ข้อความ"
+            android:textColor="@color/colorPrimaryDark"
+            android:textSize="18dp" />
+
+    </RelativeLayout>
+
+</LinearLayout>
