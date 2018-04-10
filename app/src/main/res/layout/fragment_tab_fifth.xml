@@ -3,7 +3,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:background="#FFFFFF"
+    android:background="#ededed"
     tools:context="th.ac.up.agr.thai_nativechickenexpertsystem.Fragment.TabFifthFragment">
 
     <android.support.design.widget.AppBarLayout
@@ -43,7 +43,7 @@
     </android.support.design.widget.AppBarLayout>
 
     <android.support.v7.widget.RecyclerView
-        android:paddingTop="16dp"
+        android:paddingTop="26dp"
         android:clipToPadding="false"
         android:id="@+id/more_recyclerview"
         android:layout_width="match_parent"

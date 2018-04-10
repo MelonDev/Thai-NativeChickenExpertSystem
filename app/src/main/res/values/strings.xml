@@ -12,6 +12,9 @@
     <string name="tab_3">การจัดการ</string>
     <string name="tab_3_full">แจ้งเตือนการจัดการ</string>
 
+    <string name="test">จะแสดงพฤติกรรมเดินนำหน้าโดยหันก้นให้กระบืออีกตัว หรือเดินตามกระบือตัวอื่นๆ เหมือนการเกี้ยวพาราสีของกระบือเพศผู้กับเพศเมีย ช่วงเวลาขณะแสดงพฤติกรรมประมาณ 10-15 วินาที</string>
+
+
     <string name="tab_4">โรคของไก่</string>
     <string name="tab_5">เพิ่มเติม</string>
     <string name="title_activity_sub_main">SubMainActivity</string>
@@ -21,5 +24,6 @@
     <string name="title_activity_modern_main">ModernMainActivity</string>
     <string name="title_activity_search">SearchActivity</string>
     <string name="title_activity_add_data">AddDataActivity</string>
+    <string name="title_activity_container">ContainerActivity</string>
 
 </resources>

@@ -54,7 +54,11 @@
         <activity
             android:name=".AddDataActivity"
             android:label="@string/title_activity_add_data"
-            android:theme="@style/SearchTheme"></activity>
+            android:theme="@style/SearchTheme" />
+        <activity
+            android:name=".ContainerActivity"
+            android:label="@string/title_activity_container"
+            android:theme="@style/AppTheme"></activity>
     </application>
 
 </manifest>

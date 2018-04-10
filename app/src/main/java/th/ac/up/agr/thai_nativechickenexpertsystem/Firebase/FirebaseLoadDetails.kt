@@ -3,6 +3,7 @@ package th.ac.up.agr.thai_nativechickenexpertsystem.Firebase
 import android.content.Context
 import android.util.Log
 import android.view.View
+import android.widget.Toast
 import com.google.firebase.database.*
 import th.ac.up.agr.thai_nativechickenexpertsystem.Data.ChickenDetailData
 import com.google.firebase.database.DataSnapshot
@@ -36,6 +37,7 @@ class FirebaseLoadDetails(val context: Context,val holder :ChickenDetailViewHold
 
         val data = arrs[arrs.lastIndex]
         setRef(data)
+
         //setRefC(data)
 
 
@@ -64,7 +66,11 @@ class FirebaseLoadDetails(val context: Context,val holder :ChickenDetailViewHold
             array.add(array[array.lastIndex].child(i))
         }
 
+
+
         array.add(array[array.lastIndex].child(sex))
+
+        //Toast.makeText(context,array.toString(),Toast.LENGTH_SHORT).show()
 
         return array
     }

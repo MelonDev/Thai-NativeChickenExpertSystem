@@ -38,7 +38,7 @@
                     android:paddingTop="10dp"
                     android:text="ข้อมูลพื้นฐาน"
                     android:textColor="@color/colorText"
-                    android:textSize="22dp" />
+                    android:textSize="28dp" />
 
                 <RelativeLayout
                     android:visibility="gone"
@@ -116,7 +116,7 @@
                             android:fontFamily="@font/pridi_medium"
                             android:text="รูปภาพ"
                             android:textColor="@color/colorText"
-                            android:textSize="22dp" />
+                            android:textSize="28dp" />
 
                     </LinearLayout>
 
@@ -209,7 +209,7 @@
                     android:paddingTop="10dp"
                     android:text="ลักษณะทั่วไป"
                     android:textColor="@color/colorText"
-                    android:textSize="22dp" />
+                    android:textSize="28dp" />
 
                 <RelativeLayout
                     android:visibility="gone"
@@ -254,7 +254,7 @@
                     android:paddingTop="10dp"
                     android:text="ลักษณะภายนอก"
                     android:textColor="@color/colorText"
-                    android:textSize="22dp" />
+                    android:textSize="28dp" />
 
                 <RelativeLayout
                     android:visibility="gone"
@@ -634,7 +634,7 @@
                     android:paddingTop="10dp"
                     android:text="ลักษณะทางเศรษฐกิจ"
                     android:textColor="@color/colorText"
-                    android:textSize="22dp" />
+                    android:textSize="28dp" />
                 <RelativeLayout
                     android:visibility="gone"
                     android:layout_width="match_parent"
@@ -903,7 +903,7 @@
                     android:paddingTop="10dp"
                     android:text="อื่นๆ"
                     android:textColor="@color/colorText"
-                    android:textSize="22dp" />
+                    android:textSize="28dp" />
 
                 <RelativeLayout
                     android:visibility="gone"

@@ -168,6 +168,8 @@ class ChickenDatailActivity : AppCompatActivity() {
 
         //Log.e("TEST SLOT",slot.image)
 
+        //Toast.makeText(applicationContext,arrPath.toString(),Toast.LENGTH_SHORT).show()
+
         val detailMaleRecyclerView = QuickRecyclerView(this
                 , chicken_detail_recycler_view
                 , "linear"

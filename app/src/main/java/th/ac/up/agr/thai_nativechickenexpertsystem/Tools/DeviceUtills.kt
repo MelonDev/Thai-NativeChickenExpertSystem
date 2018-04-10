@@ -1,8 +1,11 @@
 package th.ac.up.agr.thai_nativechickenexpertsystem.Tools
 
+import android.annotation.SuppressLint
 import android.content.Context
 import android.graphics.Point
+import android.support.v7.widget.RecyclerView
 import android.view.WindowManager
+import th.ac.up.agr.thai_nativechickenexpertsystem.ViewHolder.MoreMenuViewHolder
 
 class DeviceUtills(){
 

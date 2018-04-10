@@ -7,10 +7,12 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import kotlinx.android.synthetic.main.fragment_tab_fourth.view.*
+import th.ac.up.agr.thai_nativechickenexpertsystem.Adapter.DiseaseAdapter
 import th.ac.up.agr.thai_nativechickenexpertsystem.Adapter.FeaturesListVerticalAdapter
 
 import th.ac.up.agr.thai_nativechickenexpertsystem.R
 import th.ac.up.agr.thai_nativechickenexpertsystem.Tools.QuickRecyclerView
+import th.ac.up.agr.thai_nativechickenexpertsystem.ViewHolder.DiseaseViewHolder
 
 
 /**
@@ -48,7 +50,18 @@ class TabFourthFragment : Fragment() {
 
         //val FirebaseFunction = FirebaseOnFunction(view.context)
 
-        recyclerView.adapter = FeaturesListVerticalAdapter(view.context, data)
+        //recyclerView.adapter = FeaturesListVerticalAdapter(view.context, data)
+
+        recyclerView.adapter = object : DiseaseAdapter(view.context,data){
+
+            override fun onBindViewHolder(holder: DiseaseViewHolder, position: Int) {
+                super.onBindViewHolder(holder, position)
+
+                holder.title.text = data[position]
+            }
+
+        }
+
         //FirebaseFunction.toRecyclerView(FirebaseFunction.databaseReference.child("ลักษณะ").child(string), recyclerView, view.second_loading)
 
 

@@ -2,6 +2,8 @@ package th.ac.up.agr.thai_nativechickenexpertsystem.Adapter
 
 import android.content.Context
 import android.content.Intent
+import android.graphics.drawable.Drawable
+import android.os.Environment
 import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.view.LayoutInflater
@@ -19,6 +21,20 @@ import th.ac.up.agr.thai_nativechickenexpertsystem.Tools.Path
 import th.ac.up.agr.thai_nativechickenexpertsystem.Tools.test
 import th.ac.up.agr.thai_nativechickenexpertsystem.ViewHolder.ChickenBreedViewHolder
 import java.lang.Exception
+import android.os.Environment.getExternalStorageDirectory
+import com.bumptech.glide.load.DataSource
+import com.bumptech.glide.load.engine.DiskCacheStrategy
+import com.bumptech.glide.load.engine.GlideException
+import com.bumptech.glide.request.RequestListener
+import com.bumptech.glide.request.target.Target
+import okhttp3.Cache
+import okhttp3.OkHttpClient
+import java.io.File
+import com.bumptech.glide.request.RequestOptions
+import android.R.attr.data
+import com.squareup.picasso.Callback
+import com.squareup.picasso.NetworkPolicy
+
 
 class MainMenuHorizontalAdapter(val context: Context, val data: ArrayList<String>, val mainTitle: String, val path: String) : RecyclerView.Adapter<ChickenBreedViewHolder>() {
 
@@ -44,10 +60,9 @@ class MainMenuHorizontalAdapter(val context: Context, val data: ArrayList<String
         //Log.e("data",data[position])
         val dataRef = databaseReference.child("พันธุ์ไก่").child(mainTitle).child(data[position])
 
-        if (mainTitle.contentEquals("พันธุ์อื่นๆ")){
-            Log.e("asdla",data.toString())
-        }
-        else if (data[position].contentEquals("ไก่ชน") or mainTitle.contentEquals("ไก่ชน")) {
+        if (mainTitle.contentEquals("พันธุ์อื่นๆ")) {
+            Log.e("asdla", data.toString())
+        } else if (data[position].contentEquals("ไก่ชน") or mainTitle.contentEquals("ไก่ชน")) {
             //getImagePath(0, dataRef)
 
             dataRef.addListenerForSingleValueEvent(object : ValueEventListener {
@@ -76,9 +91,33 @@ class MainMenuHorizontalAdapter(val context: Context, val data: ArrayList<String
                             val url: String = p0?.value.toString()
                             if (url.isNotEmpty() && !url.contentEquals("null")) {
                                 //Log.e("PASS","PASS")
-                                //Glide.with(context).load(url).into(holder?.itemImageView!!)
-                                holder?.itemImageCardView?.visibility = View.GONE
 
+                                //holder.itemImageCardView?.visibility = View.GONE
+/*
+                                Glide.with(context)
+                                        .load(url)
+                                        .apply { RequestOptions()
+                                                .diskCacheStrategy(DiskCacheStrategy.ALL)
+                                        }
+                                        .listener(object : RequestListener<Drawable> {
+                                            override fun onLoadFailed(e: GlideException?, model: Any?, target: Target<Drawable>?, isFirstResource: Boolean): Boolean {
+                                                holder.itemImageCardView?.visibility = View.VISIBLE
+                                                holder.itemImageView?.visibility = View.GONE
+                                                return false
+                                            }
+
+                                            override fun onResourceReady(resource: Drawable?, model: Any?, target: Target<Drawable>?, dataSource: DataSource?, isFirstResource: Boolean): Boolean {
+                                                Animation().itemLoadAnimation(holder.itemImageView)
+                                                holder.itemImageView?.visibility = View.VISIBLE
+                                                Animation().itemHideAnimation(holder.itemImageCardView)
+                                                holder.itemImageCardView?.visibility = View.GONE
+                                                return false
+                                            }
+                                        })
+
+                                        .into(holder.itemImageView!!)
+*/
+/*
                                 Picasso.get().load(url).into(holder?.itemImageView!!,object : com.squareup.picasso.Callback {
                                     override fun onSuccess() {
 
@@ -92,6 +131,38 @@ class MainMenuHorizontalAdapter(val context: Context, val data: ArrayList<String
                                         holder.itemImageView?.visibility = View.GONE
                                     }
                                 })
+*/
+
+                                Picasso.get().load(url).fetch(object : Callback{
+                                    override fun onSuccess() {
+                                        Picasso.get().load(url).into(holder?.itemImageView!!)
+                                        Animation().itemLoadAnimation(holder.itemImageView)
+                                        holder.itemImageView?.visibility = View.VISIBLE
+                                        Animation().itemHideAnimation(holder.itemImageCardView)
+                                        holder.itemImageCardView?.visibility = View.GONE
+                                        /*
+                                        Picasso.get().load(url).into(holder?.itemImageView!!,object : com.squareup.picasso.Callback {
+                                            override fun onSuccess() {
+
+                                                Animation().itemLoadAnimation(holder.itemImageView)
+                                                holder.itemImageView?.visibility = View.VISIBLE
+                                                Animation().itemHideAnimation(holder.itemImageCardView)
+                                                holder.itemImageCardView?.visibility = View.GONE
+                                            }
+                                            override fun onError(e: Exception?) {
+                                                holder.itemImageCardView?.visibility = View.VISIBLE
+                                                holder.itemImageView?.visibility = View.GONE
+                                            }
+                                        })
+                                        */
+                                    }
+
+                                    override fun onError(e: Exception?) {
+                                        holder.itemImageCardView?.visibility = View.VISIBLE
+                                        holder.itemImageView?.visibility = View.GONE
+                                    }
+                                })
+
                                 //Picasso.with(context).load(url).into(holder?.itemImageView!!)
                                 //Glide.with(context).load(url).centerCrop().placeholder(R.drawable.loading_spinner).into(myImageView)
                             } else {
@@ -116,13 +187,14 @@ class MainMenuHorizontalAdapter(val context: Context, val data: ArrayList<String
                         //Log.e("PASS","PASS")
                         holder?.itemImageCardView?.visibility = View.GONE
                         //Glide.with(context).load(url).into(holder?.itemImageView!!)
-                        Picasso.get().load(url).into(holder?.itemImageView!!,object : com.squareup.picasso.Callback {
+                        Picasso.get().load(url).into(holder?.itemImageView!!, object : com.squareup.picasso.Callback {
                             override fun onSuccess() {
                                 Animation().itemLoadAnimation(holder.itemImageView)
                                 holder.itemImageView?.visibility = View.VISIBLE
                                 Animation().itemHideAnimation(holder.itemImageCardView)
                                 holder.itemImageCardView?.visibility = View.GONE
                             }
+
                             override fun onError(e: Exception?) {
                                 holder.itemImageCardView?.visibility = View.VISIBLE
                                 holder.itemImageView?.visibility = View.GONE
@@ -145,27 +217,27 @@ class MainMenuHorizontalAdapter(val context: Context, val data: ArrayList<String
 
 
         holder?.mainMenuItem?.setOnClickListener {
-            if (mainTitle.contentEquals("พันธุ์อื่นๆ")){
+            if (mainTitle.contentEquals("พันธุ์อื่นๆ")) {
                 val databaseReferences: DatabaseReference = FirebaseDatabase.getInstance().reference
                 val p = databaseReferences.child("พันธุ์ไก่").child(data[position])
 
                 //Log.e("PO",data[position])
 
-                p.addListenerForSingleValueEvent(test(this,position))
+                p.addListenerForSingleValueEvent(test(this, position))
 
             } else if (data[position].contentEquals("ไก่ชน") || mainTitle.contentEquals("ไก่ชน")) {
                 //Log.e("Pa ${path}",data[position])
 
                 val aa: DatabaseReference = FirebaseDatabase.getInstance().reference
                 val ab = aa.child("พันธุ์ไก่").child(path).child(data[position])
-                ab.addListenerForSingleValueEvent(object :ValueEventListener{
+                ab.addListenerForSingleValueEvent(object : ValueEventListener {
                     override fun onCancelled(p0: DatabaseError?) {
                         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
                     }
 
                     override fun onDataChange(p0: DataSnapshot?) {
                         onSyncKeysss(p0)
-                        if (abcde.size > 1){
+                        if (abcde.size > 1) {
                             val intent = Intent(context, SubMainActivity::class.java)
                             intent.putExtra("ID", 2)
                             intent.putExtra("TITLE", data[position])
@@ -266,7 +338,7 @@ class MainMenuHorizontalAdapter(val context: Context, val data: ArrayList<String
 
     private fun URLToImageView(url: String) {
         if (url.isNotEmpty() && !url.contentEquals("null")) {
-            Log.e("PASS","PASS")
+            Log.e("PASS", "PASS")
             Glide.with(context).load(url).into(holder.itemImageView!!)
             //Picasso.with(context).load(url).into(holder?.itemImageView!!)
             //Glide.with(myFragment).load(url).centerCrop().placeholder(R.drawable.loading_spinner).into(myImageView)
