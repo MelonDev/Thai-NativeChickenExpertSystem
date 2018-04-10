@@ -11,6 +11,7 @@ import android.widget.RelativeLayout
 import android.widget.Toast
 import at.wirecube.additiveanimations.additive_animator.AdditiveAnimator
 import th.ac.up.agr.thai_nativechickenexpertsystem.ChickenDatailActivity
+import th.ac.up.agr.thai_nativechickenexpertsystem.ContainerActivity
 import th.ac.up.agr.thai_nativechickenexpertsystem.Data.ChickenBreedData
 import th.ac.up.agr.thai_nativechickenexpertsystem.R
 import th.ac.up.agr.thai_nativechickenexpertsystem.SubMainActivity
@@ -24,13 +25,14 @@ class FeaturesListVerticalAdapter(val context: Context, val data: ArrayList<Stri
 
 
         val slot = data[position]
-        holder?.mainListTitle?.text = slot
+        holder?.newListTitle?.text = slot
 
         Animation().animation(holder?.itemView!!)
 
-        holder.listItem?.setOnClickListener {
-
-
+        holder.newListCard?.setOnClickListener {
+            val intent = Intent(context, ContainerActivity::class.java)
+            intent.putExtra("TITLE",slot)
+            context.startActivity(intent)
         }
 
 

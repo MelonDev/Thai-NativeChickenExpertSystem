@@ -58,7 +58,7 @@
         <activity
             android:name=".ContainerActivity"
             android:label="@string/title_activity_container"
-            android:theme="@style/AppTheme"></activity>
+            android:theme="@style/NewTheme"></activity>
     </application>
 
 </manifest>

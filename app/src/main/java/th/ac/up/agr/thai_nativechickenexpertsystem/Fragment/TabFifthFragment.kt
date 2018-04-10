@@ -18,8 +18,8 @@ class TabFifthFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_tab_fifth, container, false)
 
         val arr = ArrayList<IconSet>()
-        arr.add(setIconSet("อาหารไก่",R.drawable.ic_seed_on))
         arr.add(setIconSet("อาหารไก่",R.drawable.ic_seed_off))
+        arr.add(setIconSet("วัคซีน",R.drawable.ic_vaccine))
 
 
 

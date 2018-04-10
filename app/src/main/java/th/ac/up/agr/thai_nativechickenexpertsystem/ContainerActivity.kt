@@ -24,7 +24,7 @@ class ContainerActivity : AppCompatActivity() {
 
         container_title_name.text = title
 
-        setFragment(TabFirstFragment())
+        //setFragment(TabFirstFragment())
 
 
     }

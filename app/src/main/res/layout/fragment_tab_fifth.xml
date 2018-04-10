@@ -1,8 +1,8 @@
 <android.support.design.widget.CoordinatorLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     android:background="#ededed"
     tools:context="th.ac.up.agr.thai_nativechickenexpertsystem.Fragment.TabFifthFragment">
 
@@ -11,26 +11,26 @@
         android:layout_height="wrap_content"
         android:visibility="visible"
         app:elevation="0dp">
+
         <RelativeLayout
-            app:layout_scrollFlags="scroll"
             android:layout_width="match_parent"
-            android:minHeight="50dp"
             android:layout_height="50dp"
             android:layout_marginTop="4dp"
-            android:background="@color/colorPrimary">
-
+            android:background="@color/colorPrimary"
+            android:minHeight="50dp"
+            app:layout_scrollFlags="scroll">
 
 
             <TextView
-                android:gravity="center_horizontal"
                 android:id="@+id/detail_title_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_centerInParent="true"
-                android:layout_marginBottom="0dp"
+                android:layout_marginBottom="6dp"
                 android:layout_marginLeft="0dp"
                 android:fontFamily="@font/pridi_medium"
+                android:gravity="center_horizontal"
                 android:paddingBottom="0dp"
                 android:paddingRight="0dp"
                 android:text="@string/tab_5"
@@ -43,22 +43,21 @@
     </android.support.design.widget.AppBarLayout>
 
     <android.support.v7.widget.RecyclerView
-        android:paddingTop="26dp"
-        android:clipToPadding="false"
         android:id="@+id/more_recyclerview"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginLeft="0dp"
         android:layout_marginRight="0dp"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp"
         android:layout_marginTop="0dp"
+        android:clipToPadding="false"
         android:drawSelectorOnTop="false"
         android:listSelector="@android:color/transparent"
+        android:paddingLeft="16dp"
+        android:paddingRight="16dp"
+        android:paddingTop="26dp"
         app:layoutManager="android.support.v7.widget.GridLayoutManager"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         app:spanCount="3"
-        tools:listitem="@layout/menu_icon_3"
-        />
+        tools:listitem="@layout/menu_icon_3" />
 
 </android.support.design.widget.CoordinatorLayout>

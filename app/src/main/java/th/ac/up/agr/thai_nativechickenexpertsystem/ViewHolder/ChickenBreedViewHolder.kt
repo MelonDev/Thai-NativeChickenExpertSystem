@@ -6,6 +6,7 @@ import kotlinx.android.synthetic.main.list_recyclerview.view.*
 import kotlinx.android.synthetic.main.menu_icon.view.*
 import kotlinx.android.synthetic.main.menu_icon_2.view.*
 import kotlinx.android.synthetic.main.menu_recyclerview.view.*
+import kotlinx.android.synthetic.main.new_list_recyclerview.view.*
 
 class ChickenBreedViewHolder(val itemview:View) :RecyclerView.ViewHolder(itemview){
 
@@ -28,5 +29,9 @@ class ChickenBreedViewHolder(val itemview:View) :RecyclerView.ViewHolder(itemvie
 
     val itemImageView2 = itemView.item_chicken_image2
     val itemImageCardView2 = itemView.item_chicken_image2_cardView
+
+    val newListCard = itemView.new_list_card
+    val newListItem = itemView.new_list_item
+    val newListTitle = itemView.newListNameTitle
 
 }

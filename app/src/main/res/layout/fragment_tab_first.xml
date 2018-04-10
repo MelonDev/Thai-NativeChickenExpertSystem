@@ -220,7 +220,7 @@
         android:drawSelectorOnTop="false"
         android:listSelector="@android:color/transparent"
         android:visibility="gone"
-        app:layoutManager="LinearLayoutManager"
+        app:layoutManager="android.support.v7.widget.LinearLayoutManager"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         tools:listitem="@layout/menu_recyclerview"
 
@@ -236,7 +236,7 @@
         android:drawSelectorOnTop="false"
         android:listSelector="@android:color/transparent"
         android:visibility="visible"
-        app:layoutManager="LinearLayoutManager"
+        app:layoutManager="android.support.v7.widget.LinearLayoutManager"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
         tools:listitem="@layout/list_recyclerview"
 
