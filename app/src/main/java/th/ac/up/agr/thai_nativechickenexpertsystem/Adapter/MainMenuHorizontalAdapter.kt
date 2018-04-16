@@ -48,7 +48,7 @@ class MainMenuHorizontalAdapter(val context: Context, val data: ArrayList<String
 
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ChickenBreedViewHolder {
-        val view = LayoutInflater.from(parent?.context).inflate(R.layout.menu_icon, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.menu_icon, parent, false)
 
         return ChickenBreedViewHolder(view)
     }
@@ -135,9 +135,9 @@ class MainMenuHorizontalAdapter(val context: Context, val data: ArrayList<String
 
                                 Picasso.get().load(url).fetch(object : Callback{
                                     override fun onSuccess() {
-                                        Picasso.get().load(url).into(holder?.itemImageView!!)
+                                        Picasso.get().load(url).into(holder.itemImageView!!)
                                         Animation().itemLoadAnimation(holder.itemImageView)
-                                        holder.itemImageView?.visibility = View.VISIBLE
+                                        holder.itemImageView.visibility = View.VISIBLE
                                         Animation().itemHideAnimation(holder.itemImageCardView)
                                         holder.itemImageCardView?.visibility = View.GONE
                                         /*
@@ -166,8 +166,8 @@ class MainMenuHorizontalAdapter(val context: Context, val data: ArrayList<String
                                 //Picasso.with(context).load(url).into(holder?.itemImageView!!)
                                 //Glide.with(context).load(url).centerCrop().placeholder(R.drawable.loading_spinner).into(myImageView)
                             } else {
-                                holder?.itemImageCardView?.visibility = View.VISIBLE
-                                holder?.itemImageView?.visibility = View.GONE
+                                holder.itemImageCardView?.visibility = View.VISIBLE
+                                holder.itemImageView?.visibility = View.GONE
                             }
                         }
                     })
@@ -185,26 +185,26 @@ class MainMenuHorizontalAdapter(val context: Context, val data: ArrayList<String
                     val url: String = p0?.value.toString()
                     if (url.isNotEmpty() && !url.contentEquals("null")) {
                         //Log.e("PASS","PASS")
-                        holder?.itemImageCardView?.visibility = View.GONE
+                        holder.itemImageCardView?.visibility = View.GONE
                         //Glide.with(context).load(url).into(holder?.itemImageView!!)
-                        Picasso.get().load(url).into(holder?.itemImageView!!, object : com.squareup.picasso.Callback {
+                        Picasso.get().load(url).into(holder.itemImageView!!, object : com.squareup.picasso.Callback {
                             override fun onSuccess() {
                                 Animation().itemLoadAnimation(holder.itemImageView)
-                                holder.itemImageView?.visibility = View.VISIBLE
+                                holder.itemImageView.visibility = View.VISIBLE
                                 Animation().itemHideAnimation(holder.itemImageCardView)
                                 holder.itemImageCardView?.visibility = View.GONE
                             }
 
                             override fun onError(e: Exception?) {
                                 holder.itemImageCardView?.visibility = View.VISIBLE
-                                holder.itemImageView?.visibility = View.GONE
+                                holder.itemImageView.visibility = View.GONE
                             }
                         })
                         //Picasso.with(context).load(url).into(holder?.itemImageView!!)
                         //Glide.with(myFragment).load(url).centerCrop().placeholder(R.drawable.loading_spinner).into(myImageView)
                     } else {
-                        holder?.itemImageCardView?.visibility = View.VISIBLE
-                        holder?.itemImageView?.visibility = View.GONE
+                        holder.itemImageCardView?.visibility = View.VISIBLE
+                        holder.itemImageView?.visibility = View.GONE
                     }
                     //Log.e("qwe", url.toString())
                     //val detail = p0!!.getValue(ChickenDetailData::class.java)
@@ -213,10 +213,10 @@ class MainMenuHorizontalAdapter(val context: Context, val data: ArrayList<String
             })
         }
 
-        holder?.mainNameTitle?.text = data[position]
+        holder.mainNameTitle?.text = data[position]
 
 
-        holder?.mainMenuItem?.setOnClickListener {
+        holder.mainMenuItem?.setOnClickListener {
             if (mainTitle.contentEquals("พันธุ์อื่นๆ")) {
                 val databaseReferences: DatabaseReference = FirebaseDatabase.getInstance().reference
                 val p = databaseReferences.child("พันธุ์ไก่").child(data[position])
@@ -329,7 +329,7 @@ class MainMenuHorizontalAdapter(val context: Context, val data: ArrayList<String
 
             override fun onDataChange(p0: DataSnapshot?) {
                 val url: String = p0?.value.toString()
-                Log.e("qwe", url.toString())
+                Log.e("qwe", url)
                 //val detail = p0!!.getValue(ChickenDetailData::class.java)
                 URLToImageView(url)
             }

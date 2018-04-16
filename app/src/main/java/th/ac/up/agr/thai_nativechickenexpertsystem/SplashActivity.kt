@@ -7,6 +7,7 @@ import android.support.design.widget.Snackbar
 import android.support.v7.app.AppCompatActivity
 
 import kotlinx.android.synthetic.main.activity_splash.*
+import th.ac.up.agr.thai_nativechickenexpertsystem.Adapter.KotlinDemoAdapter
 
 class SplashActivity : AppCompatActivity() {
 
@@ -28,6 +29,15 @@ class SplashActivity : AppCompatActivity() {
 
             startActivity(intent)
             finish()
+        }
+
+    }
+
+    fun test(){
+        val adapter = object : KotlinDemoAdapter(){
+            override fun onBindViewHolder(holder: ViewHolder, position: Int) {
+                super.onBindViewHolder(holder, position)
+            }
         }
 
     }

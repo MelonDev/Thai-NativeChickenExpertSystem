@@ -133,7 +133,7 @@ class ChickenDatailActivity : AppCompatActivity() {
             chicken_detail_recycler_view.visibility = View.VISIBLE
         }
 
-        var delay_time: Long = 0
+        var delay_time: Long
         var time = 500L
 
         delay_time = time

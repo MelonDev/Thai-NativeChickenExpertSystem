@@ -12,10 +12,11 @@
         android:id="@+id/main_frame"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="64dp" />
+        android:layout_marginBottom="50dp" />
 
 
     <RelativeLayout
+        android:visibility="visible"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_alignParentBottom="true">
@@ -30,6 +31,23 @@
                 android:layout_width="match_parent"
                 android:layout_height="1dp"
                 android:background="#33000000" />
+
+            <RelativeLayout
+                android:visibility="gone"
+                android:layout_alignParentBottom="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <android.support.design.widget.BottomNavigationView
+                    android:layout_width="match_parent"
+                    android:id="@+id/testBottom"
+                    android:layout_height="wrap_content"
+                    app:menu="@menu/menu_main"
+                    >
+
+                </android.support.design.widget.BottomNavigationView>
+
+            </RelativeLayout>
 
             <RelativeLayout
                 android:background="@color/colorWhite"
@@ -58,6 +76,8 @@
 
 
     </RelativeLayout>
+
+
 
 
 

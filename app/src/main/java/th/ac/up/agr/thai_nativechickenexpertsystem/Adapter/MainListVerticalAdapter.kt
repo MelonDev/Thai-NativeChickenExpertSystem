@@ -17,11 +17,11 @@ class MainListVerticalAdapter (val context: Context,val data :ArrayList<String>,
 
     override fun onBindViewHolder(holder: ChickenBreedViewHolder, position: Int) {
 
-        holder?.mainListTitle?.text = data[position]
+        holder.mainListTitle?.text = data[position]
 
 
         if (data[position].contentEquals("ไก่ชน")){
-            holder?.listItem?.setOnClickListener {
+            holder.listItem?.setOnClickListener {
                 val intent = Intent(context, SubMainActivity::class.java)
                 intent.putExtra("ID", 10)
                 intent.putExtra("TITLE", data[position])
@@ -29,7 +29,7 @@ class MainListVerticalAdapter (val context: Context,val data :ArrayList<String>,
                 context.startActivity(intent)
             }
         } else if (mainTitle.contentEquals("ไก่ชน")) {
-            holder?.listItem?.setOnClickListener {
+            holder.listItem?.setOnClickListener {
                 val intent = Intent(context, SubMainActivity::class.java)
                 intent.putExtra("ID", 11)
                 intent.putExtra("TITLE", data[position])
@@ -37,7 +37,7 @@ class MainListVerticalAdapter (val context: Context,val data :ArrayList<String>,
                 context.startActivity(intent)
             }
         } else if (!finish) {
-            holder?.listItem?.setOnClickListener {
+            holder.listItem?.setOnClickListener {
                 val intent = Intent(context, SubMainActivity::class.java)
                 intent.putExtra("ID", 12)
                 intent.putExtra("TITLE", data[position])
@@ -45,7 +45,7 @@ class MainListVerticalAdapter (val context: Context,val data :ArrayList<String>,
                 context.startActivity(intent)
             }
         } else if (finish) {
-            holder?.listItem?.setOnClickListener {
+            holder.listItem?.setOnClickListener {
                 val intent = Intent(context, ChickenDatailActivity::class.java)
                 intent.putExtra("ID", 12)
                 intent.putExtra("TITLE", data[position])

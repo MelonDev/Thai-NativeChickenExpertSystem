@@ -49,7 +49,7 @@ class ChickenDetailAdapter(val context: Context,val sex :String,val arr :ArrayLi
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ChickenDetailViewHolder {
-        val view = LayoutInflater.from(parent?.context).inflate(R.layout.detail_card_view, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.detail_card_view, parent, false)
 
         return ChickenDetailViewHolder(view)
     }

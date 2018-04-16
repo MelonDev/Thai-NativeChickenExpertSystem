@@ -25,9 +25,9 @@ class FeaturesListVerticalAdapter(val context: Context, val data: ArrayList<Stri
 
 
         val slot = data[position]
-        holder?.newListTitle?.text = slot
+        holder.newListTitle?.text = slot
 
-        Animation().animation(holder?.itemView!!)
+        Animation().animation(holder.itemView!!)
 
         holder.newListCard?.setOnClickListener {
             val intent = Intent(context, ContainerActivity::class.java)

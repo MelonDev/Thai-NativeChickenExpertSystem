@@ -28,7 +28,7 @@ class MainMenuVerticalAdapter(val context: Context, val data: ArrayList<String>)
     var path = String()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ChickenBreedViewHolder {
-        val view = LayoutInflater.from(parent?.context).inflate(R.layout.menu_recyclerview, parent, false)
+        val view = LayoutInflater.from(parent.context).inflate(R.layout.menu_recyclerview, parent, false)
 
         views = view
 
@@ -41,9 +41,9 @@ class MainMenuVerticalAdapter(val context: Context, val data: ArrayList<String>)
 
     override fun onBindViewHolder(holder: ChickenBreedViewHolder, position: Int) {
 
-        holder?.mainBreedTitle?.text = data[position]
+        holder.mainBreedTitle?.text = data[position]
 
-        Animation().animation(holder?.itemView!!)
+        Animation().animation(holder.itemView!!)
 
         firebase = FirebaseChicken(context)
 

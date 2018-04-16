@@ -30,7 +30,7 @@ class MainGridVerticalAdapter(val context: Context, val data: ArrayList<String>,
 
     override fun onBindViewHolder(holder: ChickenBreedViewHolder, position: Int) {
 
-        holder?.gridItemTitle?.text = data[position]
+        holder.gridItemTitle?.text = data[position]
 
         if (title.isNotEmpty()) {
 
@@ -71,27 +71,27 @@ class MainGridVerticalAdapter(val context: Context, val data: ArrayList<String>,
                                     val url: String = p0?.value.toString()
                                     if (url.isNotEmpty() && !url.contentEquals("null")) {
                                         //Log.e("PASS","PASS")
-                                        holder?.itemImageCardView2?.visibility = View.GONE
+                                        holder.itemImageCardView2?.visibility = View.GONE
 
                                         //Glide.with(context).load(url).into(holder?.itemImageView2!!)
-                                        Picasso.get().load(url).networkPolicy(NetworkPolicy.OFFLINE).into(holder?.itemImageView2!!,object : com.squareup.picasso.Callback {
+                                        Picasso.get().load(url).networkPolicy(NetworkPolicy.OFFLINE).into(holder.itemImageView2!!,object : com.squareup.picasso.Callback {
                                             override fun onSuccess() {
                                                 Animation().itemHideAnimation(holder.itemImageCardView2)
                                                 holder.itemImageCardView2?.visibility = View.GONE
                                                 Animation().itemLoadAnimation(holder.itemImageView2)
-                                                holder.itemImageView2?.visibility = View.VISIBLE
+                                                holder.itemImageView2.visibility = View.VISIBLE
                                             }
 
                                             override fun onError(e: Exception?) {
                                                 holder.itemImageCardView2?.visibility = View.VISIBLE
-                                                holder.itemImageView2?.visibility = View.GONE
+                                                holder.itemImageView2.visibility = View.GONE
                                             }
                                         })
                                         //Picasso.with(context).load(url).into(holder?.itemImageView!!)
                                         //Glide.with(context).load(url).centerCrop().placeholder(R.drawable.loading_spinner).into(myImageView)
                                     } else {
-                                        holder?.itemImageCardView2?.visibility = View.VISIBLE
-                                        holder?.itemImageView2?.visibility = View.GONE
+                                        holder.itemImageCardView2?.visibility = View.VISIBLE
+                                        holder.itemImageView2?.visibility = View.GONE
                                     }
                                 }
                             })
@@ -108,25 +108,25 @@ class MainGridVerticalAdapter(val context: Context, val data: ArrayList<String>,
                             val url: String = p0?.value.toString()
                             if (url.isNotEmpty() && !url.contentEquals("null")) {
                                 //Log.e("PASS","PASS")
-                                holder?.itemImageCardView2?.visibility = View.GONE
+                                holder.itemImageCardView2?.visibility = View.GONE
                                 //Glide.with(context).load(url).into(holder?.itemImageView2!!)
-                                Picasso.get().load(url).networkPolicy(NetworkPolicy.OFFLINE).into(holder?.itemImageView2!!,object : com.squareup.picasso.Callback {
+                                Picasso.get().load(url).networkPolicy(NetworkPolicy.OFFLINE).into(holder.itemImageView2!!,object : com.squareup.picasso.Callback {
                                     override fun onSuccess() {
                                         Animation().itemHideAnimation(holder.itemImageCardView2)
                                         holder.itemImageCardView2?.visibility = View.GONE
                                         Animation().itemLoadAnimation(holder.itemImageView2)
-                                        holder.itemImageView2?.visibility = View.VISIBLE
+                                        holder.itemImageView2.visibility = View.VISIBLE
                                     }
                                     override fun onError(e: Exception?) {
                                         holder.itemImageCardView2?.visibility = View.VISIBLE
-                                        holder.itemImageView2?.visibility = View.GONE
+                                        holder.itemImageView2.visibility = View.GONE
                                     }
                                 })
                                 //Picasso.with(context).load(url).into(holder?.itemImageView!!)
                                 //Glide.with(myFragment).load(url).centerCrop().placeholder(R.drawable.loading_spinner).into(myImageView)
                             } else {
-                                holder?.itemImageCardView2?.visibility = View.VISIBLE
-                                holder?.itemImageView2?.visibility = View.GONE
+                                holder.itemImageCardView2?.visibility = View.VISIBLE
+                                holder.itemImageView2?.visibility = View.GONE
                             }
                             //Log.e("qwe", url.toString())
                             //val detail = p0!!.getValue(ChickenDetailData::class.java)
@@ -154,25 +154,25 @@ class MainGridVerticalAdapter(val context: Context, val data: ArrayList<String>,
 
                             if (url.isNotEmpty() && !url.contentEquals("null")) {
                                 //Log.e("PASS","PASS")
-                                holder?.itemImageCardView2?.visibility = View.GONE
+                                holder.itemImageCardView2?.visibility = View.GONE
 
                                 //Glide.with(context).load(url).into(holder?.itemImageView2!!)
-                                Picasso.get().load(url).networkPolicy(NetworkPolicy.OFFLINE).into(holder?.itemImageView2!!, object : com.squareup.picasso.Callback {
+                                Picasso.get().load(url).networkPolicy(NetworkPolicy.OFFLINE).into(holder.itemImageView2!!, object : com.squareup.picasso.Callback {
                                     override fun onSuccess() {
                                         Animation().itemHideAnimation(holder.itemImageCardView2)
                                         holder.itemImageCardView2?.visibility = View.GONE
                                         Animation().itemLoadAnimation(holder.itemImageView2)
-                                        holder.itemImageView2?.visibility = View.VISIBLE
+                                        holder.itemImageView2.visibility = View.VISIBLE
                                     }
                                     override fun onError(e: Exception?) {
                                         holder.itemImageCardView2?.visibility = View.VISIBLE
-                                        holder.itemImageView2?.visibility = View.GONE
+                                        holder.itemImageView2.visibility = View.GONE
                                     }
                                 })
                                 //Glide.with(myFragment).load(url).centerCrop().placeholder(R.drawable.loading_spinner).into(myImageView)
                             } else {
-                                holder?.itemImageCardView2?.visibility = View.VISIBLE
-                                holder?.itemImageView2?.visibility = View.GONE
+                                holder.itemImageCardView2?.visibility = View.VISIBLE
+                                holder.itemImageView2?.visibility = View.GONE
                             }
 
                             //Log.e("qwe", url.toString())
@@ -187,7 +187,7 @@ class MainGridVerticalAdapter(val context: Context, val data: ArrayList<String>,
 
 
 
-        holder?.gridItem?.setOnClickListener {
+        holder.gridItem?.setOnClickListener {
 
             when (ID) {
                 100 -> {

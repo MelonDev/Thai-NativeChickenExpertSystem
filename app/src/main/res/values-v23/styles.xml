@@ -10,6 +10,13 @@
         <item name="windowNoTitle">true</item>
     </style>
 
+    <style name="TabLayoutStyle" parent="Base.Widget.Design.TabLayout">
+        <item name="android:textSize">20dp</item>
+        <item name="android:textAllCaps">true</item>
+        <item name="android:fontFamily">@font/pridi_extralight</item>
+
+    </style>
+
     <style name="NewTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <item name="android:windowLightStatusBar">false</item>
         <item name="android:statusBarColor">#FFB300</item>

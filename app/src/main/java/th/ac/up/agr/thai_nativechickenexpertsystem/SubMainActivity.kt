@@ -321,7 +321,7 @@ class SubMainActivity : AppCompatActivity() {
 
     private fun onSyncKeyOther(dataSnapshot: DataSnapshot?) {
         val a = ArrayList<String>()
-        val b = ArrayList<String>()
+        //val b = ArrayList<String>()
 
         dataSnapshot!!.children.mapNotNullTo(a) {
             it.key

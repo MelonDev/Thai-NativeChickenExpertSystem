@@ -258,7 +258,7 @@
         android:clipToPadding="false"
         android:drawSelectorOnTop="false"
         android:listSelector="@android:color/transparent"
-        android:paddingTop="26dp"
+        android:paddingTop="16dp"
         android:visibility="visible"
         app:layoutManager="LinearLayoutManager"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"
