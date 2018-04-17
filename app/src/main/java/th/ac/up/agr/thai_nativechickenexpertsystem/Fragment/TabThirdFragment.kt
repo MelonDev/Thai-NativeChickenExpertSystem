@@ -35,8 +35,14 @@ class TabThirdFragment : Fragment() {
     private lateinit var myContext: FragmentActivity
     private var currentPage: Int = 0
 
+    private var tabThirdOne: TabThridOne = TabThridOne();
+
+    private  var myview : View? = null
+
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_tab_third, container, false)
+        myview = view
 
         myContext = activity as FragmentActivity
 
@@ -47,16 +53,23 @@ class TabThirdFragment : Fragment() {
        // val pageListener = PageListener()
         //view.viewpager.setOnPageChangeListener(pageListener)
 
+        tabThirdOne.myParentView = this
+        tabThirdOne.fab = view.fab_A
+
         return view
     }
 
     private fun setupViewPager(viewPager: ViewPager) {
         //val adapter = ViewPagerAdapter(myContext.supportFragmentManager)
-        val adapter = ViewPagerAdapter(childFragmentManager!!)
-        adapter.addFragment(TabThridOne(), "หน้าหลัก")
+        val adapter = ViewPagerAdapter(childFragmentManager)
+        adapter.addFragment(tabThirdOne, "หน้าหลัก")
         adapter.addFragment(TabThridTwo(), "แจ้งเตือน")
         adapter.addFragment(TabThridThree(), "ประวัติ")
         viewPager.adapter = adapter
+
+
+
+
     }
 
     private inner class PageListener : SimpleOnPageChangeListener() {

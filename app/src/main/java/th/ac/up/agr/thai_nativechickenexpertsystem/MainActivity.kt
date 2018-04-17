@@ -20,10 +20,13 @@ import android.support.design.internal.BottomNavigationMenuView
 import android.support.design.widget.BottomNavigationView
 import android.support.annotation.NonNull
 import android.view.MenuItem
+import android.view.View
 
 
 @Suppress("DEPRECATION")
 class MainActivity : AppCompatActivity() {
+
+    private lateinit var currentTab : Fragment
 
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -31,13 +34,29 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         bottomBar.setOnTabSelectListener { tabId ->
+//            when (tabId) {
+//
+//                R.id.nav_tab_1 -> supportFragmentManager.beginTransaction().replace(R.id.main_frame, TabFirstFragment()).commit()
+//                R.id.nav_tab_2 -> supportFragmentManager.beginTransaction().replace(R.id.main_frame, TabSecondFragment()).commit()
+//                R.id.nav_tab_3 -> supportFragmentManager.beginTransaction().replace(R.id.main_frame, TabThirdFragment()).commit()
+//                R.id.nav_tab_4 -> supportFragmentManager.beginTransaction().replace(R.id.main_frame, TabFourthFragment()).commit()
+//                else -> supportFragmentManager.beginTransaction().replace(R.id.main_frame, TabFifthFragment()).commit()
+//            }
+
+
             when (tabId) {
-                R.id.nav_tab_1 -> supportFragmentManager.beginTransaction().replace(R.id.main_frame, TabFirstFragment()).commit()
-                R.id.nav_tab_2 -> supportFragmentManager.beginTransaction().replace(R.id.main_frame, TabSecondFragment()).commit()
-                R.id.nav_tab_3 -> supportFragmentManager.beginTransaction().replace(R.id.main_frame, TabThirdFragment()).commit()
-                R.id.nav_tab_4 -> supportFragmentManager.beginTransaction().replace(R.id.main_frame, TabFourthFragment()).commit()
-                else -> supportFragmentManager.beginTransaction().replace(R.id.main_frame, TabFifthFragment()).commit()
+                R.id.nav_tab_1 -> currentTab = TabFirstFragment()
+                R.id.nav_tab_2 -> currentTab = TabSecondFragment()
+                R.id.nav_tab_3 -> currentTab = TabThirdFragment()
+                R.id.nav_tab_4 -> currentTab = TabFourthFragment()
+
+                else -> currentTab = TabFifthFragment()
             }
+
+
+            supportFragmentManager.beginTransaction().replace(R.id.main_frame,currentTab).commit()
+
+
         }
 
 
