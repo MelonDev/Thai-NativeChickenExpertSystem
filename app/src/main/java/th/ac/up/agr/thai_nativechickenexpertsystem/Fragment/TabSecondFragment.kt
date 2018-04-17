@@ -4,6 +4,9 @@ package th.ac.up.agr.thai_nativechickenexpertsystem.Fragment
 import android.os.Bundle
 import android.os.Handler
 import android.support.v4.app.Fragment
+import android.support.v4.app.FragmentManager
+import android.support.v4.app.FragmentPagerAdapter
+import android.support.v4.view.ViewPager
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -12,6 +15,7 @@ import android.widget.Toast
 import kotlinx.android.synthetic.main.fragment_tab_first.view.*
 import kotlinx.android.synthetic.main.fragment_tab_second.*
 import kotlinx.android.synthetic.main.fragment_tab_second.view.*
+import kotlinx.android.synthetic.main.fragment_tab_third.view.*
 import th.ac.up.agr.thai_nativechickenexpertsystem.Adapter.FeaturesListVerticalAdapter
 import th.ac.up.agr.thai_nativechickenexpertsystem.Adapter.MainListVerticalAdapter
 import th.ac.up.agr.thai_nativechickenexpertsystem.Firebase.FirebaseClient
@@ -34,17 +38,21 @@ class TabSecondFragment : Fragment() {
 
         //Toast.makeText(context,"TEST",Toast.LENGTH_SHORT).show()
 
-        tabSelection(view, "ภายนอก")
+        //tabSelection(view, "ภายนอก")
+
+        val tab = view.second_viewpager
+        setupViewPager(tab)
+        view.tabLayout_second.setupWithViewPager(tab)
 
         //Log.e("TEST","TEST")
-
+/*
         view.secondLeftTab.setOnClickListener {
             tabSelection(view, "ภายนอก")
         }
         view.secondRightTab.setOnClickListener {
             tabSelection(view, "เศรษฐกิจ")
         }
-
+*/
 /*
         val recyclerView = QuickRecyclerView(context!!
                 , view.feature_recycler_view
@@ -64,7 +72,7 @@ class TabSecondFragment : Fragment() {
         return view
     }
 
-
+/*
     private fun tabSelection(view: View, string: String) {
 
         loadingRecyclerview(view)
@@ -148,6 +156,39 @@ class TabSecondFragment : Fragment() {
 
         detailMaleRecyclerView.adapter = ChickenDetailAdapter(this,sex,arrPath)
         */
+    }
+*/
+    private fun setupViewPager(viewPager: ViewPager) {
+        val adapter = ViewPagerAdapter(childFragmentManager)
+        adapter.addFragment(TabSecondOne(), "ภายนอก")
+        adapter.addFragment(TabSecondTwo(), "ทางเศรษฐกิจ")
+        viewPager.adapter = adapter
+
+    }
+
+
+
+    private inner class ViewPagerAdapter(manager: FragmentManager) : FragmentPagerAdapter(manager) {
+        private val mFragmentList = ArrayList<Fragment>()
+        private val mFragmentTitleList = ArrayList<String>()
+
+        override fun getItem(position: Int): Fragment {
+            return mFragmentList[position]
+        }
+
+        override fun getCount(): Int {
+            return mFragmentList.size
+        }
+
+        fun addFragment(fragment: Fragment, title: String) {
+            mFragmentList.add(fragment)
+            mFragmentTitleList.add(title)
+            //Log.e("Test", title)
+        }
+
+        override fun getPageTitle(position: Int): CharSequence {
+            return mFragmentTitleList[position]
+        }
     }
 
 

@@ -44,8 +44,8 @@ class FirebaseOnFunction(val context: Context) {
 
     }
 
-    fun toRecyclerView(ds: DatabaseReference,recyclerView: RecyclerView,progress : RelativeLayout){
-        progress.visibility = View.VISIBLE
+    fun toRecyclerView(ds: DatabaseReference,recyclerView: RecyclerView){
+        //progress.visibility = View.VISIBLE
 
         data.clear()
         ds.addValueEventListener(object  :ValueEventListener{
@@ -57,7 +57,7 @@ class FirebaseOnFunction(val context: Context) {
                 data.clear()
                 onSyncKey(p0)
                 if (data.size > 0){
-                    progress.visibility = View.GONE
+                    //progress.visibility = View.GONE
                 }
                 recyclerView.adapter = FeaturesListVerticalAdapter(context,data)            }
         })
