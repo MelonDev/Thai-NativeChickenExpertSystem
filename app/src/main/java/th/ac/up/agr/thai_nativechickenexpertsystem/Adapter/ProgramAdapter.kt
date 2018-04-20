@@ -15,7 +15,7 @@ open class ProgramAdapter(val context: Context, val data :ArrayList<String>) :Re
     }
 
     override fun getItemCount(): Int {
-        return 10+1
+        return 10
     }
 
     override fun onBindViewHolder(holder: ProgramViewHolder, position: Int) {
@@ -27,7 +27,7 @@ open class ProgramAdapter(val context: Context, val data :ArrayList<String>) :Re
             holder.addZone.visibility = View.GONE
             holder.cardZone.visibility = View.VISIBLE
 
-            holder.title.text = "รายการที่ ${position}"
+            holder.title.text = "รายการที่ ${position+1}"
         }
 
     }

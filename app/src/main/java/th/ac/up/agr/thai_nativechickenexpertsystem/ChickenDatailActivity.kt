@@ -4,6 +4,10 @@ import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
 import android.support.design.widget.Snackbar
+import android.support.v4.app.Fragment
+import android.support.v4.app.FragmentManager
+import android.support.v4.app.FragmentPagerAdapter
+import android.support.v4.view.ViewPager
 import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.view.View
@@ -18,14 +22,24 @@ import th.ac.up.agr.thai_nativechickenexpertsystem.Data.ChickenBreedData
 import th.ac.up.agr.thai_nativechickenexpertsystem.Data.ChickenDetailData
 import th.ac.up.agr.thai_nativechickenexpertsystem.Firebase.FirebaseChicken
 import th.ac.up.agr.thai_nativechickenexpertsystem.Firebase.FirebaseLoadDetails
+import th.ac.up.agr.thai_nativechickenexpertsystem.Fragment.TabDetailFemale
+import th.ac.up.agr.thai_nativechickenexpertsystem.Fragment.TabDetailMale
 import th.ac.up.agr.thai_nativechickenexpertsystem.Tools.DeviceUtills
 import th.ac.up.agr.thai_nativechickenexpertsystem.Tools.Path
 import th.ac.up.agr.thai_nativechickenexpertsystem.Tools.QuickRecyclerView
 import th.ac.up.agr.thai_nativechickenexpertsystem.Tools.StringArrayToArrayList
 
+
+
 class ChickenDatailActivity : AppCompatActivity() {
 
     var arrPath = ArrayList<String>()
+
+    private lateinit var maleDetail :TabDetailMale
+    private lateinit var femaleDetail :TabDetailFemale
+
+
+    private val tabIcons = intArrayOf(R.drawable.male, R.drawable.female)
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -40,18 +54,90 @@ class ChickenDatailActivity : AppCompatActivity() {
 
         //Toast.makeText(applicationContext,path,Toast.LENGTH_SHORT).show()
 
+
+
+
         detail_title_name.text = title
         detail_title_name.maxWidth = DeviceUtills(this).getScreenWidth() - (175 * 2)
 
         detail_back_btn.setOnClickListener { finish() }
 
-        tabSelection("male")
+        //tabSelection("male")
 
-        leftTab.setOnClickListener { tabSelection("male") }
-        rightTab.setOnClickListener { tabSelection("female") }
+        //leftTab.setOnClickListener { tabSelection("male") }
+        //rightTab.setOnClickListener { tabSelection("female") }
+
+        //Log.e("asda",arrPath.toString())
+
+        //maleDetail = TabDetailMale()
+        //maleDetail.ins(path)
+        //femaleDetail = TabDetailFemale()
+        //femaleDetail.ins(path)
+
+
+        //Log.e("asda",path.toString())
+
+        maleDetail = TabDetailMale.newInstance(path)
+        femaleDetail = TabDetailFemale.newInstance(path)
+
+        val tab = detail_viewpager
+        setupViewPager(tab)
+        detail_tabLayout.setupWithViewPager(tab)
+        //detail_tabLayout.getTabAt(0)!!.setIcon(tabIcons[0])
+        //detail_tabLayout.getTabAt(1)!!.setIcon(tabIcons[1])
+
+
+        //maleDetail.arrPath = arrPath
+        //femaleDetail.arrPath = arrPath
+
+        //val arr = bundle.getStringArrayList("ARRPATH")
+
+
+
+        //maleDetail =
+        //femaleDetail.myParentView = this
+
+
 
 
     }
+
+    private fun setupViewPager(viewPager: ViewPager) {
+        //val adapter = ViewPagerAdapter(myContext.supportFragmentManager)
+        val adapter = ViewPagerAdapter(supportFragmentManager)
+        adapter.addFragment(maleDetail, "เพศผู้")
+        adapter.addFragment(femaleDetail, "เพศเมีย")
+        viewPager.adapter = adapter
+
+
+
+
+    }
+
+
+    private inner class ViewPagerAdapter(manager: FragmentManager) : FragmentPagerAdapter(manager) {
+        private val mFragmentList = ArrayList<Fragment>()
+        private val mFragmentTitleList = ArrayList<String>()
+
+        override fun getItem(position: Int): Fragment {
+            return mFragmentList[position]
+        }
+
+        override fun getCount(): Int {
+            return mFragmentList.size
+        }
+
+        fun addFragment(fragment: Fragment, title: String) {
+            mFragmentList.add(fragment)
+            mFragmentTitleList.add(title)
+            //Log.e("Test", title)
+        }
+
+        override fun getPageTitle(position: Int): CharSequence {
+            return mFragmentTitleList[position]
+        }
+    }
+
 /*
     private fun fakeMaleData(): ChickenDetailData {
         val data: ChickenDetailData = ChickenDetailData(
@@ -122,6 +208,7 @@ class ChickenDatailActivity : AppCompatActivity() {
         return data
     }
 */
+    /*
     private fun loadingRecyclerview() {
         val handler = Handler()
 
@@ -184,5 +271,5 @@ class ChickenDatailActivity : AppCompatActivity() {
     }
 
 
-
+*/
 }

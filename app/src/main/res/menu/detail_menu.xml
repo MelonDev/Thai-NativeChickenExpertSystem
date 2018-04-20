@@ -1,0 +1,18 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    tools:context="th.ac.up.agr.thai_nativechickenexpertsystem.MainActivity">
+    <item
+        android:id="@+id/detail_tab1"
+        android:enabled="true"
+        android:icon="@drawable/male"
+        android:title="เพศผู้"
+        app:showAsAction="ifRoom" />
+    <item
+        android:id="@+id/detail_tab2"
+        android:enabled="true"
+        android:icon="@drawable/female"
+        android:title="เพศเมีย"
+        app:showAsAction="ifRoom" />
+
+</menu>

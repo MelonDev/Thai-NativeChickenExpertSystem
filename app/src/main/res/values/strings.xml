@@ -25,5 +25,6 @@
     <string name="title_activity_search">SearchActivity</string>
     <string name="title_activity_add_data">AddDataActivity</string>
     <string name="title_activity_container">ContainerActivity</string>
+    <string name="title_activity_add_program">AddProgramActivity</string>
 
 </resources>

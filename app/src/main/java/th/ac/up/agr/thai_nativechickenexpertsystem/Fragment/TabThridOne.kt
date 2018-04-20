@@ -1,6 +1,7 @@
 package th.ac.up.agr.thai_nativechickenexpertsystem.Fragment
 
 
+import android.content.Intent
 import android.os.Bundle
 import android.support.design.widget.FloatingActionButton
 import android.support.v4.app.Fragment
@@ -12,6 +13,7 @@ import android.view.ViewGroup
 import android.widget.Toast
 import kotlinx.android.synthetic.main.fragment_tab_thrid_one.view.*
 import th.ac.up.agr.thai_nativechickenexpertsystem.Adapter.ProgramAdapter
+import th.ac.up.agr.thai_nativechickenexpertsystem.AddProgramActivity
 
 import th.ac.up.agr.thai_nativechickenexpertsystem.R
 import th.ac.up.agr.thai_nativechickenexpertsystem.Tools.QuickRecyclerView
@@ -66,9 +68,14 @@ class TabThridOne : Fragment() {
             }
 
         })
-
+        fab.setOnClickListener { onClick(view) }
 
         return view
+    }
+
+    fun onClick(view: View){
+        val intent = Intent(view.context, AddProgramActivity::class.java)
+        context!!.startActivity(intent)
     }
 
 

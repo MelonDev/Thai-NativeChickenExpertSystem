@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string-array name="demo">
+        <!--
+        <item>@drawable/???</item>
+        -->
+    </string-array>
+
+    <array name="fruits">
+        <item>Avocado</item>
+        <item>Blueberry</item>
+        <item>Coconut</item>
+        <item>Kiwifruit</item>
+        <item>Lemon</item>
+        <item>Cherries</item>
+        <item>Apple</item>
+        <item>Banana</item>
+        <item>Mango</item>
+        <item>Orange</item>
+        <item>Watermelon</item>
+        <item>Strawberries</item>
+        <item>Durian</item>
+        <item>Guava</item>
+        <item>Jackfruit</item>
+        <item>Olive</item>
+        <item>Pear</item>
+        <item>Sugar-apple</item>
+        <item>Pineapple</item>
+    </array>
+
+    <array name="data_one">
+        <item>กรงตับ</item>
+        <item>ขังคอก</item>
+        <item>ปล่อยอิสระ</item>
+        <item>อินทรีย์</item>
+    </array>
+
+    <array name="data_two">
+        <item>พ่อแม่พันธุ์</item>
+        <item>ไก่ขุน</item>
+    </array>
+
+
+</resources>

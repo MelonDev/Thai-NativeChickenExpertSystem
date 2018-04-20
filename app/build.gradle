@@ -52,6 +52,9 @@ dependencies {
     implementation 'com.jaredrummler:android-device-names:1.1.7'
     implementation 'com.google.android:flexbox:0.3.2'
 
+    implementation 'cn.aigestudio.wheelpicker:WheelPicker:1.1.2'
+    implementation 'lib.kingja.switchbutton:switchbutton:1.1.6'
+
     implementation 'com.google.firebase:firebase-database:12.0.0'
     implementation 'com.github.bumptech.glide:glide:4.6.1'
     implementation 'com.squareup.okhttp3:okhttp:3.10.0'

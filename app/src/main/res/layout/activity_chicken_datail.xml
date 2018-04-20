@@ -76,10 +76,25 @@
 
         </RelativeLayout>
 
+        <android.support.design.widget.TabLayout
+            app:layout_scrollFlags="enterAlways"
+            android:id="@+id/detail_tabLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            app:tabTextColor="@color/colorText"
+            app:tabBackground="@color/colorWhite"
+            app:tabIndicatorColor="@color/colorPrimary"
+            app:tabSelectedTextColor="@color/colorPrimary"
+            app:tabIndicatorHeight="5dp"
+            app:tabTextAppearance="@style/TabLayoutStyle"
+            app:tabGravity="fill"
+            app:tabMode="fixed"
+            />
+
 
 
         <android.support.constraint.ConstraintLayout
-            android:visibility="visible"
+            android:visibility="gone"
             app:layout_scrollFlags="enterAlways"
             android:layout_width="match_parent"
             android:layout_height="50dp">
@@ -195,6 +210,7 @@
     </android.support.design.widget.AppBarLayout>
 
     <RelativeLayout
+        android:visibility="gone"
         android:id="@+id/detail_loading"
         android:layout_width="match_parent"
         android:layout_height="match_parent">
@@ -227,25 +243,15 @@
 
     </RelativeLayout>
 
-
-    <android.support.v7.widget.RecyclerView
-        android:paddingTop="10dp"
-        android:paddingBottom="10dp"
-        android:clipToPadding="false"
-        android:id="@+id/chicken_detail_recycler_view"
-        android:visibility="visible"
+    <android.support.v4.view.ViewPager
+        android:layout_marginBottom="0dp"
+        android:id="@+id/detail_viewpager"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginLeft="0dp"
-        android:layout_marginRight="0dp"
-        android:layout_marginTop="0dp"
-        android:drawSelectorOnTop="false"
-        android:scrollbars="vertical"
-        app:layoutManager="LinearLayoutManager"
-        android:listSelector="@android:color/transparent"
-        app:layout_behavior="@string/appbar_scrolling_view_behavior"
-        tools:listitem="@layout/detail_card_view"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior" />
 
-        />
+
+
+
 
 </android.support.design.widget.CoordinatorLayout>

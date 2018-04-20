@@ -259,6 +259,7 @@
         android:drawSelectorOnTop="false"
         android:listSelector="@android:color/transparent"
         android:paddingTop="16dp"
+        android:paddingBottom="6dp"
         android:visibility="visible"
         app:layoutManager="LinearLayoutManager"
         app:layout_behavior="@string/appbar_scrolling_view_behavior"

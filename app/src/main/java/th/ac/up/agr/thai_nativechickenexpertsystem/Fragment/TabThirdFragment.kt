@@ -35,7 +35,7 @@ class TabThirdFragment : Fragment() {
     private lateinit var myContext: FragmentActivity
     private var currentPage: Int = 0
 
-    private var tabThirdOne: TabThridOne = TabThridOne();
+    private var tabThirdOne: TabThridOne = TabThridOne()
 
     private  var myview : View? = null
 
@@ -50,8 +50,8 @@ class TabThirdFragment : Fragment() {
         setupViewPager(tab)
         view.tabs.setupWithViewPager(tab)
 
-       // val pageListener = PageListener()
-        //view.viewpager.setOnPageChangeListener(pageListener)
+       val pageListener = PageListener()
+        view.viewpager.setOnPageChangeListener(pageListener)
 
         tabThirdOne.myParentView = this
         tabThirdOne.fab = view.fab_A
@@ -75,6 +75,11 @@ class TabThirdFragment : Fragment() {
     private inner class PageListener : SimpleOnPageChangeListener() {
         override fun onPageSelected(position: Int) {
             //Log.e(TAG, "page selected $position")
+            if (position == 0){
+                tabThirdOne.fab.show()
+            } else {
+                tabThirdOne.fab.hide()
+            }
             currentPage = position
         }
     }

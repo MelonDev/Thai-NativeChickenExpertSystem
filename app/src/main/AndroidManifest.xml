@@ -4,7 +4,9 @@
     package="th.ac.up.agr.thai_nativechickenexpertsystem">
 
     <uses-permission android:name="android.permission.INTERNET" />
-    <uses-permission android:name="android.permission.READ_PHONE_STATE" tools:node="remove" />
+    <uses-permission
+        android:name="android.permission.READ_PHONE_STATE"
+        tools:node="remove" />
 
     <application
         android:name=".MyApp"
@@ -48,19 +50,28 @@
         <activity
             android:name=".ModernMainActivity"
             android:label="@string/title_activity_modern_main"
+            android:screenOrientation="portrait"
             android:theme="@style/AppTheme" />
         <activity
             android:name=".SearchActivity"
             android:label="@string/title_activity_search"
+            android:screenOrientation="portrait"
             android:theme="@style/SearchTheme" />
         <activity
             android:name=".AddDataActivity"
             android:label="@string/title_activity_add_data"
+            android:screenOrientation="portrait"
             android:theme="@style/SearchTheme" />
         <activity
             android:name=".ContainerActivity"
             android:label="@string/title_activity_container"
-            android:theme="@style/NewTheme"></activity>
+            android:screenOrientation="portrait"
+            android:theme="@style/NewTheme" />
+        <activity
+            android:name=".AddProgramActivity"
+            android:label="@string/title_activity_add_program"
+            android:screenOrientation="portrait"
+            android:theme="@style/NewTheme"/>
     </application>
 
 </manifest>
