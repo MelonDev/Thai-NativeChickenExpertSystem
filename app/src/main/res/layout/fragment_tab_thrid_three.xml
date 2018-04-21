@@ -3,13 +3,40 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     tools:context=".Fragment.TabThridThree">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
+    <android.support.v7.widget.RecyclerView
+
+        android:id="@+id/program_three_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="Hellosss"
+        android:layout_marginLeft="0dp"
+        android:layout_marginRight="0dp"
+        android:layout_marginTop="0dp"
+        android:paddingBottom="0dp"
+        android:clipToPadding="false"
+        android:drawSelectorOnTop="false"
+        android:listSelector="@android:color/transparent"
+        android:paddingTop="16dp"
+        android:visibility="visible"
+        app:layoutManager="LinearLayoutManager"
+        app:layout_behavior="@string/appbar_scrolling_view_behavior"
+        tools:listitem="@layout/program_card"
+
+        />
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/program_card_three_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ไม่พบข้อมูล"
+        android:textColor="@color/colorText"
+        android:layout_marginBottom="30dp"
+        android:fontFamily="@font/pridi_medium"
+        android:textSize="32dp"
+        android:layout_gravity="center"
         />
 
 </FrameLayout>

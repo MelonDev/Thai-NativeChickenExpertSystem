@@ -11,12 +11,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.fragment_tab_thrid_one.view.*
 import th.ac.up.agr.thai_nativechickenexpertsystem.Adapter.ProgramAdapter
 import th.ac.up.agr.thai_nativechickenexpertsystem.AddProgramActivity
+import th.ac.up.agr.thai_nativechickenexpertsystem.Data.DataCard
 
 import th.ac.up.agr.thai_nativechickenexpertsystem.R
 import th.ac.up.agr.thai_nativechickenexpertsystem.Tools.QuickRecyclerView
+import java.util.*
 
 class TabThridOne : Fragment() {
 
@@ -24,14 +27,20 @@ class TabThridOne : Fragment() {
     lateinit var fab: FloatingActionButton
 
     lateinit var myParentView: TabThirdFragment
+    private var arrData = ArrayList<DataCard>()
+
+
+    val databaseReference: DatabaseReference = FirebaseDatabase.getInstance().reference
+    val ID = "melondev_icloud_com"
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-
         val view = inflater.inflate(R.layout.fragment_tab_thrid_one, container, false)
 
+        val ref = databaseReference.child("ผู้ใช้").child(ID).child("ข้อมูล").child("ACTIVE")
+
         recyclerView = QuickRecyclerView(context!!
-                , view.program_recycler_view
+                , view.program_one_recycler_view
                 , "linear"
                 , 1
                 , "vertical"
@@ -40,15 +49,10 @@ class TabThridOne : Fragment() {
                 , "high")
                 .recyclerView()
 
+        //recyclerView.
 
-        //val FirebaseFunction = FirebaseOnFunction(view.context)
-
-        //recyclerView.adapter = FeaturesListVerticalAdapter(view.context, data)
-
-        recyclerView.adapter = ProgramAdapter(view.context, ArrayList<String>())
-
+        recyclerView.adapter = ProgramAdapter(view.context, ArrayList<DataCard>())
         recyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
-
 
             var currentScrollPosition = 0
             override fun onScrolled(recyclerView: RecyclerView?, dx: Int, dy: Int) {
@@ -70,6 +74,40 @@ class TabThridOne : Fragment() {
         })
         fab.setOnClickListener { onClick(view) }
 
+        ref.addValueEventListener(object : ValueEventListener{
+
+            override fun onCancelled(p0: DatabaseError?) {
+                TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
+            }
+
+            override fun onDataChange(p0: DataSnapshot?) {
+                getData(p0)
+
+                if (arrData.size <= 1){
+                    view.program_card_one_text.visibility = View.VISIBLE
+                } else {
+                    view.program_card_one_text.visibility = View.GONE
+                }
+
+                val a = arrData
+                a.reverse()
+
+                recyclerView.adapter = ProgramAdapter(view.context,a)
+
+
+            }
+        })
+
+
+
+
+        //val FirebaseFunction = FirebaseOnFunction(view.context)
+
+        //recyclerView.adapter = FeaturesListVerticalAdapter(view.context, data)
+
+
+
+
         return view
     }
 
@@ -77,6 +115,15 @@ class TabThridOne : Fragment() {
         val intent = Intent(view.context, AddProgramActivity::class.java)
         context!!.startActivity(intent)
     }
+
+    fun getData(dataSnapshot: DataSnapshot?) {
+        arrData.clear()
+        //arrData = dataSnapshot!!.getValue(DiseaseData::class.java)!!
+        dataSnapshot!!.children.mapNotNullTo(arrData){
+            it.getValue(DataCard::class.java)
+        }
+    }
+
 
 
 }

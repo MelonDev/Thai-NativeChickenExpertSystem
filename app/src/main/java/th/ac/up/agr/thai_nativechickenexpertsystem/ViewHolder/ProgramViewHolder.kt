@@ -10,4 +10,9 @@ class ProgramViewHolder(itemView: View) :RecyclerView.ViewHolder(itemView){
     val cardZone = itemView.program_card_zone!!
     val addZone = itemView.program_add_zone!!
 
+    val dates = itemView.program_card_date!!
+    val amount = itemView.program_card_count!!
+    val systems = itemView.program_card_system!!
+    val objective = itemView.program_card_objective!!
+
 }

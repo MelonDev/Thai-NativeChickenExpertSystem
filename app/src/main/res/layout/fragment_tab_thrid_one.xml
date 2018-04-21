@@ -9,7 +9,7 @@
 
     <android.support.v7.widget.RecyclerView
 
-        android:id="@+id/program_recycler_view"
+        android:id="@+id/program_one_recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginLeft="0dp"
@@ -27,6 +27,19 @@
 
         />
 
+
+    <TextView
+        android:visibility="gone"
+        android:id="@+id/program_card_one_text"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="ไม่พบข้อมูล"
+        android:textColor="@color/colorText"
+        android:layout_marginBottom="30dp"
+        android:fontFamily="@font/pridi_medium"
+        android:textSize="32dp"
+        android:layout_gravity="center"
+        />
 
 
 
