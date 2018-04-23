@@ -53,7 +53,7 @@
             </RelativeLayout>
 
             <TextView
-                android:id="@+id/detail_title_name"
+                android:id="@+id/add_program_title_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
@@ -217,6 +217,7 @@
                         android:layout_height="wrap_content">
 
                         <TextView
+                            android:visibility="gone"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
@@ -231,7 +232,7 @@
                             android:id="@+id/add_program_day_wheel"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:paddingLeft="55dp"
+                            android:paddingLeft="10dp"
                             android:paddingRight="10dp"
                             app:wheel_atmospheric="true"
                             app:wheel_curved="true"
@@ -243,6 +244,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
+                        android:visibility="gone"
                         android:layout_width="1dp"
                         android:layout_height="match_parent"
                         android:layout_marginBottom="0dp"
@@ -256,6 +258,7 @@
                         android:layout_marginLeft="10dp">
 
                         <TextView
+                            android:visibility="gone"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
@@ -267,9 +270,23 @@
                             android:textColor="@color/colorPrimary"
                             android:textSize="22dp" />
 
+                        <com.aigestudio.wheelpicker.WheelPicker
+                            android:id="@+id/add_program_month_wheel_s"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            app:wheel_atmospheric="true"
+                            app:wheel_curved="true"
+                            app:wheel_cyclic="true"
+                            app:wheel_item_text_color="@color/colorText"
+                            app:wheel_item_text_size="22dp"
+                            app:wheel_selected_item_text_color="@color/colorPrimary" />
+
                         <com.aigestudio.wheelpicker.widgets.WheelMonthPicker
                             android:id="@+id/add_program_month_wheel"
                             android:layout_width="wrap_content"
+                            android:visibility="gone"
                             android:layout_height="wrap_content"
                             android:paddingLeft="65dp"
                             android:paddingRight="10dp"
@@ -283,6 +300,7 @@
                     </RelativeLayout>
 
                     <RelativeLayout
+                        android:visibility="gone"
                         android:layout_width="1dp"
                         android:layout_height="match_parent"
                         android:layout_marginBottom="0dp"
@@ -296,6 +314,7 @@
                         android:layout_marginLeft="10dp">
 
                         <TextView
+                            android:visibility="gone"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_centerVertical="true"
@@ -307,11 +326,26 @@
                             android:textColor="@color/colorPrimary"
                             android:textSize="22dp" />
 
+                        <com.aigestudio.wheelpicker.WheelPicker
+                            android:id="@+id/add_program_year_wheel_s"
+                            android:layout_width="wrap_content"
+                            android:layout_height="wrap_content"
+                            android:paddingLeft="10dp"
+                            android:paddingRight="10dp"
+                            app:wheel_atmospheric="true"
+                            app:wheel_curved="true"
+                            app:wheel_cyclic="true"
+                            app:wheel_item_text_color="@color/colorText"
+                            app:wheel_item_text_size="22dp"
+                            app:wheel_selected_item_text_color="@color/colorPrimary" />
+
+
                         <com.aigestudio.wheelpicker.widgets.WheelYearPicker
+                            android:visibility="gone"
                             android:id="@+id/add_program_year_wheel"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
-                            android:paddingLeft="40dp"
+                            android:paddingLeft="10dp"
                             android:paddingRight="10dp"
                             app:wheel_atmospheric="true"
                             app:wheel_curved="true"

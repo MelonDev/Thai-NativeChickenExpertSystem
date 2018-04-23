@@ -61,7 +61,7 @@ class MainMenuHorizontalAdapter(val context: Context, val data: ArrayList<String
         val dataRef = databaseReference.child("พันธุ์ไก่").child(mainTitle).child(data[position])
 
         if (mainTitle.contentEquals("พันธุ์อื่นๆ")) {
-            Log.e("asdla", data.toString())
+            //Log.e("asdla", data.toString())
         } else if (data[position].contentEquals("ไก่ชน") or mainTitle.contentEquals("ไก่ชน")) {
             //getImagePath(0, dataRef)
 

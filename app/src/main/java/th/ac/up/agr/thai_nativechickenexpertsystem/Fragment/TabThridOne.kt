@@ -113,6 +113,7 @@ class TabThridOne : Fragment() {
 
     fun onClick(view: View){
         val intent = Intent(view.context, AddProgramActivity::class.java)
+        intent.putExtra("ID","0")
         context!!.startActivity(intent)
     }
 

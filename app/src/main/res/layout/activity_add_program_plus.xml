@@ -23,7 +23,6 @@
 
             <RelativeLayout
 
-                android:id="@+id/add_program_back_btn"
                 android:layout_width="wrap_content"
                 android:layout_height="match_parent"
                 android:layout_centerVertical="true"
@@ -53,7 +52,6 @@
             </RelativeLayout>
 
             <TextView
-                android:id="@+id/detail_title_name"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
@@ -220,7 +218,6 @@
                     android:textSize="28dp" />
 
                 <android.support.design.widget.TabLayout
-                    android:id="@+id/add_program_system_tab"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:visibility="gone"
@@ -375,7 +372,6 @@
                         android:textSize="28dp" />
 
                     <TextView
-                        android:id="@+id/resetDate"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
@@ -413,7 +409,6 @@
                             android:textSize="22dp" />
 
                         <com.aigestudio.wheelpicker.widgets.WheelDayPicker
-                            android:id="@+id/add_program_day_wheel"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:paddingLeft="55dp"
@@ -453,7 +448,6 @@
                             android:textSize="22dp" />
 
                         <com.aigestudio.wheelpicker.widgets.WheelMonthPicker
-                            android:id="@+id/add_program_month_wheel"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:paddingLeft="65dp"
@@ -493,7 +487,6 @@
                             android:textSize="22dp" />
 
                         <com.aigestudio.wheelpicker.widgets.WheelYearPicker
-                            android:id="@+id/add_program_year_wheel"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:paddingLeft="40dp"
@@ -536,7 +529,6 @@
                     android:textSize="28dp" />
 
                 <com.aigestudio.wheelpicker.WheelPicker
-                    android:id="@+id/add_program_type_wheel"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_gravity="center_horizontal"
@@ -601,7 +593,6 @@
                             android:textSize="22dp" />
 
                         <com.aigestudio.wheelpicker.WheelPicker
-                            android:id="@+id/add_program_old_day_wheel"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:paddingLeft="10dp"
@@ -640,7 +631,6 @@
                         android:layout_marginLeft="10dp">
 
                         <com.aigestudio.wheelpicker.WheelPicker
-                            android:id="@+id/add_program_old_week_wheel"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:paddingLeft="10dp"
@@ -699,7 +689,6 @@
                         android:textSize="28dp" />
 
                     <TextView
-                        android:id="@+id/resetCount"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_alignParentRight="true"
@@ -738,7 +727,6 @@
                             android:textSize="22dp" />
 
                         <com.aigestudio.wheelpicker.WheelPicker
-                            android:id="@+id/add_program_count_male_wheel"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:paddingLeft="10dp"
@@ -789,7 +777,6 @@
                             android:textSize="22dp" />
 
                         <com.aigestudio.wheelpicker.WheelPicker
-                            android:id="@+id/add_program_count_female_wheel"
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:paddingLeft="10dp"

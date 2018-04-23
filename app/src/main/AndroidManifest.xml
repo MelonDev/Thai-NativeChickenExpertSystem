@@ -71,6 +71,11 @@
             android:name=".AddProgramActivity"
             android:label="@string/title_activity_add_program"
             android:screenOrientation="portrait"
+            android:theme="@style/NewTheme" />
+        <activity
+            android:name=".ProgramDetailActivity"
+            android:label="@string/title_activity_program_detail"
+            android:screenOrientation="portrait"
             android:theme="@style/NewTheme"/>
     </application>
 

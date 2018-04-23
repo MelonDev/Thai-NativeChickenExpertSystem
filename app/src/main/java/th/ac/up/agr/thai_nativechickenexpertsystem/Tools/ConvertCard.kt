@@ -35,6 +35,24 @@ class ConvertCard {
         return arrMonth[month.toInt()-1]
     }
 
+    fun getArrMonth() :ArrayList<String> {
+        arrMonth.apply {
+            add("มกราคม")
+            add("กุมภาพันธ์")
+            add("มีนาคม")
+            add("เมษายน")
+            add("พฤษภาคม")
+            add("มิถุนายน")
+            add("กรกฎาคม")
+            add("สิงหาคม")
+            add("กันยายน")
+            add("ตุลาคม")
+            add("พฤศจิกายน")
+            add("ธันวาคม")
+        }
+        return arrMonth
+    }
+
     fun getYear(year :String) :String{
         return (year.toInt() + 543).toString()
     }

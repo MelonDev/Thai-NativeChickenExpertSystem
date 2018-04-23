@@ -1,12 +1,14 @@
 package th.ac.up.agr.thai_nativechickenexpertsystem.Adapter
 
 import android.content.Context
+import android.content.Intent
 import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import th.ac.up.agr.thai_nativechickenexpertsystem.Data.DataCard
+import th.ac.up.agr.thai_nativechickenexpertsystem.ProgramDetailActivity
 import th.ac.up.agr.thai_nativechickenexpertsystem.R
 import th.ac.up.agr.thai_nativechickenexpertsystem.Tools.ConvertCard
 import th.ac.up.agr.thai_nativechickenexpertsystem.ViewHolder.ProgramViewHolder
@@ -44,13 +46,29 @@ open class ProgramAdapter(val context: Context, var data :ArrayList<DataCard>) :
                 holder.systems.text = ConvertCard().getSystem(slot.systemFarm)
                 holder.objective.text = ConvertCard().getObjective(slot.userObjective)
                 holder.amount.text = ((slot.amountMale.toInt())+(slot.amountFemale.toInt())).toString()
-                holder.dates.text = "${slot.dateDay} ${ConvertCard().getMonth(slot.dateMonth)} ${slot.dateYear}"
+                holder.dates.text = "${slot.dateDay} ${ConvertCard().getMonth(slot.dateMonth)} ${((slot.dateYear).toInt() + 543).toString()}"
             }
         }else {
             holder.addZone.visibility = View.GONE
             holder.cardZone.visibility = View.GONE
         }
 
+
+
+        holder.cardZone.setOnClickListener {
+            var arr = ArrayList<DataCard>()
+            arr.add(slot)
+            val intent = Intent(context, ProgramDetailActivity::class.java)
+            intent.putExtra("STATUS","ACTIVE")
+
+            intent.putExtra("CARDID",slot.cardID)
+
+
+
+
+            context.startActivity(intent)
+
+        }
 
     }
 
