@@ -101,6 +101,13 @@ loadCurrentTab()
                     //supportFragmentManager.beginTransaction().replace(R.id.main_frame, TabSecondFragment()).commit()
                     true
                 }
+                R.id.tab3 -> {
+                    currentTab = TabThridPlusFragment()
+                    loadCurrentTab()
+
+                    //supportFragmentManager.beginTransaction().replace(R.id.main_frame, TabFourthFragment()).commit()
+                    true
+                }
                 R.id.tab4 -> {
                     currentTab = TabFourthFragment()
                     loadCurrentTab()

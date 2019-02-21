@@ -41,10 +41,12 @@ class TabFirstFragment : Fragment() {
 
         tabMenu(view,true)
 
+        /*
         view.main_action_add_btn.setOnClickListener {
             val intent = Intent(context, AddDataActivity::class.java)
             context.startActivity(intent)
         }
+        */
 
         view.main_searchbtn.setOnClickListener {
             val intent = Intent(context, SearchActivity::class.java)

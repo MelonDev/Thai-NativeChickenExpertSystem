@@ -9,7 +9,7 @@
     <string name="tab_1">พันธุ์ไก่</string>
     <string name="tab_2">ลักษณะ</string>
     <string name="tab_2_full">ลักษณะของไก่พื้นเมือง</string>
-    <string name="tab_3">การจัดการ</string>
+    <string name="tab_3">อาหารไก่</string>
     <string name="tab_3_full">แจ้งเตือนการจัดการ</string>
 
     <string name="test">จะแสดงพฤติกรรมเดินนำหน้าโดยหันก้นให้กระบืออีกตัว หรือเดินตามกระบือตัวอื่นๆ เหมือนการเกี้ยวพาราสีของกระบือเพศผู้กับเพศเมีย ช่วงเวลาขณะแสดงพฤติกรรมประมาณ 10-15 วินาที</string>
