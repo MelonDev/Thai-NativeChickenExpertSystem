@@ -3,14 +3,14 @@ package th.ac.up.agr.thai_nativechickenexpertsystem.Fragment
 
 import android.content.Intent
 import android.os.Bundle
-import android.support.design.widget.FloatingActionButton
-import android.support.v4.app.Fragment
-import android.support.v4.app.FragmentActivity
-import android.support.v7.widget.RecyclerView
+
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.RecyclerView
+import com.google.android.material.floatingactionbutton.FloatingActionButton
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.fragment_tab_thrid_one.view.*
 import th.ac.up.agr.thai_nativechickenexpertsystem.Adapter.ProgramAdapter
@@ -55,7 +55,7 @@ class TabThridOne : Fragment() {
         recyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
 
             var currentScrollPosition = 0
-            override fun onScrolled(recyclerView: RecyclerView?, dx: Int, dy: Int) {
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 if (dy > 0) {
                     fab.hide()
                 } else {
@@ -76,11 +76,11 @@ class TabThridOne : Fragment() {
 
         ref.addValueEventListener(object : ValueEventListener{
 
-            override fun onCancelled(p0: DatabaseError?) {
+            override fun onCancelled(p0: DatabaseError) {
                 TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
             }
 
-            override fun onDataChange(p0: DataSnapshot?) {
+            override fun onDataChange(p0: DataSnapshot) {
                 getData(p0)
 
                 if (arrData.size <= 1){

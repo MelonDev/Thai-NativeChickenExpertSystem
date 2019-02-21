@@ -3,11 +3,11 @@ package th.ac.up.agr.thai_nativechickenexpertsystem.Fragment
 
 import android.content.Intent
 import android.os.Bundle
-import android.support.v4.app.Fragment
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.disease_list_card.*
 import kotlinx.android.synthetic.main.fragment_tab_fourth.view.*
@@ -37,11 +37,11 @@ class TabFourthFragment : Fragment() {
 
         val pathRef = databaseReference.child("โรค")
         pathRef.addValueEventListener(object : ValueEventListener{
-            override fun onCancelled(p0: DatabaseError?) {
+            override fun onCancelled(p0: DatabaseError) {
                 TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
             }
 
-            override fun onDataChange(p0: DataSnapshot?) {
+            override fun onDataChange(p0: DataSnapshot) {
 
                 getData(p0)
 

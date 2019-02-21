@@ -1,9 +1,9 @@
 package th.ac.up.agr.thai_nativechickenexpertsystem.Firebase
 
 import android.content.Context
-import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.view.View
+import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.*
 import th.ac.up.agr.thai_nativechickenexpertsystem.Adapter.*
 import th.ac.up.agr.thai_nativechickenexpertsystem.Data.ChickenDetailData
@@ -19,11 +19,11 @@ class FirebaseChicken(val context: Context) {
 
         data.clear()
         ds.addValueEventListener(object : ValueEventListener {
-            override fun onCancelled(p0: DatabaseError?) {
+            override fun onCancelled(p0: DatabaseError) {
 
             }
 
-            override fun onDataChange(p0: DataSnapshot?) {
+            override fun onDataChange(p0: DataSnapshot) {
                 data.clear()
                 if (id == 100 || id == 101) {
                     onSyncKeyOther(p0)

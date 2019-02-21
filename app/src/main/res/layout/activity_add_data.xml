@@ -7,7 +7,7 @@
     android:background="@color/bb_darkBackgroundColor"
     tools:context="th.ac.up.agr.thai_nativechickenexpertsystem.AddDataActivity">
 
-    <android.support.design.widget.AppBarLayout
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
         app:elevation="0dp">
@@ -98,7 +98,7 @@
 
         </RelativeLayout>
 
-    </android.support.design.widget.AppBarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
 
     <ScrollView
         android:layout_marginTop="50dp"

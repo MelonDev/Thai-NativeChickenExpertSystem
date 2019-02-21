@@ -3,15 +3,15 @@ package th.ac.up.agr.thai_nativechickenexpertsystem.Fragment
 
 import android.os.Bundle
 import android.os.Handler
-import android.support.v4.app.Fragment
-import android.support.v4.app.FragmentManager
-import android.support.v4.app.FragmentPagerAdapter
-import android.support.v4.view.ViewPager
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentPagerAdapter
+import androidx.viewpager.widget.ViewPager
 import kotlinx.android.synthetic.main.fragment_tab_first.view.*
 import kotlinx.android.synthetic.main.fragment_tab_second.*
 import kotlinx.android.synthetic.main.fragment_tab_second.view.*

@@ -4,13 +4,12 @@ package th.ac.up.agr.thai_nativechickenexpertsystem.Fragment
 import android.content.Context
 import android.content.Intent
 import android.os.Bundle
-import android.support.annotation.NonNull
-import android.support.v4.app.Fragment
-import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.DatabaseReference
 import com.google.firebase.database.FirebaseDatabase
 import kotlinx.android.synthetic.main.fragment_tab_first.*
@@ -101,7 +100,7 @@ class TabFirstFragment : Fragment() {
         return view
     }
 
-    private fun onFirebase(recyclerView: RecyclerView,id :Int){
+    private fun onFirebase(recyclerView: RecyclerView, id :Int){
         firebase.mainLoadChicken(firebase.databaseReference.child("พันธุ์ไก่"),recyclerView,id,"main","")
 
     }

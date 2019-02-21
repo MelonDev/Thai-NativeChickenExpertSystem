@@ -1,9 +1,9 @@
 package th.ac.up.agr.thai_nativechickenexpertsystem.Adapter
 
-import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
 import th.ac.up.agr.thai_nativechickenexpertsystem.R
 
 open class KotlinDemoAdapter : RecyclerView.Adapter<KotlinDemoAdapter.ViewHolder>() {

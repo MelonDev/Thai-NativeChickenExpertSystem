@@ -2,12 +2,12 @@ package th.ac.up.agr.thai_nativechickenexpertsystem.Adapter
 
 import android.content.Context
 import android.content.Intent
-import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.*
 import com.squareup.picasso.NetworkPolicy
 import com.squareup.picasso.Picasso
@@ -47,11 +47,11 @@ class MainGridVerticalAdapter(val context: Context, val data: ArrayList<String>,
                 if (ID == 4) {
                     dataRef.addListenerForSingleValueEvent(object : ValueEventListener {
 
-                        override fun onCancelled(p0: DatabaseError?) {
+                        override fun onCancelled(p0: DatabaseError) {
 
                         }
 
-                        override fun onDataChange(p0: DataSnapshot?) {
+                        override fun onDataChange(p0: DataSnapshot) {
                             //onSyncKey(p0)
                             arrPath.clear()
                             p0!!.children.mapNotNullTo(arrPath) {
@@ -64,11 +64,11 @@ class MainGridVerticalAdapter(val context: Context, val data: ArrayList<String>,
                             //getImagePath(1,ref)
                             val re = ref.child("เพศผู้").child("image")
                             re.addListenerForSingleValueEvent(object : ValueEventListener {
-                                override fun onCancelled(p0: DatabaseError?) {
+                                override fun onCancelled(p0: DatabaseError) {
                                 }
 
-                                override fun onDataChange(p0: DataSnapshot?) {
-                                    val url: String = p0?.value.toString()
+                                override fun onDataChange(p0: DataSnapshot) {
+                                    val url: String = p0.value.toString()
                                     if (url.isNotEmpty() && !url.contentEquals("null")) {
                                         //Log.e("PASS","PASS")
                                         holder.itemImageCardView2?.visibility = View.GONE
@@ -101,10 +101,10 @@ class MainGridVerticalAdapter(val context: Context, val data: ArrayList<String>,
 
                     val re = dataRef.child("เพศผู้").child("image")
                     re.addListenerForSingleValueEvent(object : ValueEventListener {
-                        override fun onCancelled(p0: DatabaseError?) {
+                        override fun onCancelled(p0: DatabaseError) {
                         }
 
-                        override fun onDataChange(p0: DataSnapshot?) {
+                        override fun onDataChange(p0: DataSnapshot) {
                             val url: String = p0?.value.toString()
                             if (url.isNotEmpty() && !url.contentEquals("null")) {
                                 //Log.e("PASS","PASS")
@@ -144,11 +144,11 @@ class MainGridVerticalAdapter(val context: Context, val data: ArrayList<String>,
 
                     val re = dataRefs.child(data[position]).child("เพศผู้").child("image")
                     re.addListenerForSingleValueEvent(object : ValueEventListener {
-                        override fun onCancelled(p0: DatabaseError?) {
+                        override fun onCancelled(p0: DatabaseError) {
                         }
 
-                        override fun onDataChange(p0: DataSnapshot?) {
-                            val url: String = p0?.value.toString()
+                        override fun onDataChange(p0: DataSnapshot) {
+                            val url: String = p0.value.toString()
 
                             Log.e("URL ${data[position]}",url)
 
@@ -197,11 +197,11 @@ class MainGridVerticalAdapter(val context: Context, val data: ArrayList<String>,
                     Log.e("PO",data[position])
 
                     p.addListenerForSingleValueEvent(object : ValueEventListener{
-                        override fun onCancelled(p0: DatabaseError?) {
+                        override fun onCancelled(p0: DatabaseError) {
                             TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
                         }
 
-                        override fun onDataChange(p0: DataSnapshot?) {
+                        override fun onDataChange(p0: DataSnapshot) {
                             onSyncKeys(p0)
 
                             val au = Path().toPath(path,data[position])

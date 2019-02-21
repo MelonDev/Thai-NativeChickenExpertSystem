@@ -2,18 +2,18 @@ package th.ac.up.agr.thai_nativechickenexpertsystem.Adapter
 
 import android.content.Context
 import android.content.Intent
-import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
 import th.ac.up.agr.thai_nativechickenexpertsystem.Data.DataCard
 import th.ac.up.agr.thai_nativechickenexpertsystem.ProgramDetailActivity
 import th.ac.up.agr.thai_nativechickenexpertsystem.R
 import th.ac.up.agr.thai_nativechickenexpertsystem.Tools.ConvertCard
 import th.ac.up.agr.thai_nativechickenexpertsystem.ViewHolder.ProgramViewHolder
 
-open class ProgramAdapter(val context: Context, var data :ArrayList<DataCard>) :RecyclerView.Adapter<ProgramViewHolder>(){
+open class ProgramAdapter(val context: Context, var data :ArrayList<DataCard>) : RecyclerView.Adapter<ProgramViewHolder>(){
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ProgramViewHolder {
         val view = LayoutInflater.from(parent.context).inflate(R.layout.program_card,parent,false)
         return ProgramViewHolder(view)

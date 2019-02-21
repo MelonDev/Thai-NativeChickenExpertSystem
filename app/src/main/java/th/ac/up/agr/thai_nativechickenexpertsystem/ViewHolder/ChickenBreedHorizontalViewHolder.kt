@@ -1,7 +1,7 @@
 package th.ac.up.agr.thai_nativechickenexpertsystem.ViewHolder
 
-import android.support.v7.widget.RecyclerView
 import android.view.View
+import androidx.recyclerview.widget.RecyclerView
 import th.ac.up.agr.thai_nativechickenexpertsystem.Adapter.MainMenuVerticalAdapter
 import th.ac.up.agr.thai_nativechickenexpertsystem.Data.ChickenBreedData
 

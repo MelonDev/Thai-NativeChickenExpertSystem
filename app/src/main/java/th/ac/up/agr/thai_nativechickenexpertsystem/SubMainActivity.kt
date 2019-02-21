@@ -3,11 +3,10 @@ package th.ac.up.agr.thai_nativechickenexpertsystem
 import android.content.Context
 import android.graphics.drawable.GradientDrawable
 import android.os.Bundle
-import android.support.design.widget.Snackbar
-import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.ValueEventListener
@@ -285,11 +284,11 @@ class SubMainActivity : AppCompatActivity() {
     private fun abcMode() {
         val s = firebase.databaseReference.child("พันธุ์ไก่")
         s.addListenerForSingleValueEvent(object : ValueEventListener {
-            override fun onCancelled(p0: DatabaseError?) {
+            override fun onCancelled(p0: DatabaseError) {
                 TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
             }
 
-            override fun onDataChange(p0: DataSnapshot?) {
+            override fun onDataChange(p0: DataSnapshot) {
                 onSyncKeyOther(p0)
 
                 sub_list_vertical_recycler_view.visibility = View.GONE

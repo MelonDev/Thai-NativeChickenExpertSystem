@@ -33,10 +33,10 @@ class FirebaseSpinner(val context: Context, val itemView: View) {
 
         pathRefA.addListenerForSingleValueEvent(object : ValueEventListener {
 
-            override fun onCancelled(p0: DatabaseError?) {
+            override fun onCancelled(p0: DatabaseError) {
             }
 
-            override fun onDataChange(p0: DataSnapshot?) {
+            override fun onDataChange(p0: DataSnapshot) {
 
                 val arrA = onSyncKey(p0)
                 val arrAS = arrA
@@ -66,10 +66,10 @@ class FirebaseSpinner(val context: Context, val itemView: View) {
 
                             pathRefB.addListenerForSingleValueEvent(object : ValueEventListener {
 
-                                override fun onCancelled(p0: DatabaseError?) {
+                                override fun onCancelled(p0: DatabaseError) {
                                 }
 
-                                override fun onDataChange(p0: DataSnapshot?) {
+                                override fun onDataChange(p0: DataSnapshot) {
                                     spinnerB.visibility = View.VISIBLE
                                     val arrB = onSyncKey(p0)
                                     val arrBS = arrB
@@ -104,10 +104,10 @@ class FirebaseSpinner(val context: Context, val itemView: View) {
 
                                                 pathRefC.addListenerForSingleValueEvent(object : ValueEventListener {
 
-                                                    override fun onCancelled(p0: DatabaseError?) {
+                                                    override fun onCancelled(p0: DatabaseError) {
                                                     }
 
-                                                    override fun onDataChange(p0: DataSnapshot?) {
+                                                    override fun onDataChange(p0: DataSnapshot) {
                                                         spinnerC.visibility = View.VISIBLE
                                                         val arrC = onSyncKey(p0)
                                                         val arrCS = arrC

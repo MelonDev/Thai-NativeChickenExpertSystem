@@ -1,14 +1,13 @@
 package th.ac.up.agr.thai_nativechickenexpertsystem
 
 import android.os.Bundle
-import android.support.design.widget.Snackbar
-import android.support.v7.app.AppCompatActivity
 import android.view.LayoutInflater
 import android.view.WindowManager
 
 import kotlinx.android.synthetic.main.activity_add_data.*
 import android.widget.ArrayAdapter
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import th.ac.up.agr.thai_nativechickenexpertsystem.Firebase.FirebaseChicken
 import th.ac.up.agr.thai_nativechickenexpertsystem.Firebase.FirebaseSpinner
 

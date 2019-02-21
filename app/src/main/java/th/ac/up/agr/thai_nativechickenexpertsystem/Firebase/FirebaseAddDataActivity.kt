@@ -183,11 +183,11 @@ class FirebaseAddDataActivity(val context: Context,val itemView : View){
 
         pathRef.addListenerForSingleValueEvent(object : ValueEventListener{
 
-            override fun onCancelled(p0: DatabaseError?) {
+            override fun onCancelled(p0: DatabaseError) {
 
             }
 
-            override fun onDataChange(p0: DataSnapshot?) {
+            override fun onDataChange(p0: DataSnapshot) {
                 val arr = onSyncKey(p0)
                 val adapter = toAdapter(arr)
                 spinner.adapter = adapter

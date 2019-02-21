@@ -7,7 +7,7 @@
     android:background="@color/bb_darkBackgroundColor"
     tools:context="th.ac.up.agr.thai_nativechickenexpertsystem.SearchActivity">
 
-    <android.support.design.widget.AppBarLayout
+    <com.google.android.material.appbar.AppBarLayout
         android:layout_width="match_parent"
         android:layout_height="50dp"
         app:elevation="0dp">
@@ -104,7 +104,7 @@
 
         </RelativeLayout>
 
-    </android.support.design.widget.AppBarLayout>
+    </com.google.android.material.appbar.AppBarLayout>
 
     <RelativeLayout
         android:layout_width="match_parent"
@@ -115,7 +115,7 @@
         android:layout_marginTop="66dp"
         android:visibility="visible">
 
-        <android.support.v7.widget.CardView
+        <androidx.cardview.widget.CardView
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:cardElevation="0dp"
@@ -141,12 +141,12 @@
                 android:textColorHint="#9e9e9e"
                 android:textSize="20dp" />
 
-        </android.support.v7.widget.CardView>
+        </androidx.cardview.widget.CardView>
 
 
     </RelativeLayout>
 
-    <android.support.v7.widget.RecyclerView
+    <androidx.recyclerview.widget.RecyclerView
         android:clipToPadding="false"
         android:orientation="horizontal"
         android:paddingLeft="16dp"

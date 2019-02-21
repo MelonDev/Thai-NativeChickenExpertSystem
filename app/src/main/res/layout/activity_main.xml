@@ -12,7 +12,7 @@
         android:id="@+id/main_frame"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_marginBottom="64dp" />
+        android:layout_marginBottom="56dp" />
 
 
     <RelativeLayout
@@ -33,25 +33,28 @@
                 android:background="#33000000" />
 
             <RelativeLayout
-                android:visibility="gone"
+                android:visibility="visible"
                 android:layout_alignParentBottom="true"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content">
 
-                <android.support.design.widget.BottomNavigationView
+                <com.google.android.material.bottomnavigation.BottomNavigationView
+                    android:visibility="visible"
+                    app:labelVisibilityMode="labeled"
+                    app:itemIconSize="30dp"
                     android:layout_width="match_parent"
                     android:id="@+id/testBottom"
                     android:layout_height="wrap_content"
                     app:menu="@menu/menu_main"
                     >
 
-                </android.support.design.widget.BottomNavigationView>
+                </com.google.android.material.bottomnavigation.BottomNavigationView>
 
             </RelativeLayout>
 
             <RelativeLayout
                 android:background="@color/colorWhite"
-                android:visibility="visible"
+                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:paddingBottom="8dp">

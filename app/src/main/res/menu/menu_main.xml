@@ -15,12 +15,6 @@
         android:title="@string/tab_2"
         app:showAsAction="ifRoom" />
     <item
-        android:id="@+id/tab3"
-        android:enabled="true"
-        android:icon="@drawable/tab3s_icon"
-        android:title="@string/tab_3"
-        app:showAsAction="ifRoom" />
-    <item
         android:id="@+id/tab4"
         android:enabled="true"
         android:icon="@drawable/tab4s_icon"

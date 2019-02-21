@@ -2,10 +2,10 @@ package th.ac.up.agr.thai_nativechickenexpertsystem.Fragment
 
 
 import android.os.Bundle
-import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 
 import th.ac.up.agr.thai_nativechickenexpertsystem.R
 

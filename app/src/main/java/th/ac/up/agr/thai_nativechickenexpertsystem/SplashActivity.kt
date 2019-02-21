@@ -3,8 +3,7 @@ package th.ac.up.agr.thai_nativechickenexpertsystem
 import android.content.Intent
 import android.os.Bundle
 import android.os.Handler
-import android.support.design.widget.Snackbar
-import android.support.v7.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatActivity
 
 import kotlinx.android.synthetic.main.activity_splash.*
 import th.ac.up.agr.thai_nativechickenexpertsystem.Adapter.KotlinDemoAdapter

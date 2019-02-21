@@ -1,7 +1,7 @@
 package th.ac.up.agr.thai_nativechickenexpertsystem.ViewHolder
 
-import android.support.v7.widget.RecyclerView
 import android.view.View
+import androidx.recyclerview.widget.RecyclerView
 import kotlinx.android.synthetic.main.detail_card_view.view.*
 
 class ChickenDetailViewHolder(itemview :View) : RecyclerView.ViewHolder(itemview){

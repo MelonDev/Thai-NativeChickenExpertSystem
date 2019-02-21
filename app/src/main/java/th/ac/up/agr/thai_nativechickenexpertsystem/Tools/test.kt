@@ -10,11 +10,11 @@ import th.ac.up.agr.thai_nativechickenexpertsystem.ChickenDatailActivity
 class test(val parent: MainMenuHorizontalAdapter,val position: Int) : ValueEventListener {
 
 
-    override fun onCancelled(p0: DatabaseError?) {
+    override fun onCancelled(p0: DatabaseError) {
 
     }
 
-    override fun onDataChange(p0: DataSnapshot?) {
+    override fun onDataChange(p0: DataSnapshot) {
         parent.onSyncKeys(p0)
 
         val au = Path().toPath(parent.path,parent.data[position])

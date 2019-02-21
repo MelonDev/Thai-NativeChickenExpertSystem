@@ -3,24 +3,26 @@ package th.ac.up.agr.thai_nativechickenexpertsystem
 import android.annotation.SuppressLint
 import android.content.ContentValues
 import android.os.Bundle
-import android.support.v7.app.AppCompatActivity
 import android.util.Log
 import com.jaredrummler.android.device.DeviceName
-
-import android.support.v4.app.Fragment
-import android.support.v4.app.FragmentManager
-import android.support.v4.app.FragmentPagerAdapter
-import android.support.v4.view.ViewPager
 
 import kotlinx.android.synthetic.main.activity_main.*
 import th.ac.up.agr.thai_nativechickenexpertsystem.Fragment.*
 import android.os.Build
-import android.support.design.internal.BottomNavigationItemView
-import android.support.design.internal.BottomNavigationMenuView
-import android.support.design.widget.BottomNavigationView
-import android.support.annotation.NonNull
 import android.view.MenuItem
 import android.view.View
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentPagerAdapter
+import androidx.viewpager.widget.ViewPager
+import com.google.android.material.bottomnavigation.BottomNavigationItemView
+import com.google.android.material.bottomnavigation.BottomNavigationMenuView
+import com.google.android.material.bottomnavigation.BottomNavigationView
+
+
+
+
 
 
 @Suppress("DEPRECATION")
@@ -33,6 +35,11 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
+        currentTab = TabFirstFragment()
+        loadCurrentTab()
+
+        /*
+
         bottomBar.setOnTabSelectListener { tabId ->
 //            when (tabId) {
 //
@@ -44,11 +51,17 @@ class MainActivity : AppCompatActivity() {
 //            }
 
 
-            when (tabId) {
-                R.id.nav_tab_1 -> currentTab = TabFirstFragment()
-                R.id.nav_tab_2 -> currentTab = TabSecondFragment()
-                R.id.nav_tab_3 -> currentTab = TabThirdFragment()
-                R.id.nav_tab_4 -> currentTab = TabFourthFragment()
+//Log.e("TEST",tabId.toString())
+
+            Log.e("TE1",bottomBar.currentTabPosition.toString())
+
+
+
+            when (bottomBar.currentTabPosition) {
+                0 -> currentTab = TabFirstFragment()
+                1 -> currentTab = TabSecondFragment()
+                2 -> currentTab = TabThirdFragment()
+                3 -> currentTab = TabFourthFragment()
 
                 else -> currentTab = TabFifthFragment()
             }
@@ -59,6 +72,7 @@ class MainActivity : AppCompatActivity() {
 
         }
 
+*/
 
         //Log.e("Model",DeviceName.getDeviceName().toString())
         //Redmi 5 Plus
@@ -71,29 +85,34 @@ class MainActivity : AppCompatActivity() {
         }
 
 
-
-
         testBottom.disableShiftMode()
         testBottom.setOnNavigationItemSelectedListener { item ->
             return@setOnNavigationItemSelectedListener when (item.itemId) {
                 R.id.tab1 -> {
-                    supportFragmentManager.beginTransaction().replace(R.id.main_frame, TabFirstFragment()).commit()
+                    currentTab = TabFirstFragment()
+loadCurrentTab()
+                    //supportFragmentManager.beginTransaction().replace(R.id.main_frame, TabFirstFragment()).commit()
                     true
                 }
                 R.id.tab2 -> {
-                    supportFragmentManager.beginTransaction().replace(R.id.main_frame, TabSecondFragment()).commit()
-                    true
-                }
-                R.id.tab3 -> {
-                    supportFragmentManager.beginTransaction().replace(R.id.main_frame, TabThirdFragment()).commit()
+                    currentTab = TabSecondFragment()
+                    loadCurrentTab()
+
+                    //supportFragmentManager.beginTransaction().replace(R.id.main_frame, TabSecondFragment()).commit()
                     true
                 }
                 R.id.tab4 -> {
-                    supportFragmentManager.beginTransaction().replace(R.id.main_frame, TabFourthFragment()).commit()
+                    currentTab = TabFourthFragment()
+                    loadCurrentTab()
+
+                    //supportFragmentManager.beginTransaction().replace(R.id.main_frame, TabFourthFragment()).commit()
                     true
                 }
                 R.id.tab5 -> {
-                    supportFragmentManager.beginTransaction().replace(R.id.main_frame, TabFifthFragment()).commit()
+                    currentTab = TabFifthFragment()
+                    loadCurrentTab()
+
+                    //supportFragmentManager.beginTransaction().replace(R.id.main_frame, TabFifthFragment()).commit()
                     true
                 }
                 else -> {
@@ -102,6 +121,9 @@ class MainActivity : AppCompatActivity() {
             }
 
         }
+
+
+
 
 
 
@@ -123,6 +145,10 @@ class MainActivity : AppCompatActivity() {
 */
         //bottomNavigationBar = findViewById<BottomNavigationBar>(R.id.bottom_navigation_bar)
 
+    }
+
+    private fun loadCurrentTab(){
+        supportFragmentManager.beginTransaction().replace(R.id.main_frame, currentTab).commit()
     }
 
     private fun setupViewPager(viewPager: ViewPager) {
@@ -166,7 +192,8 @@ class MainActivity : AppCompatActivity() {
             shiftingMode.isAccessible = false
             for (i in 0 until menuView.childCount) {
                 val item = menuView.getChildAt(i) as BottomNavigationItemView
-                item.setShiftingMode(false)
+                //item.setShiftingMode(false)
+                item.setShifting(false)
                 // set once again checked value, so view will be updated
                 item.setChecked(item.itemData.isChecked)
             }

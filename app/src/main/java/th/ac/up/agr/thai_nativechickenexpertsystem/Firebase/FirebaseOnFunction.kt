@@ -1,10 +1,10 @@
 package th.ac.up.agr.thai_nativechickenexpertsystem.Firebase
 
 import android.content.Context
-import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.view.View
 import android.widget.RelativeLayout
+import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.*
 import th.ac.up.agr.thai_nativechickenexpertsystem.Adapter.FeaturesListVerticalAdapter
 import th.ac.up.agr.thai_nativechickenexpertsystem.Adapter.MainListVerticalAdapter
@@ -19,11 +19,11 @@ class FirebaseOnFunction(val context: Context) {
     fun loadAllKey(ds :DatabaseReference) {
         data.clear()
         ds.addValueEventListener(object : ValueEventListener{
-            override fun onCancelled(p0: DatabaseError?) {
+            override fun onCancelled(p0: DatabaseError) {
 
             }
 
-            override fun onDataChange(p0: DataSnapshot?) {
+            override fun onDataChange(p0: DataSnapshot) {
                 onSyncKey(p0)
                 showStringArrayByLog("key",data)
             }
@@ -33,10 +33,10 @@ class FirebaseOnFunction(val context: Context) {
     fun singleLoadAllKey(ds :DatabaseReference) {
         data.clear()
         ds.addListenerForSingleValueEvent(object : ValueEventListener{
-            override fun onCancelled(p0: DatabaseError?) {
+            override fun onCancelled(p0: DatabaseError) {
             }
 
-            override fun onDataChange(p0: DataSnapshot?) {
+            override fun onDataChange(p0: DataSnapshot) {
                 onSyncKey(p0)
                 showStringArrayByLog("key",data)
             }
@@ -49,11 +49,11 @@ class FirebaseOnFunction(val context: Context) {
 
         data.clear()
         ds.addValueEventListener(object  :ValueEventListener{
-            override fun onCancelled(p0: DatabaseError?) {
+            override fun onCancelled(p0: DatabaseError) {
 
             }
 
-            override fun onDataChange(p0: DataSnapshot?) {
+            override fun onDataChange(p0: DataSnapshot) {
                 data.clear()
                 onSyncKey(p0)
                 if (data.size > 0){
@@ -63,7 +63,7 @@ class FirebaseOnFunction(val context: Context) {
         })
     }
 
-    private fun onSyncKey(dataSnapshot: DataSnapshot?) {
+    private fun onSyncKey(dataSnapshot: DataSnapshot) {
         dataSnapshot!!.children.mapNotNullTo(data){
             it.key
         }

@@ -1,8 +1,6 @@
 package th.ac.up.agr.thai_nativechickenexpertsystem
 
 import android.os.Bundle
-import android.support.design.widget.Snackbar
-import android.support.v7.app.AppCompatActivity
 import android.view.View
 
 import kotlinx.android.synthetic.main.activity_add_program.*
@@ -12,7 +10,6 @@ import java.util.*
 import kotlin.collections.ArrayList
 import android.view.Gravity
 import android.R.attr.gravity
-import android.support.design.widget.TabLayout
 import android.util.Log
 import android.view.ViewGroup
 import android.widget.FrameLayout
@@ -24,6 +21,8 @@ import th.ac.up.agr.thai_nativechickenexpertsystem.Data.DataCard
 import th.ac.up.agr.thai_nativechickenexpertsystem.Firebase.FirebaseProgram
 import java.text.SimpleDateFormat
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import com.google.android.material.tabs.TabLayout
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.activity_add_program_plus.*
 import th.ac.up.agr.thai_nativechickenexpertsystem.Tools.ConvertCard
@@ -76,11 +75,11 @@ class AddProgramActivity : AppCompatActivity(),WheelPicker.OnItemSelectedListene
             val ref = databaseReference.child("ผู้ใช้").child(userID).child("ข้อมูล").child("ACTIVE").child(cardID)
 
             ref.addValueEventListener(object :ValueEventListener {
-                override fun onCancelled(p0: DatabaseError?) {
+                override fun onCancelled(p0: DatabaseError) {
                     TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
                 }
 
-                override fun onDataChange(p0: DataSnapshot?) {
+                override fun onDataChange(p0: DataSnapshot) {
                     dataCard = p0!!.getValue(DataCard::class.java)!!
 
                     setData()

@@ -1,8 +1,8 @@
 package th.ac.up.agr.thai_nativechickenexpertsystem.Tools
 
-import android.support.v7.widget.CardView
 import android.view.View
 import android.widget.ImageView
+import androidx.cardview.widget.CardView
 import at.wirecube.additiveanimations.additive_animator.AdditiveAnimator
 
 class Animation {
@@ -26,7 +26,7 @@ class Animation {
                 .alpha(1f)
                 .start()
     }
-    fun itemHideAnimation(view :CardView){
+    fun itemHideAnimation(view : CardView){
         AdditiveAnimator.animate(view)
                 .setDuration(0)
                 .alpha(1f)

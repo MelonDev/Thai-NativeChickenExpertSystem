@@ -4,7 +4,6 @@ import android.content.Context
 import android.content.Intent
 import android.graphics.drawable.Drawable
 import android.os.Environment
-import android.support.v7.widget.RecyclerView
 import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
@@ -32,6 +31,7 @@ import okhttp3.OkHttpClient
 import java.io.File
 import com.bumptech.glide.request.RequestOptions
 import android.R.attr.data
+import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Callback
 import com.squareup.picasso.NetworkPolicy
 
@@ -67,14 +67,14 @@ class MainMenuHorizontalAdapter(val context: Context, val data: ArrayList<String
 
             dataRef.addListenerForSingleValueEvent(object : ValueEventListener {
 
-                override fun onCancelled(p0: DatabaseError?) {
+                override fun onCancelled(p0: DatabaseError) {
 
                 }
 
-                override fun onDataChange(p0: DataSnapshot?) {
+                override fun onDataChange(p0: DataSnapshot) {
                     //onSyncKey(p0)
                     arrPath.clear()
-                    p0!!.children.mapNotNullTo(arrPath) {
+                    p0.children.mapNotNullTo(arrPath) {
                         it.key
                     }
                     val p = arrPath[0]
@@ -84,10 +84,10 @@ class MainMenuHorizontalAdapter(val context: Context, val data: ArrayList<String
                     //getImagePath(1,ref)
                     val re = ref.child("เพศผู้").child("image")
                     re.addListenerForSingleValueEvent(object : ValueEventListener {
-                        override fun onCancelled(p0: DatabaseError?) {
+                        override fun onCancelled(p0: DatabaseError) {
                         }
 
-                        override fun onDataChange(p0: DataSnapshot?) {
+                        override fun onDataChange(p0: DataSnapshot) {
                             val url: String = p0?.value.toString()
                             if (url.isNotEmpty() && !url.contentEquals("null")) {
                                 //Log.e("PASS","PASS")
@@ -178,10 +178,10 @@ class MainMenuHorizontalAdapter(val context: Context, val data: ArrayList<String
 
             val re = dataRef.child("เพศผู้").child("image")
             re.addListenerForSingleValueEvent(object : ValueEventListener {
-                override fun onCancelled(p0: DatabaseError?) {
+                override fun onCancelled(p0: DatabaseError) {
                 }
 
-                override fun onDataChange(p0: DataSnapshot?) {
+                override fun onDataChange(p0: DataSnapshot) {
                     val url: String = p0?.value.toString()
                     if (url.isNotEmpty() && !url.contentEquals("null")) {
                         //Log.e("PASS","PASS")
@@ -231,11 +231,11 @@ class MainMenuHorizontalAdapter(val context: Context, val data: ArrayList<String
                 val aa: DatabaseReference = FirebaseDatabase.getInstance().reference
                 val ab = aa.child("พันธุ์ไก่").child(path).child(data[position])
                 ab.addListenerForSingleValueEvent(object : ValueEventListener {
-                    override fun onCancelled(p0: DatabaseError?) {
+                    override fun onCancelled(p0: DatabaseError) {
                         TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
                     }
 
-                    override fun onDataChange(p0: DataSnapshot?) {
+                    override fun onDataChange(p0: DataSnapshot) {
                         onSyncKeysss(p0)
                         if (abcde.size > 1) {
                             val intent = Intent(context, SubMainActivity::class.java)
@@ -302,11 +302,11 @@ class MainMenuHorizontalAdapter(val context: Context, val data: ArrayList<String
 
         dataRef.addListenerForSingleValueEvent(object : ValueEventListener {
 
-            override fun onCancelled(p0: DatabaseError?) {
+            override fun onCancelled(p0: DatabaseError) {
 
             }
 
-            override fun onDataChange(p0: DataSnapshot?) {
+            override fun onDataChange(p0: DataSnapshot) {
                 onSyncKey(p0)
 
                 //TEST
@@ -324,10 +324,10 @@ class MainMenuHorizontalAdapter(val context: Context, val data: ArrayList<String
     private fun getImageURL(ref: DatabaseReference) {
         val re = ref.child("เพศผู้").child("image")
         re.addListenerForSingleValueEvent(object : ValueEventListener {
-            override fun onCancelled(p0: DatabaseError?) {
+            override fun onCancelled(p0: DatabaseError) {
             }
 
-            override fun onDataChange(p0: DataSnapshot?) {
+            override fun onDataChange(p0: DataSnapshot) {
                 val url: String = p0?.value.toString()
                 Log.e("qwe", url)
                 //val detail = p0!!.getValue(ChickenDetailData::class.java)

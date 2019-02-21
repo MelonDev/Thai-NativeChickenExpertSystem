@@ -3,11 +3,6 @@ package th.ac.up.agr.thai_nativechickenexpertsystem.Fragment
 
 import android.content.ContentValues.TAG
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.support.v4.app.FragmentManager
-import android.support.v4.app.FragmentPagerAdapter
-import android.support.v4.view.ViewPager
-import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -17,14 +12,15 @@ import th.ac.up.agr.thai_nativechickenexpertsystem.Adapter.ProgramAdapter
 import th.ac.up.agr.thai_nativechickenexpertsystem.R
 import th.ac.up.agr.thai_nativechickenexpertsystem.Tools.QuickRecyclerView
 import th.ac.up.agr.thai_nativechickenexpertsystem.ViewHolder.ProgramViewHolder
-import android.support.v4.app.FragmentActivity
 import kotlinx.android.synthetic.main.fragment_tab_third.*
 import android.os.AsyncTask
 import android.util.Log
 import kotlin.math.max
-import android.support.v4.view.ViewPager.SimpleOnPageChangeListener
-
-
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentActivity
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentPagerAdapter
+import androidx.viewpager.widget.ViewPager
 
 
 /**
@@ -72,7 +68,7 @@ class TabThirdFragment : Fragment() {
 
     }
 
-    private inner class PageListener : SimpleOnPageChangeListener() {
+    private inner class PageListener : ViewPager.SimpleOnPageChangeListener() {
         override fun onPageSelected(position: Int) {
             //Log.e(TAG, "page selected $position")
             if (position == 0){

@@ -3,9 +3,9 @@ package th.ac.up.agr.thai_nativechickenexpertsystem.Adapter
 import android.content.Context
 import android.content.Intent
 import android.graphics.BitmapFactory
-import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
 import com.squareup.picasso.Picasso
 import th.ac.up.agr.thai_nativechickenexpertsystem.ContainerActivity
 import th.ac.up.agr.thai_nativechickenexpertsystem.Data.IconSet

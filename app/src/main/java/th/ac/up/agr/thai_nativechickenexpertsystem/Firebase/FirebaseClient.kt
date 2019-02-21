@@ -1,7 +1,6 @@
 package th.ac.up.agr.thai_nativechickenexpertsystem.Firebase
 
 import android.content.Context
-import android.support.v7.widget.RecyclerView
 import android.util.Log
 import com.google.firebase.database.*
 import th.ac.up.agr.thai_nativechickenexpertsystem.Data.ChickenBreedData
@@ -20,11 +19,11 @@ open class FirebaseClient(val context: Context) {
         dataKey.clear()
 
         childRef.addValueEventListener(object : ValueEventListener{
-            override fun onCancelled(p0: DatabaseError?) {
+            override fun onCancelled(p0: DatabaseError) {
                 TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
             }
 
-            override fun onDataChange(p0: DataSnapshot?) {
+            override fun onDataChange(p0: DataSnapshot) {
                 onSync(p0)
             }
         })

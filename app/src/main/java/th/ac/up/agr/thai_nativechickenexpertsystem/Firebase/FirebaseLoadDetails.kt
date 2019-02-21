@@ -77,11 +77,11 @@ class FirebaseLoadDetails(val context: Context,val holder :ChickenDetailViewHold
 
     private fun setRef(data: DatabaseReference) {
         data.addValueEventListener(object : ValueEventListener {
-            override fun onCancelled(p0: DatabaseError?) {
+            override fun onCancelled(p0: DatabaseError) {
                 TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
             }
 
-            override fun onDataChange(p0: DataSnapshot?) {
+            override fun onDataChange(p0: DataSnapshot) {
                 //getKey(p0)
                 getData(p0)
             }
@@ -91,22 +91,22 @@ class FirebaseLoadDetails(val context: Context,val holder :ChickenDetailViewHold
 
     private fun setRefC(databaseReference: DatabaseReference) {
         databaseReference.addChildEventListener(object : ChildEventListener {
-            override fun onCancelled(p0: DatabaseError?) {
+            override fun onCancelled(p0: DatabaseError) {
             }
 
-            override fun onChildMoved(p0: DataSnapshot?, p1: String?) {
+            override fun onChildMoved(p0: DataSnapshot, p1: String?) {
                 TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
             }
 
-            override fun onChildChanged(p0: DataSnapshot?, p1: String?) {
+            override fun onChildChanged(p0: DataSnapshot, p1: String?) {
                 getData(p0)
             }
 
-            override fun onChildAdded(p0: DataSnapshot?, p1: String?) {
+            override fun onChildAdded(p0: DataSnapshot, p1: String?) {
                 getData(p0)
             }
 
-            override fun onChildRemoved(p0: DataSnapshot?) {
+            override fun onChildRemoved(p0: DataSnapshot) {
                 TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
             }
         })

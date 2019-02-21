@@ -1,8 +1,8 @@
 package th.ac.up.agr.thai_nativechickenexpertsystem.Tools.PreCaching
 
 import android.content.Context
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 
 class PreCachingLinearLayoutManager(context: Context) : LinearLayoutManager(context){
 

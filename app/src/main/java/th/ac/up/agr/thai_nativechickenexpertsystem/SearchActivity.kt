@@ -2,13 +2,12 @@ package th.ac.up.agr.thai_nativechickenexpertsystem
 
 import android.os.Build
 import android.os.Bundle
-import android.support.design.widget.Snackbar
-import android.support.v7.app.AppCompatActivity
 import android.text.Editable
 import android.text.TextWatcher
 import android.util.Log
 import android.view.View
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
 import com.jaredrummler.android.device.DeviceName
 
 import kotlinx.android.synthetic.main.activity_search.*

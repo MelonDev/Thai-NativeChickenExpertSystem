@@ -2,10 +2,10 @@ package th.ac.up.agr.thai_nativechickenexpertsystem.Adapter
 
 import android.content.Context
 import android.content.Intent
-import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import android.widget.Toast
+import androidx.recyclerview.widget.RecyclerView
 import th.ac.up.agr.thai_nativechickenexpertsystem.ChickenDatailActivity
 import th.ac.up.agr.thai_nativechickenexpertsystem.Data.ChickenBreedData
 import th.ac.up.agr.thai_nativechickenexpertsystem.R
