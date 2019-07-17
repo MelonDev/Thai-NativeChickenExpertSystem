@@ -17,8 +17,10 @@ class TabFifthFragment : Fragment() {
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_tab_fifth, container, false)
         val arr = ArrayList<IconSet>()
-        arr.add(setIconSet("อาหารไก่",R.drawable.ic_seed_off))
+        arr.add(setIconSet("อาหาร",R.drawable.ic_seed_off))
         arr.add(setIconSet("วัคซีน",R.drawable.ic_vaccine))
+        arr.add(setIconSet("ลักษณะ",R.drawable.ic_feather_off))
+        //arr.add(setIconSet("Privacy Policy",R.drawable.ic_seed_off))
 
 
 

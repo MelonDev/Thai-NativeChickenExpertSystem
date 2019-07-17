@@ -1,6 +1,7 @@
 package th.ac.up.agr.thai_nativechickenexpertsystem
 
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.google.firebase.database.*
@@ -27,6 +28,15 @@ class ProgramDetailActivity : AppCompatActivity() {
         setContentView(R.layout.activity_program_detail)
 
         detail_program_back_btn.setOnClickListener { finish() }
+
+        val w = window
+
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+            w.navigationBarColor = resources.getColor(R.color.colorBNVT)
+        }
+        else if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
+            w.navigationBarColor = resources.getColor(R.color.colorBNV)
+        }
 
         status = intent.extras.getString("STATUS")
 

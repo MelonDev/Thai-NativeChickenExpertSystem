@@ -1,5 +1,6 @@
 package th.ac.up.agr.thai_nativechickenexpertsystem
 
+import android.os.Build
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
@@ -23,6 +24,15 @@ class ContainerActivity : AppCompatActivity() {
         val title = bundle.getString("TITLE")
 
         container_title_name.text = title
+
+        val w = window
+
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+            w.navigationBarColor = resources.getColor(R.color.colorBNVT)
+        }
+        else if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
+            w.navigationBarColor = resources.getColor(R.color.colorBNV)
+        }
 
         when(ID){
             "DISEASE" -> {

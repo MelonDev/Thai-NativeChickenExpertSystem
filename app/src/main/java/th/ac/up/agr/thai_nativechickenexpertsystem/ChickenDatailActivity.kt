@@ -1,6 +1,7 @@
 package th.ac.up.agr.thai_nativechickenexpertsystem
 
 import android.content.Intent
+import android.os.Build
 import android.os.Bundle
 import android.os.Handler
 
@@ -48,6 +49,15 @@ class ChickenDatailActivity : AppCompatActivity() {
         val bundle = intent.extras
         val title = bundle.getString("TITLE")
         val path = bundle.getString("PATH")
+
+        val w = window
+
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+            w.navigationBarColor = resources.getColor(R.color.colorBNVT)
+        }
+        else if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
+            w.navigationBarColor = resources.getColor(R.color.colorBNV)
+        }
 
         arrPath = Path().fromPathToArray(path)
         //Toast.makeText(this,Path().fromPathToArray(path).toString(), Toast.LENGTH_SHORT).show()

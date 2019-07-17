@@ -2,6 +2,7 @@ package th.ac.up.agr.thai_nativechickenexpertsystem
 
 import android.content.Context
 import android.graphics.drawable.GradientDrawable
+import android.os.Build
 import android.os.Bundle
 import android.util.Log
 import android.view.View
@@ -42,6 +43,15 @@ class SubMainActivity : AppCompatActivity() {
 
         sub_title_name.text = title
         sub_title_name.maxWidth = DeviceUtills(this).getScreenWidth() - (175 * 2)
+
+        val w = window
+
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+            w.navigationBarColor = resources.getColor(R.color.colorBNVT)
+        }
+        else if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
+            w.navigationBarColor = resources.getColor(R.color.colorBNV)
+        }
 
         //Toast.makeText(this,ID.toString(),Toast.LENGTH_SHORT).show()
 

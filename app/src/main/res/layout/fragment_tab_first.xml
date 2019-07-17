@@ -13,7 +13,7 @@
 
         <RelativeLayout
             android:layout_width="match_parent"
-            android:layout_height="200dp"
+            android:layout_height="120dp"
             android:background="@color/colorPrimary"
             app:layout_scrollFlags="scroll">
 
@@ -42,7 +42,7 @@
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
-                android:layout_marginBottom="68dp"
+                android:layout_marginBottom="8dp"
                 android:layout_marginLeft="0dp"
                 android:fontFamily="@font/kanit_extralight"
                 android:paddingLeft="16dp"
@@ -55,7 +55,7 @@
                 android:layout_height="wrap_content"
                 android:layout_alignParentBottom="true"
                 android:layout_alignParentRight="true"
-                android:layout_marginBottom="80dp"
+                android:layout_marginBottom="20dp"
                 android:layout_marginRight="16dp"
                 android:visibility="visible">
 
@@ -155,6 +155,7 @@
             </LinearLayout>
 
             <RelativeLayout
+                android:visibility="gone"
                 android:layout_width="match_parent"
                 android:layout_height="60dp"
                 android:layout_alignParentBottom="true"

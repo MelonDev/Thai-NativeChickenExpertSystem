@@ -13,6 +13,8 @@
 
     <color name="searchPrimaryColor">#313131</color>
     <color name="colorBNV">#BFBFBF</color>
+    <color name="colorBNVT">#ECECEC</color>
+
     <color name="colorBBNV">@color/bb_darkBackgroundColor</color>
 
 </resources>

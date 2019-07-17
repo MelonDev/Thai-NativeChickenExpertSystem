@@ -76,17 +76,29 @@ class MainActivity : AppCompatActivity() {
 
         //Log.e("Model",DeviceName.getDeviceName().toString())
         //Redmi 5 Plus
-        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
+        /*if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             if (!DeviceName.getDeviceName()!!.contentEquals("Redmi 5 Plus")) {
                 val w = window
                 //w.setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS, WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS)
                 w.navigationBarColor = resources.getColor(R.color.colorBNV)
             }
         }
+        */
+        val w = window
+
+        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+            w.navigationBarColor = resources.getColor(R.color.colorBNVT)
+        }
+        else if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
+            w.navigationBarColor = resources.getColor(R.color.colorBNV)
+        }
 
 
         testBottom.disableShiftMode()
         testBottom.setOnNavigationItemSelectedListener { item ->
+
+
+
             return@setOnNavigationItemSelectedListener when (item.itemId) {
                 R.id.tab1 -> {
                     currentTab = TabFirstFragment()
@@ -94,13 +106,14 @@ loadCurrentTab()
                     //supportFragmentManager.beginTransaction().replace(R.id.main_frame, TabFirstFragment()).commit()
                     true
                 }
+                /*
                 R.id.tab2 -> {
                     currentTab = TabSecondFragment()
                     loadCurrentTab()
 
                     //supportFragmentManager.beginTransaction().replace(R.id.main_frame, TabSecondFragment()).commit()
                     true
-                }
+                }*/
                 R.id.tab3 -> {
                     currentTab = TabThridPlusFragment()
                     loadCurrentTab()
@@ -126,6 +139,8 @@ loadCurrentTab()
                     false
                 }
             }
+
+
 
         }
 

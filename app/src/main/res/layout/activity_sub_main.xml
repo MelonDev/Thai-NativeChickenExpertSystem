@@ -83,7 +83,7 @@
         android:paddingTop="10dp"
         android:id="@+id/sub_menu_vertical_recycler_view"
         android:visibility="gone"
-        android:paddingBottom="10dp"
+        android:paddingBottom="0dp"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:layout_marginLeft="16dp"
