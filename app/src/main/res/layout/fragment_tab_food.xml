@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:background="#ededed"
+    tools:context=".Fragment.TabFoodFragment">
+
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="visible"
+        app:elevation="0dp">
+
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:layout_marginTop="4dp"
+            android:background="@color/colorPrimary"
+            android:minHeight="50dp"
+            app:layout_scrollFlags="scroll">
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentBottom="true"
+                android:layout_centerInParent="true"
+                android:layout_marginBottom="6dp"
+                android:layout_marginLeft="0dp"
+                android:fontFamily="@font/pridi_medium"
+                android:gravity="center_horizontal"
+                android:paddingBottom="0dp"
+                android:paddingRight="0dp"
+                android:text="@string/tab_3"
+                android:textColor="#FFFFFF"
+                android:textSize="24dp" />
+
+
+        </RelativeLayout>
+
+
+
+    </com.google.android.material.appbar.AppBarLayout>
+
+
+</FrameLayout>

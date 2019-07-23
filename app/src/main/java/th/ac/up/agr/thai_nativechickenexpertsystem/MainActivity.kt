@@ -106,16 +106,16 @@ loadCurrentTab()
                     //supportFragmentManager.beginTransaction().replace(R.id.main_frame, TabFirstFragment()).commit()
                     true
                 }
-                /*
+
                 R.id.tab2 -> {
-                    currentTab = TabSecondFragment()
+                    currentTab = TabThridPlusFragment()
                     loadCurrentTab()
 
                     //supportFragmentManager.beginTransaction().replace(R.id.main_frame, TabSecondFragment()).commit()
                     true
-                }*/
+                }
                 R.id.tab3 -> {
-                    currentTab = TabThridPlusFragment()
+                    currentTab = TabFoodFragment()
                     loadCurrentTab()
 
                     //supportFragmentManager.beginTransaction().replace(R.id.main_frame, TabFourthFragment()).commit()
@@ -223,6 +223,8 @@ loadCurrentTab()
             Log.e(ContentValues.TAG, "Unable to get shift mode field", e)
         } catch (e: IllegalStateException) {
             Log.e(ContentValues.TAG, "Unable to change value of shift mode", e)
+        } catch (e: Exception){
+            print(e.localizedMessage)
         }
     }
 
