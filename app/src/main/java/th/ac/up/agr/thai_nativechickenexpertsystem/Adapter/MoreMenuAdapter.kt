@@ -6,6 +6,7 @@ import android.graphics.BitmapFactory
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.squareup.picasso.Picasso
 import th.ac.up.agr.thai_nativechickenexpertsystem.ContainerActivity
 import th.ac.up.agr.thai_nativechickenexpertsystem.Data.IconSet
@@ -37,13 +38,21 @@ class MoreMenuAdapter(val context: Context, val data: ArrayList<IconSet>) : Recy
 
         //val option = BitmapFactory.Options()
         //option.inSampleSize =
-        val bitmap = BitmapFactory.decodeResource(context.resources, slot.image)
-        holder.imageView.setImageBitmap(bitmap)
+        //val bitmap = BitmapFactory.decodeResource(context.resources, slot.image)
+        //holder.imageView.setImageBitmap(bitmap)
+
+        Glide.with(context).load(slot.image).into(holder.imageView)
 
         holder.imageView.setOnClickListener {
-            val intent = Intent(context, ContainerActivity::class.java)
+            var intent :Intent = Intent()
+            if(slot.activity != null){
+                intent = Intent(context, slot.activity::class.java)
+            }else {
+                intent = Intent(context, ContainerActivity::class.java)
+            }
             intent.putExtra("TITLE",slot.name)
-            context.startActivity(intent) }
+            context.startActivity(intent)
+        }
 
     }
 }

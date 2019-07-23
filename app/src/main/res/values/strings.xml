@@ -15,7 +15,7 @@
     <string name="test">จะแสดงพฤติกรรมเดินนำหน้าโดยหันก้นให้กระบืออีกตัว หรือเดินตามกระบือตัวอื่นๆ เหมือนการเกี้ยวพาราสีของกระบือเพศผู้กับเพศเมีย ช่วงเวลาขณะแสดงพฤติกรรมประมาณ 10-15 วินาที</string>
 
 
-    <string name="tab_4">โรคของไก่</string>
+    <string name="tab_4">โรค</string>
     <string name="tab_5">เพิ่มเติม</string>
     <string name="title_activity_sub_main">SubMainActivity</string>
     <string name="title_activity_chicken_datail">ChickenDatailActivity</string>
