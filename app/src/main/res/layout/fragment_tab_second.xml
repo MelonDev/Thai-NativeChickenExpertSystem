@@ -15,6 +15,7 @@
 
 
         <RelativeLayout
+            android:visibility="gone"
             app:layout_scrollFlags="scroll"
             android:layout_width="match_parent"
             android:minHeight="50dp"

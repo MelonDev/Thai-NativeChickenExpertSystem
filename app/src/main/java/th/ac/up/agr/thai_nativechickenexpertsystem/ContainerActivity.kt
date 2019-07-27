@@ -2,14 +2,18 @@ package th.ac.up.agr.thai_nativechickenexpertsystem
 
 import android.os.Build
 import android.os.Bundle
+import android.util.Log
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
+import com.google.android.material.snackbar.Snackbar
 
 import kotlinx.android.synthetic.main.activity_container.*
-import th.ac.up.agr.thai_nativechickenexpertsystem.Fragment.DiseaseDetail
-import th.ac.up.agr.thai_nativechickenexpertsystem.Fragment.TabFirstFragment
+import th.ac.up.agr.thai_nativechickenexpertsystem.Fragment.*
 
 class ContainerActivity : AppCompatActivity() {
+
+    lateinit var ID :String
+    lateinit var name :String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -20,10 +24,15 @@ class ContainerActivity : AppCompatActivity() {
         }
 
         val bundle = intent.extras
-        val ID = bundle.getString("ID")
-        val title = bundle.getString("TITLE")
+        ID = bundle.getString("ID")
+        //val title = bundle.getString("TITLE")
+        name = bundle.getString("NAME")
+        //Snackbar.make(this.findViewById(android.R.id.content),name,Snackbar.LENGTH_SHORT)
+        //Log.e("NAME",name)
 
-        container_title_name.text = title
+        var name_c = name.substring(3)
+
+        container_title_name.text = name
 
         val w = window
 
@@ -36,12 +45,42 @@ class ContainerActivity : AppCompatActivity() {
 
         when(ID){
             "DISEASE" -> {
-                val DISEASE_CAUSE = bundle.getString("DISEASE_CAUSE")
-                val DISEASE_PREVENT = bundle.getString("DISEASE_PREVENT")
-                val DISEASE_DETAIL = bundle.getString("DISEASE_DETAIL")
-                val DISEASE_SYMPTOM = bundle.getString("DISEASE_SYMPTOM")
+                //val DISEASE_CAUSE = bundle.getString("DISEASE_CAUSE")
+                //val DISEASE_PREVENT = bundle.getString("DISEASE_PREVENT")
+                //val DISEASE_DETAIL = bundle.getString("DISEASE_DETAIL")
+                //val DISEASE_SYMPTOM = bundle.getString("DISEASE_SYMPTOM")
 
-                val fragment = DiseaseDetail.newInstance(title,DISEASE_CAUSE,DISEASE_DETAIL,DISEASE_PREVENT,DISEASE_SYMPTOM)
+                //val fragment = DiseaseDetail.newInstance(title,DISEASE_CAUSE,DISEASE_DETAIL,DISEASE_PREVENT,DISEASE_SYMPTOM)
+                //Log.e("NAME_C",name_c)
+
+                val fragment = DiseaseDetail.newInstance(name_c)
+
+
+                setFragment(fragment)
+            }
+            "MENU" -> {
+                //val fragment = vaccineFragment.newInstance(name_c)
+
+                when(bundle.getInt("POSITION")){
+                    0 -> {
+                        val fragment = VaccineFragment()
+
+
+                        setFragment(fragment)
+                    }
+                    2 -> {
+                        val fragment = TabSecondFragment()
+
+
+                        setFragment(fragment)
+                    }
+                }
+
+
+            }
+            "FOOD" -> {
+                val fragment = FoodFragment()
+
 
                 setFragment(fragment)
             }

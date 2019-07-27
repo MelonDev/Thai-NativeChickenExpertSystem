@@ -224,7 +224,7 @@ loadCurrentTab()
         } catch (e: IllegalStateException) {
             Log.e(ContentValues.TAG, "Unable to change value of shift mode", e)
         } catch (e: Exception){
-            print(e.localizedMessage)
+            Log.e(ContentValues.TAG,e.localizedMessage)
         }
     }
 

@@ -50,7 +50,9 @@ class MoreMenuAdapter(val context: Context, val data: ArrayList<IconSet>) : Recy
             }else {
                 intent = Intent(context, ContainerActivity::class.java)
             }
-            intent.putExtra("TITLE",slot.name)
+            intent.putExtra("ID","MENU")
+            intent.putExtra("NAME",slot.name)
+            intent.putExtra("POSITION",position)
             context.startActivity(intent)
         }
 

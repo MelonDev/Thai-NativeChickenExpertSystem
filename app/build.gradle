@@ -13,8 +13,8 @@ android {
         applicationId "th.ac.up.agr.thai_nativechickenexpertsystem"
         minSdkVersion 23
         targetSdkVersion 28
-        versionCode 7
-        versionName "0.7"
+        versionCode 8
+        versionName "0.8"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {
@@ -32,6 +32,7 @@ android {
 repositories {
     mavenCentral()
     google()
+    maven { url 'https://jitpack.io' }
 }
 
 dependencies {
@@ -57,11 +58,16 @@ dependencies {
     implementation 'cn.aigestudio.wheelpicker:WheelPicker:1.1.2'
     implementation 'lib.kingja.switchbutton:switchbutton:1.1.6'
 
-    implementation 'com.google.firebase:firebase-database:18.0.0'
+    implementation 'com.google.firebase:firebase-database:18.0.1'
     implementation 'com.github.bumptech.glide:glide:4.8.0'
     implementation 'com.squareup.okhttp3:okhttp:3.10.0'
 
+    implementation 'com.mylhyl:circleDialog:2.6.6'
+
+
     annotationProcessor 'com.github.bumptech.glide:compiler:4.8.0'
+
+    implementation 'com.github.levitnudi:LegacyTableView:1.2'
 
 
     testImplementation 'junit:junit:4.12'
