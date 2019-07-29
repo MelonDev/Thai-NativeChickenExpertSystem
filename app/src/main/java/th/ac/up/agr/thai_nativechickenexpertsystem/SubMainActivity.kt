@@ -54,6 +54,7 @@ class SubMainActivity : AppCompatActivity() {
         }
 
         //Toast.makeText(this,ID.toString(),Toast.LENGTH_SHORT).show()
+        Toast.makeText(this,path.toString(),Toast.LENGTH_SHORT).show()
 
 
         when (ID) {
@@ -211,7 +212,7 @@ class SubMainActivity : AppCompatActivity() {
 
             }
             100 -> {
-                abcMode()
+                abcMode(path)
 
             }
 
@@ -291,7 +292,7 @@ class SubMainActivity : AppCompatActivity() {
 */
     }
 
-    private fun abcMode() {
+    private fun abcMode(path :String) {
         val s = firebase.databaseReference.child("พันธุ์ไก่")
         s.addListenerForSingleValueEvent(object : ValueEventListener {
             override fun onCancelled(p0: DatabaseError) {

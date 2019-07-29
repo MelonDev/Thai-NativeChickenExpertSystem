@@ -39,9 +39,53 @@ class MainGridVerticalAdapter(val context: Context, val data: ArrayList<String>,
             //Log.e("PATH",arr.toString())
             //Log.e("DATA",data.toString())
 
-            if (ID == 100){
+            //Log.e("TE",ID.toString())
+            //Log.e("TEST",data[position])
 
+            if (ID == 100) {
+                var dataRef = databaseReference
+                if (data[position].contentEquals("ไก่กลาย")) {
+                    dataRef = dataRef.child("พันธุ์ไก่").child(data[position]).child("ไก่คอล่อน")
+                } else {
+                    dataRef = dataRef.child("พันธุ์ไก่").child(data[position]).child(data[position])
+                }
+                val re = dataRef.child("เพศผู้").child("image")
+                re.addListenerForSingleValueEvent(object : ValueEventListener {
+                    override fun onCancelled(p0: DatabaseError) {
+                    }
+
+                    override fun onDataChange(p0: DataSnapshot) {
+                        val url: String = p0?.value.toString()
+                        if (url.isNotEmpty() && !url.contentEquals("null")) {
+                            //Log.e("PASS","PASS")
+                            holder.itemImageCardView2?.visibility = View.GONE
+                            //Glide.with(context).load(url).into(holder?.itemImageView2!!)
+                            Picasso.get().load(url).networkPolicy(NetworkPolicy.OFFLINE).into(holder.itemImageView2!!, object : com.squareup.picasso.Callback {
+                                override fun onSuccess() {
+                                    Animation().itemHideAnimation(holder.itemImageCardView2)
+                                    holder.itemImageCardView2?.visibility = View.GONE
+                                    Animation().itemLoadAnimation(holder.itemImageView2)
+                                    holder.itemImageView2.visibility = View.VISIBLE
+                                }
+
+                                override fun onError(e: Exception?) {
+                                    holder.itemImageCardView2?.visibility = View.VISIBLE
+                                    holder.itemImageView2.visibility = View.GONE
+                                }
+                            })
+                            //Picasso.with(context).load(url).into(holder?.itemImageView!!)
+                            //Glide.with(myFragment).load(url).centerCrop().placeholder(R.drawable.loading_spinner).into(myImageView)
+                        } else {
+                            holder.itemImageCardView2?.visibility = View.VISIBLE
+                            holder.itemImageView2?.visibility = View.GONE
+                        }
+                        //Log.e("qwe", url.toString())
+                        //val detail = p0!!.getValue(ChickenDetailData::class.java)
+                        //URLToImageView(url)
+                    }
+                })
             } else {
+                //Log.e(arr[0],data[position])
                 val dataRef = databaseReference.child("พันธุ์ไก่").child(arr[0]).child(data[position])
 
                 if (ID == 4) {
@@ -74,7 +118,7 @@ class MainGridVerticalAdapter(val context: Context, val data: ArrayList<String>,
                                         holder.itemImageCardView2?.visibility = View.GONE
 
                                         //Glide.with(context).load(url).into(holder?.itemImageView2!!)
-                                        Picasso.get().load(url).networkPolicy(NetworkPolicy.OFFLINE).into(holder.itemImageView2!!,object : com.squareup.picasso.Callback {
+                                        Picasso.get().load(url).networkPolicy(NetworkPolicy.OFFLINE).into(holder.itemImageView2!!, object : com.squareup.picasso.Callback {
                                             override fun onSuccess() {
                                                 Animation().itemHideAnimation(holder.itemImageCardView2)
                                                 holder.itemImageCardView2?.visibility = View.GONE
@@ -110,13 +154,14 @@ class MainGridVerticalAdapter(val context: Context, val data: ArrayList<String>,
                                 //Log.e("PASS","PASS")
                                 holder.itemImageCardView2?.visibility = View.GONE
                                 //Glide.with(context).load(url).into(holder?.itemImageView2!!)
-                                Picasso.get().load(url).networkPolicy(NetworkPolicy.OFFLINE).into(holder.itemImageView2!!,object : com.squareup.picasso.Callback {
+                                Picasso.get().load(url).networkPolicy(NetworkPolicy.OFFLINE).into(holder.itemImageView2!!, object : com.squareup.picasso.Callback {
                                     override fun onSuccess() {
                                         Animation().itemHideAnimation(holder.itemImageCardView2)
                                         holder.itemImageCardView2?.visibility = View.GONE
                                         Animation().itemLoadAnimation(holder.itemImageView2)
                                         holder.itemImageView2.visibility = View.VISIBLE
                                     }
+
                                     override fun onError(e: Exception?) {
                                         holder.itemImageCardView2?.visibility = View.VISIBLE
                                         holder.itemImageView2.visibility = View.GONE
@@ -133,9 +178,7 @@ class MainGridVerticalAdapter(val context: Context, val data: ArrayList<String>,
                             //URLToImageView(url)
                         }
                     })
-                }
-
-                else if (ID == 6){
+                } else if (ID == 6) {
                     //onSyncKey()
 
                     //Log.e("PAT",path)
@@ -150,7 +193,7 @@ class MainGridVerticalAdapter(val context: Context, val data: ArrayList<String>,
                         override fun onDataChange(p0: DataSnapshot) {
                             val url: String = p0.value.toString()
 
-                            Log.e("URL ${data[position]}",url)
+                            Log.e("URL ${data[position]}", url)
 
                             if (url.isNotEmpty() && !url.contentEquals("null")) {
                                 //Log.e("PASS","PASS")
@@ -164,6 +207,7 @@ class MainGridVerticalAdapter(val context: Context, val data: ArrayList<String>,
                                         Animation().itemLoadAnimation(holder.itemImageView2)
                                         holder.itemImageView2.visibility = View.VISIBLE
                                     }
+
                                     override fun onError(e: Exception?) {
                                         holder.itemImageCardView2?.visibility = View.VISIBLE
                                         holder.itemImageView2.visibility = View.GONE
@@ -194,9 +238,9 @@ class MainGridVerticalAdapter(val context: Context, val data: ArrayList<String>,
                     val databaseReferences: DatabaseReference = FirebaseDatabase.getInstance().reference
                     val p = databaseReferences.child("พันธุ์ไก่").child(data[position])
 
-                    Log.e("PO",data[position])
+                    Log.e("PO", data[position])
 
-                    p.addListenerForSingleValueEvent(object : ValueEventListener{
+                    p.addListenerForSingleValueEvent(object : ValueEventListener {
                         override fun onCancelled(p0: DatabaseError) {
                             TODO("not implemented") //To change body of created functions use File | Settings | File Templates.
                         }
@@ -204,15 +248,15 @@ class MainGridVerticalAdapter(val context: Context, val data: ArrayList<String>,
                         override fun onDataChange(p0: DataSnapshot) {
                             onSyncKeys(p0)
 
-                            val au = Path().toPath(path,data[position])
-                            val aus = Path().toPath(au,abc[0])
+                            val au = Path().toPath(path, data[position])
+                            val aus = Path().toPath(au, abc[0])
 
                             //Log.e("abc",abc.toString())
 
                             val intent = Intent(context, ChickenDatailActivity::class.java)
                             intent.putExtra("ID", 2)
 
-                            if (data[position].contentEquals("ไก่กลาย")){
+                            if (data[position].contentEquals("ไก่กลาย")) {
                                 intent.putExtra("TITLE", data[position] + " - " + abc[0])
                             } else {
                                 intent.putExtra("TITLE", abc[0])

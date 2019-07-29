@@ -61,14 +61,57 @@ class MainMenuHorizontalAdapter(val context: Context, val data: ArrayList<String
         val dataRef = databaseReference.child("พันธุ์ไก่").child(mainTitle).child(data[position])
 
         if (mainTitle.contentEquals("พันธุ์อื่นๆ")) {
-            //Log.e("asdla", data.toString())
+
+
+            var dataRefs = databaseReference
+            //val dataRefs = databaseReference.child("พันธุ์ไก่").child(data[position]).child(data[position])
+            if(data[position].contentEquals("ไก่กลาย")){
+                dataRefs = databaseReference.child("พันธุ์ไก่").child(data[position]).child("ไก่คอล่อน")
+            }else {
+                dataRefs = databaseReference.child("พันธุ์ไก่").child(data[position]).child(data[position])
+            }
+
+            dataRefs.addListenerForSingleValueEvent(object : ValueEventListener {
+                override fun onCancelled(p0: DatabaseError) {
+                    Log.e("", "")
+                }
+
+                override fun onDataChange(p0: DataSnapshot) {
+                    if(p0.value != null){
+                        val p1 = p0.child("เพศผู้").child("image")
+                        val url: String = p1.value.toString()
+
+                        if (url.isNotEmpty() && !url.contentEquals("null")) {
+                            Picasso.get().load(url).fetch(object : Callback {
+                                override fun onSuccess() {
+                                    Picasso.get().load(url).into(holder.itemImageView!!)
+                                    Animation().itemLoadAnimation(holder.itemImageView)
+                                    holder.itemImageView.visibility = View.VISIBLE
+                                    Animation().itemHideAnimation(holder.itemImageCardView)
+                                    holder.itemImageCardView?.visibility = View.GONE
+
+                                }
+
+                                override fun onError(e: Exception?) {
+                                    holder.itemImageCardView?.visibility = View.VISIBLE
+                                    holder.itemImageView?.visibility = View.GONE
+                                }
+                            })
+                        }else {
+                            holder.itemImageCardView?.visibility = View.VISIBLE
+                            holder.itemImageView?.visibility = View.GONE
+                        }
+                    }
+                }
+            })
+
         } else if (data[position].contentEquals("ไก่ชน") or mainTitle.contentEquals("ไก่ชน")) {
             //getImagePath(0, dataRef)
 
             dataRef.addListenerForSingleValueEvent(object : ValueEventListener {
 
                 override fun onCancelled(p0: DatabaseError) {
-
+                    Log.e("", "")
                 }
 
                 override fun onDataChange(p0: DataSnapshot) {
@@ -82,6 +125,7 @@ class MainMenuHorizontalAdapter(val context: Context, val data: ArrayList<String
                     //Log.e("ARR",arrPath.toString())
                     val ref = dataRef.child(p)
                     //getImagePath(1,ref)
+
                     val re = ref.child("เพศผู้").child("image")
                     re.addListenerForSingleValueEvent(object : ValueEventListener {
                         override fun onCancelled(p0: DatabaseError) {
@@ -133,7 +177,7 @@ class MainMenuHorizontalAdapter(val context: Context, val data: ArrayList<String
                                 })
 */
 
-                                Picasso.get().load(url).fetch(object : Callback{
+                                Picasso.get().load(url).fetch(object : Callback {
                                     override fun onSuccess() {
                                         Picasso.get().load(url).into(holder.itemImageView!!)
                                         Animation().itemLoadAnimation(holder.itemImageView)
