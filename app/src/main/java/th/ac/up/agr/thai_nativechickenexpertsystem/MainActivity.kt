@@ -107,13 +107,13 @@ loadCurrentTab()
                     true
                 }
 
-                R.id.tab2 -> {
+               /* R.id.tab2 -> {
                     currentTab = TabThridPlusFragment()
                     loadCurrentTab()
 
                     //supportFragmentManager.beginTransaction().replace(R.id.main_frame, TabSecondFragment()).commit()
                     true
-                }
+                }*/
                 R.id.tab3 -> {
                     currentTab = TabFoodFragment()
                     loadCurrentTab()

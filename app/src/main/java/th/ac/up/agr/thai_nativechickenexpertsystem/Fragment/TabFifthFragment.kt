@@ -19,10 +19,18 @@ class TabFifthFragment : Fragment() {
         val view = inflater.inflate(R.layout.fragment_tab_fifth, container, false)
         val arr = ArrayList<IconSet>()
         //arr.add(setIconSet("อาหาร",R.drawable.ic_seed_off,null))
+        arr.add(setIconSet("การจัดการแต่ละระยะ",R.drawable.ic_chicken_management_2,null))
+        arr.add(setIconSet("การผสมพันธุ์",R.drawable.ic_breeding_2,null))
+        arr.add(setIconSet("ลักษณะ",R.drawable.ic_feather_off,null))
+        arr.add(setIconSet("โรงเรือน",R.drawable.ic_farm,null))
+
         arr.add(setIconSet("วัคซีน",R.drawable.ic_vaccine,null))
         arr.add(setIconSet("ถ่ายพยาธิ",R.drawable.bacteria_off,null))
-        arr.add(setIconSet("ลักษณะ",R.drawable.ic_feather_off,null))
+
+
+
         arr.add(setIconSet("ติดต่อเรา",R.drawable.ic_people_off,null))
+
         //arr.add(setIconSet("ติดต่อเรา",R.drawable.ic_people_off))
 
         //arr.add(setIconSet("Privacy Policy",R.drawable.ic_seed_off))
