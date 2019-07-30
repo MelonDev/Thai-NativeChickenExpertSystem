@@ -673,6 +673,7 @@
 
                     </LinearLayout>
                     <LinearLayout
+                        android:id="@+id/male_egg_a"
                         android:layout_marginTop="5dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
@@ -697,17 +698,20 @@
 
                     </LinearLayout>
                     <LinearLayout
+                        android:id="@+id/male_egg_b"
+
                         android:layout_marginTop="5dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
 
                         <TextView
+
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="top"
                             android:fontFamily="@font/pridi_light"
-                            android:text="ผลผลิตไข่แม่ต่อปี(ฟอง) : "
+                            android:text="ผลผลิตไข่ต่อแม่ต่อปี(ฟอง) : "
                             android:textSize="20dp" />
 
                         <TextView
@@ -722,12 +726,15 @@
                     </LinearLayout>
 
                     <LinearLayout
+                        android:id="@+id/male_egg_c"
+
                         android:layout_marginTop="5dp"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:orientation="horizontal">
 
                         <TextView
+
                             android:layout_width="wrap_content"
                             android:layout_height="wrap_content"
                             android:layout_gravity="center_vertical"

@@ -13,11 +13,15 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import com.squareup.picasso.NetworkPolicy
+import com.squareup.picasso.Picasso
 import kotlinx.android.synthetic.main.fragment_disease_detail.view.*
 import th.ac.up.agr.thai_nativechickenexpertsystem.ContainerActivity
 import th.ac.up.agr.thai_nativechickenexpertsystem.Data.DiseaseData
 
 import th.ac.up.agr.thai_nativechickenexpertsystem.R
+import th.ac.up.agr.thai_nativechickenexpertsystem.Tools.Animation
+import java.lang.Exception
 
 class DiseaseDetail : Fragment() {
 
@@ -58,8 +62,18 @@ class DiseaseDetail : Fragment() {
         //val p3 = arguments!!.getString("P3")
         //val p4 = arguments!!.getString("P4")
         val name = arguments!!.getString("NAME")
+        Log.e("TE",name)
 
-        FirebaseDatabase.getInstance().reference.child("โรค").child(name).addValueEventListener(object : ValueEventListener{
+        var names = ""
+
+        if(name.indexOf("ธิ")>=0){
+            names = "พยา$name"
+        }else {
+            names = name
+        }
+
+
+        FirebaseDatabase.getInstance().reference.child("โรค").child(names).addValueEventListener(object : ValueEventListener{
             override fun onCancelled(p0: DatabaseError) {
                 Log.e("","")
             }
@@ -69,9 +83,25 @@ class DiseaseDetail : Fragment() {
                     val detail = p0.getValue(DiseaseData::class.java)!!
 
                     view.DiseaseDetailA1.text = detail.detail
+
                     view.DiseaseDetailB1.text = detail.symptom
                     view.DiseaseDetailC1.text = detail.cause
                     view.DiseaseDetailD1.text = detail.prevent
+
+                    Log.e("TES",detail.name)
+
+                    if(detail.image.isNotEmpty())Picasso.get().load(detail.image).error(R.drawable.unknown_picture).into(view.DiseaseDetailImageView!!, object : com.squareup.picasso.Callback {
+                        override fun onSuccess() {
+
+                        }
+
+                        override fun onError(e: Exception?) {
+
+                        }
+                    })
+
+
+
 
                 }
             }

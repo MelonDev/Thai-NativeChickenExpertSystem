@@ -8,6 +8,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.RecyclerView
 import com.google.firebase.database.*
 import kotlinx.android.synthetic.main.disease_list_card.*
 import kotlinx.android.synthetic.main.fragment_tab_fourth.view.*
@@ -31,6 +32,8 @@ class TabFourthFragment : Fragment() {
 
     private var arrData = ArrayList<DiseaseData>()
 
+    private lateinit var recyclerView :RecyclerView
+
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?, savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_tab_fourth, container, false)
@@ -43,9 +46,10 @@ class TabFourthFragment : Fragment() {
 
             override fun onDataChange(p0: DataSnapshot) {
 
-                getData(p0)
 
-                val recyclerView = QuickRecyclerView(context!!
+                arrData.clear()
+
+                recyclerView = QuickRecyclerView(context!!
                         , view.disease_recycler_view
                         , "linear"
                         , 1
@@ -55,7 +59,14 @@ class TabFourthFragment : Fragment() {
                         , "high")
                         .recyclerView()
 
-                recyclerView.adapter = object : DiseaseAdapter(view.context,arrData){
+
+
+                recyclerView.adapter = DiseaseAdapter(view.context,arrData)
+
+                getData(p0)
+
+
+                /*recyclerView.adapter = object : DiseaseAdapter(view.context,arrData){
 
                     override fun onBindViewHolder(holder: DiseaseViewHolder, position: Int) {
                         super.onBindViewHolder(holder, position)
@@ -79,7 +90,7 @@ class TabFourthFragment : Fragment() {
 
                     }
 
-                }
+                }*/
 
 
             }
@@ -133,9 +144,34 @@ class TabFourthFragment : Fragment() {
 
     fun getData(dataSnapshot: DataSnapshot?) {
         //arrData = dataSnapshot!!.getValue(DiseaseData::class.java)!!
-        dataSnapshot!!.children.mapNotNullTo(arrData){
+        /*dataSnapshot!!.children.mapNotNullTo(arrData){
             it.getValue(DiseaseData::class.java)
         }
+        */
+
+        val arrD = ArrayList<DiseaseData>()
+
+        dataSnapshot!!.children.forEach {
+            if(it.value != null){
+                val value = it.getValue(DiseaseData::class.java)!!
+
+                //Log.e(value.name,value.name.indexOf("พยาธิ").toString())
+
+                if(value.name.indexOf("พยาธิ")>=0){
+                    arrD.add(value)
+                    //Log.e("0",value.name)
+                }else {
+                    arrData.add(value)
+                    //Log.e("1",value.name)
+
+                }
+            }
+        }
+
+        arrData.addAll(arrD)
+
+        recyclerView.adapter!!.notifyDataSetChanged()
+
     }
 
     private fun onSyncKey(dataSnapshot: DataSnapshot?) {

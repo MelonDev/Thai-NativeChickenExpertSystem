@@ -13,8 +13,8 @@ android {
         applicationId "th.ac.up.agr.thai_nativechickenexpertsystem"
         minSdkVersion 23
         targetSdkVersion 28
-        versionCode 9
-        versionName "0.9"
+        versionCode 10
+        versionName "0.10"
         testInstrumentationRunner "android.support.test.runner.AndroidJUnitRunner"
     }
     buildTypes {

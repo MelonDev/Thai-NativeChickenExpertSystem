@@ -28,6 +28,8 @@ class FirebaseLoadDetails(val context: Context,val holder :ChickenDetailViewHold
 
     var posi = 0
 
+    var sex = ""
+
     //private var database :DatabaseReference = databaseReference
 
     fun loadData(arr: ArrayList<String>, sex: String, pos: Int) {
@@ -37,6 +39,9 @@ class FirebaseLoadDetails(val context: Context,val holder :ChickenDetailViewHold
 
         val data = arrs[arrs.lastIndex]
         setRef(data)
+
+        this.sex = sex
+        //Log.e("dasd",sex)
 
         //setRefC(data)
 
@@ -182,6 +187,18 @@ class FirebaseLoadDetails(val context: Context,val holder :ChickenDetailViewHold
             }
             3 -> {
                 allGone(holder)
+
+                if(sex.contentEquals("เพศผู้")){
+                    holder?.eggA?.visibility = View.GONE
+                    holder?.eggB?.visibility = View.GONE
+                    holder?.eggC?.visibility = View.GONE
+
+                }else {
+                    holder?.eggA?.visibility = View.VISIBLE
+                    holder?.eggB?.visibility = View.VISIBLE
+                    holder?.eggC?.visibility = View.VISIBLE
+                }
+
                 holder?.detailE?.visibility = View.VISIBLE
 
                 holder?.C1?.text = slot.eggShellColor
@@ -196,7 +213,14 @@ class FirebaseLoadDetails(val context: Context,val holder :ChickenDetailViewHold
             }
             4 -> {
                 allGone(holder)
-                holder?.detailF?.visibility = View.VISIBLE
+
+                if(sex.contentEquals("เพศผู้")){
+                    holder?.detailF?.visibility = View.GONE
+                }else {
+                    holder?.detailF?.visibility = View.VISIBLE
+                }
+
+
 
                 holder?.F1?.text = slot.weightOfGiveFirstEgg
             }

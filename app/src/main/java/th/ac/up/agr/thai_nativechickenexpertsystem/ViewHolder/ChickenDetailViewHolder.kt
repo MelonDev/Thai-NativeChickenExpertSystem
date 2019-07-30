@@ -13,6 +13,11 @@ class ChickenDetailViewHolder(itemview :View) : RecyclerView.ViewHolder(itemview
     val detailE = itemview.detailE
     val detailF = itemview.detailF
 
+    val eggA = itemview.male_egg_a
+    val eggB = itemview.male_egg_b
+    val eggC = itemview.male_egg_c
+
+
     val A1 = itemview.detailA1
     val B1Image = itemview.detailB1
     val C1 = itemview.detailC1
