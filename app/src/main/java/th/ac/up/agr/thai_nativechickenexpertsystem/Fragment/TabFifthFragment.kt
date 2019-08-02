@@ -25,9 +25,8 @@ class TabFifthFragment : Fragment() {
         arr.add(setIconSet("โรงเรือน",R.drawable.ic_farm,null))
 
         arr.add(setIconSet("วัคซีน",R.drawable.ic_vaccine,null))
-        arr.add(setIconSet("ถ่ายพยาธิ",R.drawable.bacteria_off,null))
-
-
+        //arr.add(setIconSet("ถ่ายพยาธิ",R.drawable.bacteria_off,null))
+        arr.add(setIconSet("อ้างอิง",R.drawable.ic_book,null))
 
         arr.add(setIconSet("ติดต่อเรา",R.drawable.ic_people_off,null))
 

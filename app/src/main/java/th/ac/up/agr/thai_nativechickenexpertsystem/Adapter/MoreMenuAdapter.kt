@@ -3,6 +3,7 @@ package th.ac.up.agr.thai_nativechickenexpertsystem.Adapter
 import android.content.Context
 import android.content.Intent
 import android.graphics.BitmapFactory
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
@@ -10,6 +11,8 @@ import com.bumptech.glide.Glide
 import com.squareup.picasso.Picasso
 import th.ac.up.agr.thai_nativechickenexpertsystem.ContainerActivity
 import th.ac.up.agr.thai_nativechickenexpertsystem.Data.IconSet
+import th.ac.up.agr.thai_nativechickenexpertsystem.Fragment.VaccineFragment
+import th.ac.up.agr.thai_nativechickenexpertsystem.FullImageActivity
 import th.ac.up.agr.thai_nativechickenexpertsystem.R
 import th.ac.up.agr.thai_nativechickenexpertsystem.SubMainActivity
 import th.ac.up.agr.thai_nativechickenexpertsystem.ViewHolder.MoreMenuViewHolder
@@ -43,17 +46,29 @@ class MoreMenuAdapter(val context: Context, val data: ArrayList<IconSet>) : Recy
 
         Glide.with(context).load(slot.image).into(holder.imageView)
 
+        Log.e("TAGSS",slot.activity.toString())
+
+
+
         holder.imageView.setOnClickListener {
-            var intent :Intent = Intent()
-            if(slot.activity != null){
-                intent = Intent(context, slot.activity::class.java)
+
+            if(position == 1 || position == 3){
+                val intent = Intent(context, FullImageActivity::class.java)
+
+                intent.putExtra("ID","MORE")
+                intent.putExtra("NAME",slot.name)
+                //intent.putExtra("POSITION",position)
+                context.startActivity(intent)
             }else {
+
+                var intent: Intent = Intent()
                 intent = Intent(context, ContainerActivity::class.java)
+
+                intent.putExtra("ID", "MENU")
+                intent.putExtra("NAME", slot.name)
+                intent.putExtra("POSITION", position)
+                context.startActivity(intent)
             }
-            intent.putExtra("ID","MENU")
-            intent.putExtra("NAME",slot.name)
-            intent.putExtra("POSITION",position)
-            context.startActivity(intent)
         }
 
     }

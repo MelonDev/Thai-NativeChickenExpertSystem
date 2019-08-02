@@ -14,7 +14,7 @@ class SplashActivity : AppCompatActivity() {
     internal lateinit var handler: Handler
     internal lateinit var runnable: Runnable
     internal var delay_time: Long = 0
-    internal var time = 3000L
+    internal var time = 1000L
 
 
     override fun onCreate(savedInstanceState: Bundle?) {

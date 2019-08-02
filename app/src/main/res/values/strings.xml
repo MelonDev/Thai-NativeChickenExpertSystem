@@ -27,5 +27,6 @@
     <string name="title_activity_container">ContainerActivity</string>
     <string name="title_activity_add_program">AddProgramActivity</string>
     <string name="title_activity_program_detail">ProgramDetailActivity</string>
+    <string name="title_activity_full_image">FullImageActivity</string>
 
 </resources>

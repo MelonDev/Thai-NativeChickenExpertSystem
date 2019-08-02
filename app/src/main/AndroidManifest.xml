@@ -17,6 +17,12 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:name=".FullImageActivity"
+            android:label="@string/title_activity_full_image"
+            android:screenOrientation="portrait"
+
+            android:theme="@style/FullScreenAppTheme"></activity>
+        <activity
             android:name=".MainActivity"
             android:label="@string/app_name"
             android:screenOrientation="portrait"
@@ -76,7 +82,7 @@
             android:name=".ProgramDetailActivity"
             android:label="@string/title_activity_program_detail"
             android:screenOrientation="portrait"
-            android:theme="@style/NewTheme"/>
+            android:theme="@style/NewTheme" />
     </application>
 
 </manifest>

@@ -15,6 +15,22 @@
       },
       "oauth_client": [
         {
+          "client_id": "722263960296-gaggc3kt92acigeac5ekc5eio7h85gbr.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "th.ac.up.agr.thai_nativechickenexpertsystem",
+            "certificate_hash": "e6b9e9cd5c891a60f1f4d168a7dc775c60821055"
+          }
+        },
+        {
+          "client_id": "722263960296-bhj4udjc7ubks04ui7b6j31afb4qnms1.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "th.ac.up.agr.thai_nativechickenexpertsystem",
+            "certificate_hash": "0aaf6882cde7bfd519534ae049dd205fb720b61c"
+          }
+        },
+        {
           "client_id": "722263960296-9cg8uj43ctipmle15l5mpjnkjf0dhsbf.apps.googleusercontent.com",
           "client_type": 3
         }

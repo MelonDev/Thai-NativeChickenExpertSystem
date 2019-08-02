@@ -1,6 +1,7 @@
 package th.ac.up.agr.thai_nativechickenexpertsystem.Fragment
 
 
+import android.content.Intent
 import android.graphics.BitmapFactory
 import android.os.Bundle
 import android.util.Log
@@ -15,9 +16,12 @@ import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
 import com.squareup.picasso.NetworkPolicy
 import com.squareup.picasso.Picasso
+import kotlinx.android.synthetic.main.fragment_disease_detail.*
 import kotlinx.android.synthetic.main.fragment_disease_detail.view.*
+import kotlinx.android.synthetic.main.fragment_disease_detail.view.DiseaseDetailB
 import th.ac.up.agr.thai_nativechickenexpertsystem.ContainerActivity
 import th.ac.up.agr.thai_nativechickenexpertsystem.Data.DiseaseData
+import th.ac.up.agr.thai_nativechickenexpertsystem.FullImageActivity
 
 import th.ac.up.agr.thai_nativechickenexpertsystem.R
 import th.ac.up.agr.thai_nativechickenexpertsystem.Tools.Animation
@@ -62,7 +66,7 @@ class DiseaseDetail : Fragment() {
         //val p3 = arguments!!.getString("P3")
         //val p4 = arguments!!.getString("P4")
         val name = arguments!!.getString("NAME")
-        Log.e("TE",name)
+        //Log.e("TE",name)
 
         var names = ""
 
@@ -70,6 +74,15 @@ class DiseaseDetail : Fragment() {
             names = "พยา$name"
         }else {
             names = name
+        }
+
+        view.DiseaseDetailImageView.setOnClickListener {
+            val intent = Intent(context!!, FullImageActivity::class.java)
+
+            intent.putExtra("ID","DISEASE")
+            intent.putExtra("NAME",name)
+            //intent.putExtra("POSITION",position)
+            context!!.startActivity(intent)
         }
 
 
@@ -99,6 +112,21 @@ class DiseaseDetail : Fragment() {
 
                         }
                     })
+
+                    view.DiseaseDetailB.visibility = View.GONE
+                    view.DiseaseDetailC.visibility = View.GONE
+                    view.DiseaseDetailD.visibility = View.GONE
+
+                    if(detail.symptom.isNotEmpty()){
+                        view.DiseaseDetailB.visibility = View.VISIBLE
+                    }
+                    if(detail.cause.isNotEmpty()){
+                        view.DiseaseDetailC.visibility = View.VISIBLE
+                    }
+                    if(detail.prevent.isNotEmpty()){
+                        view.DiseaseDetailD.visibility = View.VISIBLE
+                    }
+
 
 
 

@@ -1,5 +1,6 @@
 package th.ac.up.agr.thai_nativechickenexpertsystem
 
+import android.content.Intent
 import android.os.Build
 import android.os.Bundle
 import android.util.Log
@@ -43,6 +44,8 @@ class ContainerActivity : AppCompatActivity() {
             w.navigationBarColor = resources.getColor(R.color.colorBNV)
         }
 
+        Log.e("ID",ID.toString())
+
         when(ID){
             "DISEASE" -> {
                 //val DISEASE_CAUSE = bundle.getString("DISEASE_CAUSE")
@@ -63,6 +66,15 @@ class ContainerActivity : AppCompatActivity() {
 
                 when(bundle.getInt("POSITION")){
                     0 -> {
+                        val fragment = FarmManagerFragment()
+
+
+                        setFragment(fragment)
+                    }
+                    1 -> {
+
+                    }
+                    4 -> {
                         val fragment = VaccineFragment()
 
 
@@ -73,6 +85,9 @@ class ContainerActivity : AppCompatActivity() {
 
 
                         setFragment(fragment)
+                    }
+                    3 -> {
+
                     }
                 }
 
