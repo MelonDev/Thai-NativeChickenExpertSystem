@@ -28,5 +28,8 @@
     <string name="title_activity_add_program">AddProgramActivity</string>
     <string name="title_activity_program_detail">ProgramDetailActivity</string>
     <string name="title_activity_full_image">FullImageActivity</string>
+    <string name="title_activity_login">LoginActivity</string>
+    <string name="title_activity_information">InformationActivity</string>
+    <string name="title_activity_farm_input">FarmInputActivity</string>
 
 </resources>

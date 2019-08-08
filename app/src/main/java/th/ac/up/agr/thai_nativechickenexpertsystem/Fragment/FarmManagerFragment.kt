@@ -26,11 +26,29 @@ class FarmManagerFragment : Fragment() {
     private lateinit var arrData: ArrayList<FarmData>
     private lateinit var recyclerView: RecyclerView
 
+    companion object {
+
+        fun newInstance(id: Int): FarmManagerFragment {
+            val args = Bundle()
+
+            args.putInt("ID", id)
+            //args.putInt("value", value)
+            //args.putSerializable("testData", testData)
+            val fragment = FarmManagerFragment()
+            fragment.arguments = args
+            return fragment
+        }
+    }
+
+    private var actionId = -1
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         val view = inflater.inflate(R.layout.fragment_farm_manager, container, false)
 
         arrData = ArrayList()
+
+        actionId = arguments!!.getInt("ID")
 
         recyclerView = QuickRecyclerView(context!!
                 , view.farm_recycler_view
@@ -42,8 +60,9 @@ class FarmManagerFragment : Fragment() {
                 , "high")
                 .recyclerView()
 
+        recyclerView.adapter = FarmManagerAdapter(actionId,arrData)
 
-        recyclerView.adapter = FarmManagerAdapter(arrData)
+
 
 
         loadData()
@@ -54,7 +73,13 @@ class FarmManagerFragment : Fragment() {
     private fun loadData() {
 
 
-        FirebaseDatabase.getInstance().reference.child("เพิ่มเติม").child("การจัดการแต่ละระยะ").addValueEventListener(object : ValueEventListener {
+        var firebase = FirebaseDatabase.getInstance().reference
+        if (actionId == 0) {
+            firebase = firebase.child("เพิ่มเติม").child("การจัดการแต่ละระยะ")
+        } else if (actionId == 1) {
+            firebase = firebase.child("เพิ่มเติม").child("โภชนาการ")
+        }
+        firebase.addValueEventListener(object : ValueEventListener {
             override fun onCancelled(p0: DatabaseError) {
                 Log.e("", "")
             }
@@ -64,7 +89,7 @@ class FarmManagerFragment : Fragment() {
                 if (p0.value != null) {
                     arrData.clear()
 
-                    Log.e("FMPOS", p0.childrenCount.toString())
+                    //Log.e("FMPOS", p0.childrenCount.toString())
                     p0.children.forEach {
                         arrData.add(it.getValue(FarmData::class.java)!!)
                     }
@@ -79,9 +104,8 @@ class FarmManagerFragment : Fragment() {
             }
         })
 
+
     }
-
-
 
 
 }

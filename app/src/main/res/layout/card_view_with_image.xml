@@ -6,6 +6,40 @@
     android:orientation="vertical">
 
     <androidx.cardview.widget.CardView
+        android:visibility="gone"
+        android:id="@+id/card_view_layout"
+        app:cardElevation="0dp"
+        app:cardCornerRadius="6dp"
+        app:cardBackgroundColor="@android:color/transparent"
+        android:layout_marginTop="5dp"
+        android:layout_marginBottom="5dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <ImageView
+                android:visibility="visible"
+                android:id="@+id/card_view_image"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:maxHeight="300dp"
+                android:maxWidth="400dp"
+                android:scaleType="fitCenter"
+                android:src="@drawable/unknown_picture" />
+
+        </RelativeLayout>
+
+    </androidx.cardview.widget.CardView>
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/card_view_image_layout"
+
         android:layout_marginTop="5dp"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
@@ -66,7 +100,7 @@
 
                     <ImageView
                         android:visibility="visible"
-                        android:id="@+id/image_card_view_image"
+                        android:id="@+id/image_card_view_image_image_image"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
                         android:adjustViewBounds="true"

@@ -27,6 +27,14 @@ class FullImageActivity : AppCompatActivity() {
 
 
         when(ID){
+            "VACCINE"->{
+                val firebase = FirebaseDatabase.getInstance().reference.child("วัคซีน").child(name).child("image")
+                loadImage(firebase)
+            }
+            "NEW" -> {
+                val firebase = FirebaseDatabase.getInstance().reference.child("เพิ่มเติม").child("โภชนาการ").child(name).child("image")
+                loadImage(firebase)
+            }
             "FARM" -> {
                 val firebase = FirebaseDatabase.getInstance().reference.child("เพิ่มเติม").child("การจัดการแต่ละระยะ").child(name).child("image")
                 loadImage(firebase)

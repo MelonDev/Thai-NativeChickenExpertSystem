@@ -4,6 +4,8 @@
     package="th.ac.up.agr.thai_nativechickenexpertsystem">
 
     <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
     <uses-permission
         android:name="android.permission.READ_PHONE_STATE"
         tools:node="remove" />
@@ -17,11 +19,27 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
+            android:screenOrientation="portrait"
+
+            android:name=".FarmInputActivity"
+            android:label="@string/title_activity_farm_input"
+            android:theme="@style/AppTheme.NoActionBar"></activity>
+        <activity
+            android:screenOrientation="portrait"
+
+            android:name=".InformationActivity"
+            android:label="@string/title_activity_information"
+            android:theme="@style/AppTheme.NoActionBar" />
+        <activity
+            android:name=".LoginActivity"
+            android:label="@string/title_activity_login"
+            android:screenOrientation="portrait"
+            android:theme="@style/splash" />
+        <activity
             android:name=".FullImageActivity"
             android:label="@string/title_activity_full_image"
             android:screenOrientation="portrait"
-
-            android:theme="@style/FullScreenAppTheme"></activity>
+            android:theme="@style/FullScreenAppTheme" />
         <activity
             android:name=".MainActivity"
             android:label="@string/app_name"

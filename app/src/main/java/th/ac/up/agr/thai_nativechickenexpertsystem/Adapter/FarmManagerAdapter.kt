@@ -11,7 +11,7 @@ import th.ac.up.agr.thai_nativechickenexpertsystem.R
 import th.ac.up.agr.thai_nativechickenexpertsystem.ViewHolder.FarmManagerViewHolder
 import java.util.zip.Inflater
 
-class FarmManagerAdapter(val arrData: ArrayList<FarmData>) : RecyclerView.Adapter<FarmManagerViewHolder>() {
+class FarmManagerAdapter(val sID :Int,val arrData: ArrayList<FarmData>) : RecyclerView.Adapter<FarmManagerViewHolder>() {
 
     private lateinit var con: Context
 
@@ -34,7 +34,12 @@ class FarmManagerAdapter(val arrData: ArrayList<FarmData>) : RecyclerView.Adapte
         holder.layout.setOnClickListener {
             val intent = Intent(con, FullImageActivity::class.java)
 
-                    intent.putExtra("ID","FARM")
+            if(sID == 0){
+                intent.putExtra("ID","FARM")
+            }else if(sID == 1){
+                intent.putExtra("ID","NEW")
+
+            }
             intent.putExtra("NAME",slot.name)
             //intent.putExtra("POSITION",position)
             con.startActivity(intent)

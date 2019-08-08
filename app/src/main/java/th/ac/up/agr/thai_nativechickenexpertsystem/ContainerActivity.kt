@@ -13,8 +13,8 @@ import th.ac.up.agr.thai_nativechickenexpertsystem.Fragment.*
 
 class ContainerActivity : AppCompatActivity() {
 
-    lateinit var ID :String
-    lateinit var name :String
+    lateinit var ID: String
+    lateinit var name: String
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -37,16 +37,15 @@ class ContainerActivity : AppCompatActivity() {
 
         val w = window
 
-        if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.O){
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.O) {
             w.navigationBarColor = resources.getColor(R.color.colorBNVT)
-        }
-        else if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP){
+        } else if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.LOLLIPOP) {
             w.navigationBarColor = resources.getColor(R.color.colorBNV)
         }
 
-        Log.e("ID",ID.toString())
+        Log.e("ID", ID.toString())
 
-        when(ID){
+        when (ID) {
             "DISEASE" -> {
                 //val DISEASE_CAUSE = bundle.getString("DISEASE_CAUSE")
                 //val DISEASE_PREVENT = bundle.getString("DISEASE_PREVENT")
@@ -64,9 +63,9 @@ class ContainerActivity : AppCompatActivity() {
             "MENU" -> {
                 //val fragment = vaccineFragment.newInstance(name_c)
 
-                when(bundle.getInt("POSITION")){
+                when (bundle.getInt("POSITION")) {
                     0 -> {
-                        val fragment = FarmManagerFragment()
+                        val fragment = FarmManagerFragment.newInstance(0)
 
 
                         setFragment(fragment)
@@ -74,7 +73,7 @@ class ContainerActivity : AppCompatActivity() {
                     1 -> {
 
                     }
-                    4 -> {
+                    5 -> {
                         val fragment = VaccineFragment()
 
 
@@ -87,6 +86,14 @@ class ContainerActivity : AppCompatActivity() {
                         setFragment(fragment)
                     }
                     3 -> {
+
+                    }
+                    4 -> {
+
+                        val fragment = FarmManagerFragment.newInstance(1)
+
+
+                        setFragment(fragment)
 
                     }
                 }
@@ -106,6 +113,6 @@ class ContainerActivity : AppCompatActivity() {
 
     }
 
-    private fun setFragment(fragment: Fragment) = supportFragmentManager.beginTransaction().replace(R.id.container_frame,fragment).commit()
+    private fun setFragment(fragment: Fragment) = supportFragmentManager.beginTransaction().replace(R.id.container_frame, fragment).commit()
 
 }
