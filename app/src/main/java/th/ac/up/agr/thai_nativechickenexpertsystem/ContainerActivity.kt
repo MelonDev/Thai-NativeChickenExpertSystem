@@ -73,28 +73,28 @@ class ContainerActivity : AppCompatActivity() {
                     1 -> {
 
                     }
-                    5 -> {
+
+                    4 -> {
                         val fragment = VaccineFragment()
 
 
                         setFragment(fragment)
                     }
                     2 -> {
-                        val fragment = TabSecondFragment()
 
-
-                        setFragment(fragment)
                     }
+
                     3 -> {
-
-                    }
-                    4 -> {
 
                         val fragment = FarmManagerFragment.newInstance(1)
 
 
                         setFragment(fragment)
 
+                    }
+                    5 -> {
+                        val fragment = CreditFragment()
+                        setFragment(fragment)
                     }
                 }
 

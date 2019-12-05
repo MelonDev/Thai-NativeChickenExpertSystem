@@ -28,7 +28,7 @@ class TabFifthFragment : Fragment() {
         //arr.add(setIconSet("อาหาร",R.drawable.ic_seed_off,null))
         arr.add(setIconSet("การจัดการแต่ละระยะ",R.drawable.ic_chicken_management_2,null))
         arr.add(setIconSet("การผสมพันธุ์",R.drawable.ic_breeding_2,null))
-        arr.add(setIconSet("ลักษณะ",R.drawable.ic_feather_off,null))
+        //arr.add(setIconSet("ลักษณะ",R.drawable.ic_feather_off,null))
         arr.add(setIconSet("โรงเรือน",R.drawable.ic_farm,null))
 
         arr.add(setIconSet("โภชนาการ",R.drawable.ic_wheat,null))

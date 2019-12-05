@@ -52,7 +52,7 @@ class MoreMenuAdapter(val context: Context, val data: ArrayList<IconSet>) : Recy
 
         holder.imageView.setOnClickListener {
 
-            if(position == 1 || position == 3){
+            if(position == 1 || position == 2){
                 val intent = Intent(context, FullImageActivity::class.java)
 
                 intent.putExtra("ID","MORE")
